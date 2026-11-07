@@ -3,210 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FOHGM - Fountain of Higher Grace Ministry | Pastor Sam Otema</title>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<title>FOHGM - Fountain of Higher Grace | Badege Layibi, Gulu</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0a1931;color:#fff;line-height:1.6}
-a{color:#FFD700;text-decoration:none}
-header{background:#071426;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
-.logo{font-weight:900;color:#FFD700;font-size:20px}
-.logo span{color:#fff;font-size:11px;display:block;font-weight:400;letter-spacing:2px}
-nav{display:flex;gap:14px}
-nav a{color:#fff;font-weight:700;font-size:13px}
-.hero{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0a1931,#123a6b)}
-.hero h1{font-size:40px;color:#FFD700;line-height:1.1}
-.hero p{max-width:650px;margin:16px auto;color:#dbe6ff}
-.btn{display:inline-block;background:#FFD700;color:#0a1931;padding:13px 26px;border-radius:30px;font-weight:900;margin:6px}
-.btn2{display:inline-block;border:2px solid #FFD700;color:#FFD700;padding:12px 26px;border-radius:30px;font-weight:900;margin:6px}
-section{padding:45px 20px;max-width:900px;margin:auto}
-h2{color:#FFD700;margin-bottom:12px;font-size:28px;text-align:center}
-.card{background:#122a4d;padding:20px;border-radius:14px;margin:12px 0;border:1px solid #23406e}
-.pastor{display:flex;gap:18px;align-items:center}
-.pastor-img{width:110px;height:110px;border-radius:50%;background:#FFD700;color:#0a1931;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:900;flex-shrink:0}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-input,select,textarea{width:100%;padding:13px;border-radius:10px;border:none;margin:8px 0;font-size:16px;color:#111}
-button{width:100%;padding:14px;background:#FFD700;border:none;border-radius:10px;font-weight:900;font-size:16px;cursor:pointer;color:#0a1931}
-.small-btn{width:auto;padding:8px 14px;font-size:13px;margin:4px}
-.danger{background:#ff4444;color:#fff}
-footer{text-align:center;padding:30px;background:#071426;color:#aaa;font-size:13px}
-#gate{position:fixed;inset:0;background:#0a1931;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px}
-.gate-box{background:#fff;color:#0a1931;max-width:430px;width:100%;padding:26px;border-radius:18px;text-align:center}
-.gate-box p{color:#555;margin:10px 0}
-#main{display:none}
-#status{font-size:12px;color:#FFD700;margin-top:8px}
-#adminPanel{display:none;max-width:900px;margin:auto;padding:20px}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0}
-.stat{background:#fff;color:#0a1931;padding:18px;border-radius:14px;text-align:center}
-.stat b{font-size:28px;color:#0a1931;display:block}
-.admin-table{background:#fff;color:#111;padding:14px;border-radius:12px;margin:12px 0}
-.admin-table p{border-bottom:1px solid #eee;padding:8px 0;font-size:14px}
-@media(max-width:650px){.grid,.stat-grid{grid-template-columns:1fr}nav{display:none}.hero h1{font-size:32px}.pastor{flex-direction:column;text-align:center}}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{color:#222;line-height:1.6;background:#fff}
+a{text-decoration:none;color:inherit}
+/* HEADER LIKE WATOTO */
+header{background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.08);display:flex;justify-content:space-between;align-items:center;padding:12px 4%;}
+.logo{font-family:Georgia,serif;font-size:34px;font-weight:900;font-style:italic;letter-spacing:-1px;color:#111}
+.logo span{display:block;font-size:10px;font-style:normal;letter-spacing:3px;font-family:Arial;color:#b99700;font-weight:800;margin-top:-4px}
+nav{display:flex;gap:18px;align-items:center}
+.nav-item{position:relative;padding:10px 4px}
+.nav-item>a{font-size:13px;font-weight:800;letter-spacing:.5px;color:#111;text-transform:uppercase}
+.nav-item>a:hover{color:#1a7a2e;border-bottom:3px solid #1a7a2e}
+.nav-item:first-child>a{color:#1a7a2e;border-bottom:3px solid #1a7a2e}
+.dropdown{position:absolute;top:100%;left:0;background:#fff;min-width:240px;box-shadow:0 10px 30px rgba(0,0,0,.15);display:none;border-top:2px solid #1a7a2e}
+.nav-item:hover .dropdown{display:block}
+.dropdown a{display:block;padding:13px 18px;font-size:14px;font-weight:700;color:#222;border-bottom:1px solid #eee}
+.dropdown a:hover{background:#f7f7f7;color:#1a7a2e;padding-left:22px}
+.dropdown a small{display:block;font-weight:400;color:#777;font-size:12px}
+.hamburger{display:none;font-size:28px;cursor:pointer}
+/* HERO - JESUS FILM BACKGROUND */
+.hero{position:relative;height:78vh;min-height:520px;background:url('https://images.unsplash.com/photo-1507692049790-de58290a4334?w=1600&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.hero-content{position:relative;z-index:2;padding:20px;max-width:800px}
+.hero-content h1{font-size:54px;line-height:1.05;text-shadow:0 3px 20px rgba(0,0,0,.6)}
+.hero-content p{font-size:18px;margin:16px auto;max-width:650px}
+.btn{display:inline-block;background:#1a7a2e;color:#fff;padding:14px 28px;border-radius:30px;font-weight:900;margin:6px}
+.btn-gold{background:#d4af00;color:#111}
+.btn-white{background:#fff;color:#111}
+.badge{background:#d4af00;color:#111;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:900;letter-spacing:1px}
+/* SECTIONS */
+section{padding:60px 5%;max-width:1150px;margin:auto}
+h2{font-size:32px;text-align:center;margin-bottom:8px;color:#111}
+.sub{text-align:center;color:#666;max-width:700px;margin:0 auto 30px}
+.green{color:#1a7a2e;text-transform:uppercase;letter-spacing:2px;font-size:22px;text-align:center;font-weight:800}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.card{border:1px solid #eee;border-radius:12px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.06)}
+.card img{width:100%;height:180px;object-fit:cover}
+.card div{padding:18px}
+.card h3{margin-bottom:8px}
+.card p{color:#666;font-size:14px}
+.pastor-box{display:flex;gap:24px;align-items:center;background:#f8f5e6;padding:28px;border-radius:16px}
+.pastor-img{width:150px;height:150px;border-radius:50%;background:#1a7a2e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:900;flex-shrink:0}
+.jesus-box{background:#0a1931;color:#fff;border-radius:16px;padding:30px;display:flex;gap:20px;align-items:center}
+.jesus-box h3{color:#FFD700;font-size:26px}
+input,select,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #ddd;margin:8px 0;font-size:15px}
+button{width:100%;padding:14px;background:#1a7a2e;color:#fff;border:none;border-radius:10px;font-weight:900;cursor:pointer}
+footer{background:#111;color:#bbb;padding:50px 5% 20px}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px;max-width:1150px;margin:auto}
+footer h4{color:#fff;margin-bottom:12px}
+footer a{display:block;padding:4px 0;font-size:14px}
+.wa{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:999;box-shadow:0 5px 20px rgba(0,0,0,.3)}
+@media(max-width:900px){nav{display:none}.hamburger{display:block}.grid,.footer-grid{grid-template-columns:1fr}.hero-content h1{font-size:36px}.pastor-box,.jesus-box{flex-direction:column;text-align:center}}
+#mobileMenu{display:none;background:#fff;padding:20px;border-top:1px solid #eee}
+#mobileMenu a{display:block;padding:12px 0;font-weight:800;border-bottom:1px solid #eee}
 </style>
 </head>
 <body>
 
-<div id="gate">
-  <div class="gate-box">
-    <div style="font-size:42px">⛲</div>
-    <h1>FOHGM</h1>
-    <p><b>Fountain of Higher Grace Ministry</b><br>PASTOR SAM OTEMA - SAM MINISTRY PERFORMING VERIFICATION</p>
-    <p style="font-size:13px">Please verify to enter the official ministry website.</p>
-    <input id="nameInput" placeholder="Enter your full name">
-    <select id="reasonInput"><option value="Member">I am a Member</option><option value="Visitor">I am a Visitor</option><option value="Prayer">I need Prayer</option><option value="Giving">I want to Give</option></select>
-    <button onclick="verifyUser()">VERIFY & ENTER →</button>
-    <p id="status">Connecting to Firebase...</p>
-    <p style="font-size:12px">Your name will be saved to FOHGM Firebase database.</p>
-    <p style="font-size:12px;margin-top:10px"><a href="#" onclick="openAdminLogin();return false;" style="color:#0a1931;text-decoration:underline">Admin Login</a></p>
+<header>
+  <div class="logo">Fountain<span>FOUNTAIN OF HIGHER GRACE • GULU</span></div>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').style.display=document.getElementById('mobileMenu').style.display=='block'?'none':'block'">☰</div>
+  <nav>
+    <div class="nav-item"><a href="#home">Home</a></div>
+    <div class="nav-item"><a href="#about">About ▾</a>
+      <div class="dropdown">
+        <a href="#vision">Vision And Values<small>What we believe & where we are going</small></a>
+        <a href="#leadership">Leadership ›<small>Pastor Sam Otema & Team</small></a>
+        <a href="#beliefs">Beliefs<small>Our faith, our foundation</small></a>
+        <a href="#history">History<small>Established 2024 in Badege Layibi, Gulu</small></a>
+        <a href="#accountability">Accountability<small>Integrity & stewardship</small></a>
+        <a href="#faqs">FAQs<small>Questions? We answer</small></a>
+        <a href="#privacy">Privacy Policy<small>How we protect you</small></a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="#join">Join Us ▾</a>
+      <div class="dropdown">
+        <a href="#visit">Plan Your Visit<small>First time? Start here</small></a>
+        <a href="#member">Become a Member<small>Join the Fountain family</small></a>
+        <a href="#baptism">Baptism<small>Take the next step</small></a>
+        <a href="#volunteer">Volunteer<small>Serve with us</small></a>
+        <a href="#cells">Small Groups / Cells<small>Life together in Badege</small></a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="#community">Community ▾</a>
+      <div class="dropdown">
+        <a href="#children">Children<small>Fountain Kids</small></a>
+        <a href="#youth">Youth<small>Next generation</small></a>
+        <a href="#women">Women<small>Women of Grace</small></a>
+        <a href="#men">Men<small>Men of Higher Grace</small></a>
+        <a href="#worship">Worship Team<small>Music & Arts</small></a>
+        <a href="#outreach">Outreach<small>Badege Layibi & Gulu</small></a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="#connect">Connect ▾</a>
+      <div class="dropdown">
+        <a href="#prayer">Prayer Request<small>We will pray for you</small></a>
+        <a href="#testimonies">Testimonies<small>What God has done</small></a>
+        <a href="#contact">Contact Us<small>Find us in Layibi</small></a>
+        <a href="#location">Location<small>Badege Layibi, Gulu</small></a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="#resources">Resources ▾</a>
+      <div class="dropdown">
+        <a href="#sermons">Sermons<small>Messages by Pastor Sam</small></a>
+        <a href="#jesusfilm">Jesus Film Online<small>Watch the Jesus Film</small></a>
+        <a href="#bible">Bible Reading<small>Daily reading plan</small></a>
+        <a href="#devotional">Devotionals<small>Grow daily</small></a>
+        <a href="#media">Media<small>Photos & Videos</small></a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="#give">Give ▾</a>
+      <div class="dropdown">
+        <a href="#give-online">Give Online<small>Give in seconds</small></a>
+        <a href="#momo">Mobile Money<small>MTN & Airtel</small></a>
+        <a href="#partner">Partnership<small>Partner with FOHGM</small></a>
+        <a href="#projects">Projects<small>Church building & community</small></a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div id="mobileMenu">
+  <a href="#home">HOME</a><a href="#about">ABOUT - Vision, Leadership, Beliefs, History</a><a href="#join">JOIN US - Visit, Member, Baptism</a><a href="#community">COMMUNITY - Kids, Youth, Women, Men</a><a href="#connect">CONNECT - Prayer, Contact</a><a href="#resources">RESOURCES - Sermons, Jesus Film</a><a href="#give">GIVE - Online, Mobile Money</a>
+</div>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <span class="badge">BADEGE LAYIBI • GULU • EST. 2024</span>
+    <h1>Fountain of<br>Higher Grace</h1>
+    <p>We are a cell-based community church in Badege Layibi, Gulu, celebrating Christ, growing and multiplying as each one reaches one; touching those around us with the love of Jesus.</p>
+    <a class="btn" href="#visit">Plan Your Visit →</a>
+    <a class="btn btn-gold" href="#jesusfilm">▶ Watch Jesus Film</a>
+    <p style="margin-top:14px;font-size:13px">Led by Pastor Sam Otema | Sunday 9:00 AM</p>
   </div>
 </div>
 
-<div id="main">
-<header>
-  <div class="logo">FOHGM <span>FOUNTAIN OF HIGHER GRACE</span></div>
-  <nav><a href="#home">Home</a><a href="#pastor">Pastor</a><a href="#services">Services</a><a href="#give">Give</a><a href="#contact">Contact</a><a href="#" onclick="openAdminLogin();return false;">Admin</a></nav>
-</header>
+<section id="vision">
+  <div class="green">VISION</div>
+  <p style="text-align:center;max-width:750px;margin:16px auto;font-size:18px">We are a cell-based community church in Badege Layibi, Gulu, celebrating Christ, growing and multiplying as each one reaches one; touching those around us with the love of Jesus, bringing healing to the cities and the nations.</p>
+</section>
 
-<div class="hero" id="home">
-  <p style="letter-spacing:3px;color:#FFD700">WELCOME TO FOHGM • KAMPALA, UGANDA</p>
-  <h1>Fountain of<br>Higher Grace Ministry</h1>
-  <p>Led by Pastor Sam Otema. Where grace meets you, heals you, and lifts you higher.</p>
-  <a class="btn" href="#services">Join a Service →</a>
-  <a class="btn2" href="#pastor">Meet Pastor Sam</a>
-  <p id="welcomeMsg" style="margin-top:16px;color:#FFD700;font-weight:700"></p>
-</div>
-
-<section id="pastor">
-  <h2>Meet Pastor Sam Otema</h2>
-  <div class="card pastor">
-    <div class="pastor-img">SO</div>
-    <div>
-      <h3 style="color:#FFD700;font-size:22px">Pastor Sam Otema</h3>
-      <p style="color:#FFD700;font-weight:700">Founder & Senior Pastor, FOHGM</p>
-      <p style="margin-top:8px">Pastor Sam Otema is a servant of God called to preach higher grace, healing and restoration. Through SAM Ministry, he leads FOHGM in Kampala with a heart for prayer, the Word, and helping families rise in faith. His message is simple: No matter where you have been, grace can lift you higher.</p>
-      <p style="margin-top:8px;font-size:14px">📖 "Where sin abounded, grace did much more abound." - Romans 5:20</p>
-    </div>
+<section id="about" style="background:#f9f9f9">
+  <h2>About FOHGM</h2><p class="sub">Fountain of Higher Grace - Badege Layibi, Gulu. Established in 2024.</p>
+  <div class="grid">
+    <div class="card"><div><h3 id="beliefs">Our Beliefs</h3><p>Jesus is Lord. The Bible is truth. Grace lifts us higher. We believe in salvation, healing, the Holy Spirit, and the power of prayer.</p></div></div>
+    <div class="card"><div><h3 id="history">Our History</h3><p>Started in 2024 in Badege Layibi, Gulu, with a small gathering under Pastor Sam Otema. Today we are a growing fountain for families in Layibi and beyond.</p></div></div>
+    <div class="card"><div><h3 id="accountability">Accountability</h3><p>We steward every gift with integrity. Finances are accounted for, leadership is accountable, and the church is open.</p></div></div>
   </div>
 </section>
 
-<section id="about"><h2>About FOHGM</h2><div class="card"><p>FOHGM is a grace-filled Christian community in Kampala, Uganda, under the leadership of Pastor Sam Otema. We exist to share the love of Jesus, build strong families, and raise disciples who carry grace to their homes and nations.</p><p style="margin-top:10px"><b>Vision:</b> To be a fountain where everyone drinks from higher grace.<br><b>Mission:</b> Worship, Word, Prayer, and Compassion.</p></div></section>
-
-<section id="services"><h2>Weekly Services</h2><div class="grid"><div class="card"><h3 style="color:#FFD700">Sunday Worship</h3><p>Sunday • 9:00 AM<br>Main Celebration with Pastor Sam Otema</p></div><div class="card"><h3 style="color:#FFD700">Midweek Prayer</h3><p>Wednesday • 6:00 PM<br>Prayer, Intercession & Testimonies</p></div><div class="card"><h3 style="color:#FFD700">Bible Study</h3><p>Friday • 6:00 PM<br>Deep Word & Discipleship</p></div><div class="card"><h3 style="color:#FFD700">Youth & Children</h3><p>Saturday • 10:00 AM<br>Youth, Teens & Kids Church</p></div></div></section>
-
-<section id="give"><h2>Give & Partner</h2><div class="card" style="text-align:center"><p>Your giving helps Pastor Sam and FOHGM preach, feed families and grow the ministry.</p><p style="margin:14px 0"><b>MTN Mobile Money</b><br><span style="font-size:24px;color:#FFD700">0780 000 000</span><br><small>Names: FOHGM Ministry</small></p><p><b>Airtel Money</b><br><span style="font-size:24px;color:#FFD700">0700 000 000</span></p></div></section>
-
-<section id="contact"><h2>Prayer Request & Contact</h2><div class="card"><input id="prayerName" placeholder="Your name"><textarea id="prayerText" rows="3" placeholder="How can Pastor Sam and the team pray for you?"></textarea><button onclick="sendPrayer()">Send Prayer Request</button><p id="prayerDone" style="text-align:center;color:#FFD700;margin-top:10px"></p><p style="text-align:center;margin-top:14px">WhatsApp: +256 700 000 000<br>Email: info@fohgm.org<br>Location: Kampala, Uganda<br>Pastor: Sam Otema</p></div></section>
-<footer><p>© 2026 FOHGM - Fountain of Higher Grace Ministry | Pastor Sam Otema</p><p>Built with grace in Kampala, Uganda.</p></footer>
-</div>
-
-<div id="adminPanel">
-  <h2 style="margin-top:20px">FOHGM Admin Dashboard</h2>
-  <p style="text-align:center">Welcome Pastor Sam Otema • FOHGM Admin</p>
-  <div id="adminLoginBox" class="card" style="max-width:400px;margin:20px auto;text-align:center">
-    <h3 style="color:#FFD700">Admin Login</h3>
-    <input id="adminPass" type="password" placeholder="Enter admin password">
-    <button onclick="loginAdmin()">Login to Dashboard</button>
-    <p style="font-size:12px;color:#ccc;margin-top:8px">Default password: FOHGM2026</p>
+<section id="leadership">
+  <h2>Leadership</h2><p class="sub">Meet the shepherd of the Fountain</p>
+  <div class="pastor-box">
+    <div class="pastor-img">SO</div>
+    <div><h3 style="font-size:26px">Pastor Sam Otema</h3><p style="color:#1a7a2e;font-weight:800">Founder & Senior Pastor - Fountain of Higher Grace</p><p style="margin-top:10px">Pastor Sam Otema was called to start Fountain of Higher Grace in Badege Layibi, Gulu in 2024. His heart is for the lost, the broken, and the next generation. Through the Word, prayer and higher grace, he is raising a church that reaches one to reach one.</p><p style="margin-top:8px"><b>📖 Romans 5:20</b> - "Where sin abounded, grace did much more abound."</p></div>
   </div>
-  <div id="adminContent" style="display:none">
-    <div class="stat-grid">
-      <div class="stat"><b id="statVerified">0</b>Verified People</div>
-      <div class="stat"><b id="statPrayers">0</b>Prayer Requests</div>
-      <div class="stat"><b id="statToday">0</b>Today</div>
-    </div>
-    <button class="small-btn" onclick="loadAdminData()">🔄 Refresh Data</button>
-    <button class="small-btn" onclick="logoutAdmin()">Logout</button>
-    <button class="small-btn" onclick="backToSite()">← Back to Website</button>
-    <div class="admin-table"><h3>Verified People</h3><div id="verifiedList"><p>No data yet. Connect Firebase to see real data.</p></div></div>
-    <div class="admin-table"><h3>Prayer Requests</h3><div id="prayerList"><p>No prayers yet.</p></div></div>
+</section>
+
+<section id="join" style="background:#f9f9f9">
+  <h2>Join Us</h2><p class="sub">There is a place for you at the Fountain.</p>
+  <div class="grid">
+    <div class="card"><img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=800&q=80"><div><h3 id="visit">Plan Your Visit</h3><p>Sunday 9:00 AM - Badege Layibi, Gulu. Come as you are. We will welcome you.</p></div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80"><div><h3 id="member">Become a Member</h3><p>Join the family. Attend a membership class and become part of FOHGM.</p></div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?w=800&q=80"><div><h3 id="baptism">Baptism</h3><p>Ready to be baptised? Sign up and we will walk with you.</p></div></div>
+    <div class="card"><div><h3 id="volunteer">Volunteer</h3><p>Ushering, Media, Kids, Worship, Outreach - serve where God placed you.</p></div></div>
+    <div class="card"><div><h3 id="cells">Small Groups / Cells</h3><p>Mid-week cells in homes across Badege Layibi. Life is better together.</p></div></div>
+    <div class="card"><div><h3>Service Times</h3><p><b>Sunday:</b> 9:00 AM - Celebration<br><b>Wednesday:</b> 6:00 PM - Prayer<br><b>Friday:</b> 6:00 PM - Bible Study</p></div></div>
   </div>
-</div>
+</section>
 
-<script>
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY_HERE",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-const ADMIN_PASSWORD = "FOHGM2026";
-let db = null;
-try {
-  if (firebaseConfig.apiKey !== "YOUR_API_KEY_HERE") {
-    firebase.initializeApp(firebaseConfig);
-    db = firebase.firestore();
-    document.getElementById('status').textContent = "✓ Connected to FOHGM Firebase";
-  } else {
-    document.getElementById('status').textContent = "Firebase not configured yet - using local save. Site still works.";
-  }
-} catch(e){ document.getElementById('status').textContent = "Using local save. Site still works."; }
+<section id="community">
+  <h2>Community</h2><p class="sub">Everyone belongs. Everyone grows.</p>
+  <div class="grid">
+    <div class="card"><div><h3 id="children">👧 Children - Fountain Kids</h3><p>Safe, fun, Jesus-centred teaching for our children every Sunday.</p></div></div>
+    <div class="card"><div><h3 id="youth">🔥 Youth</h3><p>Youth in Gulu rising in grace, purity and purpose.</p></div></div>
+    <div class="card"><div><h3 id="women">💛 Women of Grace</h3><p>Women praying, growing and lifting families in Layibi.</p></div></div>
+    <div class="card"><div><h3 id="men">💪 Men of Higher Grace</h3><p>Men standing as priests in their homes.</p></div></div>
+    <div class="card"><div><h3 id="worship">🎵 Worship Team</h3><p>Leading Badege into the presence of God.</p></div></div>
+    <div class="card"><div><h3 id="outreach">❤️ Outreach</h3><p>Reaching Badege Layibi, Gulu schools, markets and homes with the love of Jesus.</p></div></div>
+  </div>
+</section>
 
-function verifyUser(){
-  var name = document.getElementById('nameInput').value.trim();
-  if(!name){ alert('Please enter your name'); return; }
-  var reason = document.getElementById('reasonInput').value;
-  var data = { name: name, reason: reason, pastor: "Sam Otema", ministry: "FOHGM", time: new Date().toISOString() };
-  try{ localStorage.setItem('fohgm_name', name); }catch(e){}
-  let local = JSON.parse(localStorage.getItem('fohgm_verifications')||'[]'); local.push(data); localStorage.setItem('fohgm_verifications', JSON.stringify(local));
-  if(db){ db.collection("verifications").add(data).then(function(){ showMain(name); }).catch(function(){ showMain(name); }); } else { showMain(name); }
-}
-function showMain(name){
-  document.getElementById('gate').style.display='none';
-  document.getElementById('adminPanel').style.display='none';
-  document.getElementById('main').style.display='block';
-  if(name){ document.getElementById('welcomeMsg').textContent = 'Welcome, ' + name + ' — Pastor Sam Otema and FOHGM welcome you!'; }
-}
-function sendPrayer(){
-  var n = document.getElementById('prayerName').value.trim();
-  var t = document.getElementById('prayerText').value.trim();
-  if(!t){ alert('Please write your prayer request'); return; }
-  var data = { name: n || 'friend', prayer: t, time: new Date().toISOString() };
-  let local = JSON.parse(localStorage.getItem('fohgm_prayers')||'[]'); local.push(data); localStorage.setItem('fohgm_prayers', JSON.stringify(local));
-  if(db){ db.collection("prayers").add(data).then(function(){ document.getElementById('prayerDone').textContent = 'Thank you. Saved to Firebase. Pastor Sam will pray for you.'; }).catch(function(){ document.getElementById('prayerDone').textContent = 'Thank you. We received your prayer.'; }); } else { document.getElementById('prayerDone').textContent = 'Thank you ' + (n||'friend') + '. We received your prayer.'; }
-  document.getElementById('prayerText').value='';
-}
-function openAdminLogin(){
-  document.getElementById('gate').style.display='none';
-  document.getElementById('main').style.display='none';
-  document.getElementById('adminPanel').style.display='block';
-  document.getElementById('adminLoginBox').style.display='block';
-  document.getElementById('adminContent').style.display='none';
-}
-function loginAdmin(){
-  var p = document.getElementById('adminPass').value;
-  if(p === ADMIN_PASSWORD){
-    document.getElementById('adminLoginBox').style.display='none';
-    document.getElementById('adminContent').style.display='block';
-    loadAdminData();
-  } else { alert('Wrong password. Try FOHGM2026'); }
-}
-function logoutAdmin(){ document.getElementById('adminContent').style.display='none'; document.getElementById('adminLoginBox').style.display='block'; document.getElementById('adminPass').value=''; }
-function backToSite(){ document.getElementById('adminPanel').style.display='none'; document.getElementById('main').style.display='block'; }
-async function loadAdminData(){
-  let ver = JSON.parse(localStorage.getItem('fohgm_verifications')||'[]');
-  let pra = JSON.parse(localStorage.getItem('fohgm_prayers')||'[]');
-  if(db){
-    try{
-      let s1 = await db.collection("verifications").orderBy("time","desc").limit(50).get();
-      if(!s1.empty){ ver = []; s1.forEach(function(d){ let x=d.data(); x.id=d.id; ver.push(x); }); }
-      let s2 = await db.collection("prayers").orderBy("time","desc").limit(50).get();
-      if(!s2.empty){ pra = []; s2.forEach(function(d){ let x=d.data(); x.id=d.id; pra.push(x); }); }
-    }catch(e){}
-  }
-  document.getElementById('statVerified').textContent = ver.length;
-  document.getElementById('statPrayers').textContent = pra.length;
-  let today = new Date().toISOString().slice(0,10);
-  document.getElementById('statToday').textContent = ver.filter(function(v){ return (v.time||'').slice(0,10)===today; }).length;
-  document.getElementById('verifiedList').innerHTML = ver.length ? ver.map(function(v){ return '<p><b>'+(v.name||'')+'</b> - '+(v.reason||'')+'<br><small>'+(v.time||'')+'</small></p>'; }).join('') : '<p>No verified people yet.</p>';
-  document.getElementById('prayerList').innerHTML = pra.length ? pra.map(function(v){ return '<p><b>'+(v.name||'')+'</b>: '+(v.prayer||'')+'<br><small>'+(v.time||'')+'</small></p>'; }).join('') : '<p>No prayers yet.</p>';
-}
-window.onload = function(){
-  if(window.location.search.includes('admin=1')){ openAdminLogin(); return; }
-  try{ var saved = localStorage.getItem('fohgm_name'); if(saved){ showMain(saved); } }catch(e){}
-};
-</script>
+<section id="jesusfilm" style="background:#f9f9f9">
+  <div class="jesus-box">
+    <div style="flex:1"><h3>Jesus Film Online</h3><p style="margin:10px 0;color:#ddd">Watch the story of Jesus - in your language, free, anywhere. This is the background of our mission: Each one reach one.</p><a class="btn btn-gold" href="https://www.jesusfilm.org/watch/jesus.html/english.html" target="_blank">▶ Watch Jesus Film Now</a><a class="btn btn-white" href="https://www.jesusfilm.org/" target="_blank">Visit JesusFilm.org</a></div>
+    <div style="flex:1"><iframe width="100%" height="220" src="https://www.youtube.com/embed/8d8h4y8A0oE" title="Jesus Film" frameborder="0" allowfullscreen style="border-radius:12px"></iframe><p style="font-size:12px;color:#aaa;margin-top:8px">Background video: The Jesus Film - Share it with a friend in Gulu today.</p></div>
+  </div>
+</section>
+
+<section id="sermons"><h2>Resources - Sermons</h2><p class="sub">Messages by Pastor Sam Otema</p>
+  <div class="grid">
+    <div class="card"><div><h3 id="bible">Higher Grace</h3><p>Romans 5:20 - Grace that lifts you higher than your past.</p></div></div>
+    <div class="card"><div><h3 id="devotional">Each One Reach One</h3><p>Our vision in action - how one life can change a whole family in Layibi.</p></div></div>
+    <div class="card"><div><h3 id="media">The Fountain That Never Dries</h3><p>John 4:14 - Drink from the Fountain and never thirst again.</p></div></div>
+  </div>
+</section>
+
+<section id="connect" style="background:#f9f9f9">
+  <h2>Connect</h2><p class="sub">We want to hear from you.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div class="card"><div><h3 id="prayer">Prayer Request</h3><input id="pName" placeholder="Your name"><textarea id="pText" rows="3" placeholder="How can we pray for you?"></textarea><button onclick="document.getElementById('pDone').textContent='Thank you. Pastor Sam and the team will pray for you.';document.getElementById('pText').value=''">Send Prayer Request</button><p id="pDone" style="color:#1a7a2e;font-weight:800;margin-top:10px"></p></div></div>
+    <div class="card"><div><h3 id="testimonies">Testimonies</h3><p>"I came broken to Badege Layibi, and God healed me at the Fountain." - Mary, Gulu</p><p style="margin-top:10px">"My family was restored through grace." - David, Layibi</p><h3 id="contact" style="margin-top:18px">Contact Us</h3><p id="location"><b>Location:</b> Badege Layibi, Gulu, Uganda<br><b>WhatsApp:</b> +256 700 000 000<br><b>Email:</b> info@fohgm.org<br><b>Pastor:</b> Sam Otema<br><b>Est.:</b> 2024</p></div></div>
+  </div>
+</section>
+
+<section id="give"><h2>Give</h2><p class="sub">Your giving builds the Fountain in Gulu.</p>
+  <div class="card" style="text-align:center;padding:28px"><h3 id="give-online">Give Online</h3><p id="momo">MTN Mobile Money: <b style="font-size:22px;color:#1a7a2e">0780 000 000</b> - FOHGM</p><p>Airtel Money: <b style="font-size:22px;color:#1a7a2e">0700 000 000</b> - FOHGM</p><p id="partner" style="margin-top:10px">Partner Monthly - Support Pastor Sam & the mission in Badege Layibi.</p><p id="projects"><b>Projects:</b> Church Land, Building, Kids Ministry, Outreach</p><a class="btn" href="https://wa.me/256700000000?text=I%20want%20to%20give%20to%20FOHGM">Give via WhatsApp →</a></div>
+</section>
+
+<section id="faqs"><h2>FAQs</h2><div class="card"><div><p><b>Where is the church?</b> Badege Layibi, Gulu, Uganda.</p><p style="margin-top:10px"><b>When are services?</b> Sunday 9:00 AM, Wednesday Prayer 6:00 PM, Friday Bible Study 6:00 PM.</p><p style="margin-top:10px"><b>Who is the pastor?</b> Pastor Sam Otema, Founder & Senior Pastor since 2024.</p><p style="margin-top:10px" id="privacy"><b>Privacy Policy:</b> We respect your information. We never share your prayer requests or personal details without permission.</p></div></div></section>
+
+<footer>
+  <div class="footer-grid">
+    <div><h4>FOHGM</h4><p>Fountain of Higher Grace<br>Badege Layibi, Gulu<br>Established 2024<br>Pastor Sam Otema</p></div>
+    <div><h4>About</h4><a href="#vision">Vision & Values</a><a href="#leadership">Leadership</a><a href="#beliefs">Beliefs</a><a href="#history">History</a></div>
+    <div><h4>Join & Connect</h4><a href="#visit">Plan Your Visit</a><a href="#cells">Small Groups</a><a href="#prayer">Prayer</a><a href="#contact">Contact</a></div>
+    <div><h4>Resources & Give</h4><a href="#sermons">Sermons</a><a href="#jesusfilm">Jesus Film Online</a><a href="#give">Give</a><a href="#momo">Mobile Money</a></div>
+  </div>
+  <p style="text-align:center;margin-top:30px;border-top:1px solid #333;padding-top:16px">© 2026 Fountain of Higher Grace - Badege Layibi, Gulu | Pastor Sam Otema | Each One Reach One</p>
+</footer>
+<a class="wa" href="https://wa.me/256700000000">💬</a>
 </body>
 </html>
