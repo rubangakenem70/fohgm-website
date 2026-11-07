@@ -3,45 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FOHGM - Fountain of Higher Grace Ministry</title>
+<title>FOHGM - Fountain of Higher Grace Ministry | Pastor Sam Otema</title>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#0a1931;color:#fff;line-height:1.6}
 a{color:#FFD700;text-decoration:none}
 header{background:#071426;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
 .logo{font-weight:900;color:#FFD700;font-size:20px}
-.logo span{color:#fff;font-size:12px;display:block;font-weight:400;letter-spacing:2px}
-nav{display:flex;gap:18px}
+.logo span{color:#fff;font-size:11px;display:block;font-weight:400;letter-spacing:2px}
+nav{display:flex;gap:16px}
 nav a{color:#fff;font-weight:700;font-size:14px}
-nav a:hover{color:#FFD700}
-.hero{text-align:center;padding:70px 20px;background:linear-gradient(180deg,#0a1931,#123a6b)}
-.hero h1{font-size:42px;color:#FFD700;line-height:1.1}
-.hero p{max-width:650px;margin:18px auto;color:#dbe6ff}
-.btn{display:inline-block;background:#FFD700;color:#0a1931;padding:13px 26px;border-radius:30px;font-weight:900;margin:8px}
-.btn2{display:inline-block;border:2px solid #FFD700;color:#FFD700;padding:12px 26px;border-radius:30px;font-weight:900;margin:8px}
-section{padding:50px 20px;max-width:900px;margin:auto}
+.hero{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0a1931,#123a6b)}
+.hero h1{font-size:40px;color:#FFD700;line-height:1.1}
+.hero p{max-width:650px;margin:16px auto;color:#dbe6ff}
+.btn{display:inline-block;background:#FFD700;color:#0a1931;padding:13px 26px;border-radius:30px;font-weight:900;margin:6px}
+.btn2{display:inline-block;border:2px solid #FFD700;color:#FFD700;padding:12px 26px;border-radius:30px;font-weight:900;margin:6px}
+section{padding:45px 20px;max-width:900px;margin:auto}
 h2{color:#FFD700;margin-bottom:12px;font-size:28px;text-align:center}
 .card{background:#122a4d;padding:20px;border-radius:14px;margin:12px 0;border:1px solid #23406e}
+.pastor{display:flex;gap:18px;align-items:center}
+.pastor-img{width:110px;height:110px;border-radius:50%;background:#FFD700;color:#0a1931;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:900;flex-shrink:0}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-input,select,textarea{width:100%;padding:13px;border-radius:10px;border:none;margin:8px 0;font-size:16px}
-button{width:100%;padding:14px;background:#FFD700;border:none;border-radius:10px;font-weight:900;font-size:16px;cursor:pointer}
+input,select,textarea{width:100%;padding:13px;border-radius:10px;border:none;margin:8px 0;font-size:16px;color:#111}
+button{width:100%;padding:14px;background:#FFD700;border:none;border-radius:10px;font-weight:900;font-size:16px;cursor:pointer;color:#0a1931}
 footer{text-align:center;padding:30px;background:#071426;color:#aaa;font-size:13px}
 #gate{position:fixed;inset:0;background:#0a1931;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px}
-.gate-box{background:#fff;color:#0a1931;max-width:420px;width:100%;padding:26px;border-radius:18px;text-align:center}
-.gate-box h1{color:#0a1931;font-size:26px}
+.gate-box{background:#fff;color:#0a1931;max-width:430px;width:100%;padding:26px;border-radius:18px;text-align:center}
 .gate-box p{color:#555;margin:10px 0}
 #main{display:none}
-@media(max-width:650px){.grid{grid-template-columns:1fr}nav{display:none}.hero h1{font-size:32px}}
+#status{font-size:12px;color:#FFD700;margin-top:8px}
+@media(max-width:650px){.grid{grid-template-columns:1fr}nav{display:none}.hero h1{font-size:32px}.pastor{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
 
 <div id="gate">
   <div class="gate-box">
-    <div style="font-size:40px">⛲</div>
+    <div style="font-size:42px">⛲</div>
     <h1>FOHGM</h1>
-    <p><b>Fountain of Higher Grace Ministry</b><br>SAM MINISTRY PERFORMING VERIFICATION</p>
-    <p style="font-size:13px">Please verify to continue to the official ministry website.</p>
+    <p><b>Fountain of Higher Grace Ministry</b><br>PASTOR SAM OTEMA - SAM MINISTRY PERFORMING VERIFICATION</p>
+    <p style="font-size:13px">Please verify to enter the official ministry website.</p>
     <input id="nameInput" placeholder="Enter your full name">
     <select id="reasonInput">
       <option value="Member">I am a Member</option>
@@ -50,40 +53,48 @@ footer{text-align:center;padding:30px;background:#071426;color:#aaa;font-size:13
       <option value="Giving">I want to Give</option>
     </select>
     <button onclick="verifyUser()">VERIFY & ENTER →</button>
-    <p style="font-size:12px;margin-top:12px">By entering, you agree to be part of the FOHGM community in love and grace.</p>
+    <p id="status">Connecting to Firebase...</p>
+    <p style="font-size:12px">Your name will be saved to FOHGM Firebase database.</p>
   </div>
 </div>
 
 <div id="main">
 <header>
   <div class="logo">FOHGM <span>FOUNTAIN OF HIGHER GRACE</span></div>
-  <nav>
-    <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#give">Give</a><a href="#contact">Contact</a>
-  </nav>
+  <nav><a href="#home">Home</a><a href="#pastor">Pastor</a><a href="#services">Services</a><a href="#give">Give</a><a href="#contact">Contact</a></nav>
 </header>
 
 <div class="hero" id="home">
   <p style="letter-spacing:3px;color:#FFD700">WELCOME TO FOHGM • KAMPALA, UGANDA</p>
   <h1>Fountain of<br>Higher Grace Ministry</h1>
-  <p>Where grace meets you, heals you, and lifts you higher. Join us for worship, prayer, teaching and community.</p>
+  <p>Led by Pastor Sam Otema. Where grace meets you, heals you, and lifts you higher.</p>
   <a class="btn" href="#services">Join a Service →</a>
-  <a class="btn2" href="#give">Give & Support</a>
+  <a class="btn2" href="#pastor">Meet Pastor Sam</a>
   <p id="welcomeMsg" style="margin-top:16px;color:#FFD700;font-weight:700"></p>
 </div>
 
-<section id="about">
-  <h2>About Us</h2>
-  <div class="card">
-    <p><b>FOHGM</b> is a grace-filled Christian community in Kampala, Uganda. We exist to share the love of Jesus, build strong families, and raise disciples who carry grace to their homes, workplaces and nations.</p>
-    <p style="margin-top:10px"><b>Our Vision:</b> To be a fountain where everyone drinks from higher grace.</p>
-    <p><b>Our Mission:</b> Worship, Word, Prayer, and Compassion in action.</p>
+<section id="pastor">
+  <h2>Meet Pastor Sam Otema</h2>
+  <div class="card pastor">
+    <div class="pastor-img">SO</div>
+    <div>
+      <h3 style="color:#FFD700;font-size:22px">Pastor Sam Otema</h3>
+      <p style="color:#FFD700;font-weight:700">Founder & Senior Pastor, FOHGM</p>
+      <p style="margin-top:8px">Pastor Sam Otema is a servant of God called to preach higher grace, healing and restoration. Through SAM Ministry, he leads FOHGM in Kampala with a heart for prayer, the Word, and helping families rise in faith. His message is simple: No matter where you have been, grace can lift you higher.</p>
+      <p style="margin-top:8px;font-size:14px">📖 "Where sin abounded, grace did much more abound." - Romans 5:20</p>
+    </div>
   </div>
+</section>
+
+<section id="about">
+  <h2>About FOHGM</h2>
+  <div class="card"><p>FOHGM is a grace-filled Christian community in Kampala, Uganda, under the leadership of Pastor Sam Otema. We exist to share the love of Jesus, build strong families, and raise disciples who carry grace to their homes and nations.</p><p style="margin-top:10px"><b>Vision:</b> To be a fountain where everyone drinks from higher grace.<br><b>Mission:</b> Worship, Word, Prayer, and Compassion.</p></div>
 </section>
 
 <section id="services">
   <h2>Weekly Services</h2>
   <div class="grid">
-    <div class="card"><h3 style="color:#FFD700">Sunday Worship</h3><p>Sunday • 9:00 AM<br>Main Celebration, Worship & Word</p></div>
+    <div class="card"><h3 style="color:#FFD700">Sunday Worship</h3><p>Sunday • 9:00 AM<br>Main Celebration with Pastor Sam Otema</p></div>
     <div class="card"><h3 style="color:#FFD700">Midweek Prayer</h3><p>Wednesday • 6:00 PM<br>Prayer, Intercession & Testimonies</p></div>
     <div class="card"><h3 style="color:#FFD700">Bible Study</h3><p>Friday • 6:00 PM<br>Deep Word & Discipleship</p></div>
     <div class="card"><h3 style="color:#FFD700">Youth & Children</h3><p>Saturday • 10:00 AM<br>Youth, Teens & Kids Church</p></div>
@@ -92,56 +103,87 @@ footer{text-align:center;padding:30px;background:#071426;color:#aaa;font-size:13
 
 <section id="give">
   <h2>Give & Partner</h2>
-  <div class="card" style="text-align:center">
-    <p>Your giving helps us preach, feed, support families, and grow the ministry.</p>
-    <p style="margin:14px 0"><b>MTN Mobile Money</b><br><span style="font-size:24px;color:#FFD700">0780 000 000</span><br><small>Names: FOHGM Ministry</small></p>
-    <p><b>Airtel Money</b><br><span style="font-size:24px;color:#FFD700">0700 000 000</span></p>
-    <p style="font-size:13px;color:#ccc;margin-top:12px">Replace these numbers with your real ministry numbers in GitHub later.</p>
-  </div>
+  <div class="card" style="text-align:center"><p>Your giving helps Pastor Sam and FOHGM preach, feed families and grow the ministry.</p><p style="margin:14px 0"><b>MTN Mobile Money</b><br><span style="font-size:24px;color:#FFD700">0780 000 000</span><br><small>Names: FOHGM Ministry</small></p><p><b>Airtel Money</b><br><span style="font-size:24px;color:#FFD700">0700 000 000</span></p><p style="font-size:13px;color:#ccc;margin-top:10px">Replace with your real numbers later in VS Code.</p></div>
 </section>
 
 <section id="contact">
   <h2>Prayer Request & Contact</h2>
   <div class="card">
     <input id="prayerName" placeholder="Your name">
-    <textarea id="prayerText" rows="3" placeholder="How can we pray for you?"></textarea>
+    <textarea id="prayerText" rows="3" placeholder="How can Pastor Sam and the team pray for you?"></textarea>
     <button onclick="sendPrayer()">Send Prayer Request</button>
     <p id="prayerDone" style="text-align:center;color:#FFD700;margin-top:10px"></p>
-    <p style="text-align:center;margin-top:14px">WhatsApp: +256 700 000 000<br>Email: info@fohgm.org<br>Location: Kampala, Uganda</p>
+    <p style="text-align:center;margin-top:14px">WhatsApp: +256 700 000 000<br>Email: info@fohgm.org<br>Location: Kampala, Uganda<br>Pastor: Sam Otema</p>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 FOHGM - Fountain of Higher Grace Ministry. All rights reserved.</p>
-  <p>Built with grace in Kampala, Uganda.</p>
-</footer>
+<footer><p>© 2026 FOHGM - Fountain of Higher Grace Ministry | Pastor Sam Otema</p><p>Built with grace in Kampala, Uganda.</p></footer>
 </div>
 
 <script>
+// ===== FIREBASE CONFIG - PASTE YOUR REAL CONFIG HERE =====
+// Go to console.firebase.google.com > Project Settings > Your apps > Copy config
+// Replace the values below with your real values. Site still works if you leave it.
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY_HERE",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+let db = null;
+let firebaseReady = false;
+try {
+  if (firebaseConfig.apiKey !== "YOUR_API_KEY_HERE") {
+    firebase.initializeApp(firebaseConfig);
+    db = firebase.firestore();
+    firebaseReady = true;
+    document.getElementById('status').textContent = "✓ Connected to FOHGM Firebase";
+  } else {
+    document.getElementById('status').textContent = "Firebase not configured yet - using local save. Site still works.";
+  }
+} catch(e) {
+  document.getElementById('status').textContent = "Using local save. Site still works.";
+}
+
 function verifyUser(){
   var name = document.getElementById('nameInput').value.trim();
   if(!name){ alert('Please enter your name'); return; }
   var reason = document.getElementById('reasonInput').value;
+  var data = { name: name, reason: reason, pastor: "Sam Otema", ministry: "FOHGM", time: new Date().toISOString() };
   try{ localStorage.setItem('fohgm_name', name); localStorage.setItem('fohgm_reason', reason); }catch(e){}
-  showMain(name);
+  if(db){
+    db.collection("verifications").add(data).then(function(){
+      document.getElementById('status').textContent = "✓ Saved to Firebase";
+      showMain(name);
+    }).catch(function(){ showMain(name); });
+  } else {
+    showMain(name);
+  }
 }
 function showMain(name){
   document.getElementById('gate').style.display='none';
   document.getElementById('main').style.display='block';
-  if(name){ document.getElementById('welcomeMsg').textContent = 'Welcome, ' + name + ' — We are glad you are here!'; }
+  if(name){ document.getElementById('welcomeMsg').textContent = 'Welcome, ' + name + ' — Pastor Sam Otema and FOHGM welcome you!'; }
 }
 function sendPrayer(){
   var n = document.getElementById('prayerName').value.trim();
   var t = document.getElementById('prayerText').value.trim();
   if(!t){ alert('Please write your prayer request'); return; }
-  document.getElementById('prayerDone').textContent = 'Thank you ' + (n||'friend') + '. We have received your prayer. We will pray for you.';
+  var data = { name: n || 'friend', prayer: t, time: new Date().toISOString() };
+  if(db){
+    db.collection("prayers").add(data).then(function(){
+      document.getElementById('prayerDone').textContent = 'Thank you ' + (n||'friend') + '. Saved to Firebase. Pastor Sam will pray for you.';
+    }).catch(function(){ document.getElementById('prayerDone').textContent = 'Thank you. We received your prayer.'; });
+  } else {
+    document.getElementById('prayerDone').textContent = 'Thank you ' + (n||'friend') + '. We received your prayer. We will pray for you.';
+  }
   document.getElementById('prayerText').value='';
 }
 window.onload = function(){
-  try{
-    var saved = localStorage.getItem('fohgm_name');
-    if(saved){ showMain(saved); }
-  }catch(e){}
+  try{ var saved = localStorage.getItem('fohgm_name'); if(saved){ showMain(saved); } }catch(e){}
 };
 </script>
 </body>
