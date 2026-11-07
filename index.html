@@ -13,8 +13,8 @@ a{color:#FFD700;text-decoration:none}
 header{background:#071426;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
 .logo{font-weight:900;color:#FFD700;font-size:20px}
 .logo span{color:#fff;font-size:11px;display:block;font-weight:400;letter-spacing:2px}
-nav{display:flex;gap:16px}
-nav a{color:#fff;font-weight:700;font-size:14px}
+nav{display:flex;gap:14px}
+nav a{color:#fff;font-weight:700;font-size:13px}
 .hero{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0a1931,#123a6b)}
 .hero h1{font-size:40px;color:#FFD700;line-height:1.1}
 .hero p{max-width:650px;margin:16px auto;color:#dbe6ff}
@@ -28,13 +28,21 @@ h2{color:#FFD700;margin-bottom:12px;font-size:28px;text-align:center}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 input,select,textarea{width:100%;padding:13px;border-radius:10px;border:none;margin:8px 0;font-size:16px;color:#111}
 button{width:100%;padding:14px;background:#FFD700;border:none;border-radius:10px;font-weight:900;font-size:16px;cursor:pointer;color:#0a1931}
+.small-btn{width:auto;padding:8px 14px;font-size:13px;margin:4px}
+.danger{background:#ff4444;color:#fff}
 footer{text-align:center;padding:30px;background:#071426;color:#aaa;font-size:13px}
 #gate{position:fixed;inset:0;background:#0a1931;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px}
 .gate-box{background:#fff;color:#0a1931;max-width:430px;width:100%;padding:26px;border-radius:18px;text-align:center}
 .gate-box p{color:#555;margin:10px 0}
 #main{display:none}
 #status{font-size:12px;color:#FFD700;margin-top:8px}
-@media(max-width:650px){.grid{grid-template-columns:1fr}nav{display:none}.hero h1{font-size:32px}.pastor{flex-direction:column;text-align:center}}
+#adminPanel{display:none;max-width:900px;margin:auto;padding:20px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0}
+.stat{background:#fff;color:#0a1931;padding:18px;border-radius:14px;text-align:center}
+.stat b{font-size:28px;color:#0a1931;display:block}
+.admin-table{background:#fff;color:#111;padding:14px;border-radius:12px;margin:12px 0}
+.admin-table p{border-bottom:1px solid #eee;padding:8px 0;font-size:14px}
+@media(max-width:650px){.grid,.stat-grid{grid-template-columns:1fr}nav{display:none}.hero h1{font-size:32px}.pastor{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
@@ -46,22 +54,18 @@ footer{text-align:center;padding:30px;background:#071426;color:#aaa;font-size:13
     <p><b>Fountain of Higher Grace Ministry</b><br>PASTOR SAM OTEMA - SAM MINISTRY PERFORMING VERIFICATION</p>
     <p style="font-size:13px">Please verify to enter the official ministry website.</p>
     <input id="nameInput" placeholder="Enter your full name">
-    <select id="reasonInput">
-      <option value="Member">I am a Member</option>
-      <option value="Visitor">I am a Visitor</option>
-      <option value="Prayer">I need Prayer</option>
-      <option value="Giving">I want to Give</option>
-    </select>
+    <select id="reasonInput"><option value="Member">I am a Member</option><option value="Visitor">I am a Visitor</option><option value="Prayer">I need Prayer</option><option value="Giving">I want to Give</option></select>
     <button onclick="verifyUser()">VERIFY & ENTER →</button>
     <p id="status">Connecting to Firebase...</p>
     <p style="font-size:12px">Your name will be saved to FOHGM Firebase database.</p>
+    <p style="font-size:12px;margin-top:10px"><a href="#" onclick="openAdminLogin();return false;" style="color:#0a1931;text-decoration:underline">Admin Login</a></p>
   </div>
 </div>
 
 <div id="main">
 <header>
   <div class="logo">FOHGM <span>FOUNTAIN OF HIGHER GRACE</span></div>
-  <nav><a href="#home">Home</a><a href="#pastor">Pastor</a><a href="#services">Services</a><a href="#give">Give</a><a href="#contact">Contact</a></nav>
+  <nav><a href="#home">Home</a><a href="#pastor">Pastor</a><a href="#services">Services</a><a href="#give">Give</a><a href="#contact">Contact</a><a href="#" onclick="openAdminLogin();return false;">Admin</a></nav>
 </header>
 
 <div class="hero" id="home">
@@ -86,44 +90,40 @@ footer{text-align:center;padding:30px;background:#071426;color:#aaa;font-size:13
   </div>
 </section>
 
-<section id="about">
-  <h2>About FOHGM</h2>
-  <div class="card"><p>FOHGM is a grace-filled Christian community in Kampala, Uganda, under the leadership of Pastor Sam Otema. We exist to share the love of Jesus, build strong families, and raise disciples who carry grace to their homes and nations.</p><p style="margin-top:10px"><b>Vision:</b> To be a fountain where everyone drinks from higher grace.<br><b>Mission:</b> Worship, Word, Prayer, and Compassion.</p></div>
-</section>
+<section id="about"><h2>About FOHGM</h2><div class="card"><p>FOHGM is a grace-filled Christian community in Kampala, Uganda, under the leadership of Pastor Sam Otema. We exist to share the love of Jesus, build strong families, and raise disciples who carry grace to their homes and nations.</p><p style="margin-top:10px"><b>Vision:</b> To be a fountain where everyone drinks from higher grace.<br><b>Mission:</b> Worship, Word, Prayer, and Compassion.</p></div></section>
 
-<section id="services">
-  <h2>Weekly Services</h2>
-  <div class="grid">
-    <div class="card"><h3 style="color:#FFD700">Sunday Worship</h3><p>Sunday • 9:00 AM<br>Main Celebration with Pastor Sam Otema</p></div>
-    <div class="card"><h3 style="color:#FFD700">Midweek Prayer</h3><p>Wednesday • 6:00 PM<br>Prayer, Intercession & Testimonies</p></div>
-    <div class="card"><h3 style="color:#FFD700">Bible Study</h3><p>Friday • 6:00 PM<br>Deep Word & Discipleship</p></div>
-    <div class="card"><h3 style="color:#FFD700">Youth & Children</h3><p>Saturday • 10:00 AM<br>Youth, Teens & Kids Church</p></div>
-  </div>
-</section>
+<section id="services"><h2>Weekly Services</h2><div class="grid"><div class="card"><h3 style="color:#FFD700">Sunday Worship</h3><p>Sunday • 9:00 AM<br>Main Celebration with Pastor Sam Otema</p></div><div class="card"><h3 style="color:#FFD700">Midweek Prayer</h3><p>Wednesday • 6:00 PM<br>Prayer, Intercession & Testimonies</p></div><div class="card"><h3 style="color:#FFD700">Bible Study</h3><p>Friday • 6:00 PM<br>Deep Word & Discipleship</p></div><div class="card"><h3 style="color:#FFD700">Youth & Children</h3><p>Saturday • 10:00 AM<br>Youth, Teens & Kids Church</p></div></div></section>
 
-<section id="give">
-  <h2>Give & Partner</h2>
-  <div class="card" style="text-align:center"><p>Your giving helps Pastor Sam and FOHGM preach, feed families and grow the ministry.</p><p style="margin:14px 0"><b>MTN Mobile Money</b><br><span style="font-size:24px;color:#FFD700">0780 000 000</span><br><small>Names: FOHGM Ministry</small></p><p><b>Airtel Money</b><br><span style="font-size:24px;color:#FFD700">0700 000 000</span></p><p style="font-size:13px;color:#ccc;margin-top:10px">Replace with your real numbers later in VS Code.</p></div>
-</section>
+<section id="give"><h2>Give & Partner</h2><div class="card" style="text-align:center"><p>Your giving helps Pastor Sam and FOHGM preach, feed families and grow the ministry.</p><p style="margin:14px 0"><b>MTN Mobile Money</b><br><span style="font-size:24px;color:#FFD700">0780 000 000</span><br><small>Names: FOHGM Ministry</small></p><p><b>Airtel Money</b><br><span style="font-size:24px;color:#FFD700">0700 000 000</span></p></div></section>
 
-<section id="contact">
-  <h2>Prayer Request & Contact</h2>
-  <div class="card">
-    <input id="prayerName" placeholder="Your name">
-    <textarea id="prayerText" rows="3" placeholder="How can Pastor Sam and the team pray for you?"></textarea>
-    <button onclick="sendPrayer()">Send Prayer Request</button>
-    <p id="prayerDone" style="text-align:center;color:#FFD700;margin-top:10px"></p>
-    <p style="text-align:center;margin-top:14px">WhatsApp: +256 700 000 000<br>Email: info@fohgm.org<br>Location: Kampala, Uganda<br>Pastor: Sam Otema</p>
-  </div>
-</section>
-
+<section id="contact"><h2>Prayer Request & Contact</h2><div class="card"><input id="prayerName" placeholder="Your name"><textarea id="prayerText" rows="3" placeholder="How can Pastor Sam and the team pray for you?"></textarea><button onclick="sendPrayer()">Send Prayer Request</button><p id="prayerDone" style="text-align:center;color:#FFD700;margin-top:10px"></p><p style="text-align:center;margin-top:14px">WhatsApp: +256 700 000 000<br>Email: info@fohgm.org<br>Location: Kampala, Uganda<br>Pastor: Sam Otema</p></div></section>
 <footer><p>© 2026 FOHGM - Fountain of Higher Grace Ministry | Pastor Sam Otema</p><p>Built with grace in Kampala, Uganda.</p></footer>
 </div>
 
+<div id="adminPanel">
+  <h2 style="margin-top:20px">FOHGM Admin Dashboard</h2>
+  <p style="text-align:center">Welcome Pastor Sam Otema • FOHGM Admin</p>
+  <div id="adminLoginBox" class="card" style="max-width:400px;margin:20px auto;text-align:center">
+    <h3 style="color:#FFD700">Admin Login</h3>
+    <input id="adminPass" type="password" placeholder="Enter admin password">
+    <button onclick="loginAdmin()">Login to Dashboard</button>
+    <p style="font-size:12px;color:#ccc;margin-top:8px">Default password: FOHGM2026</p>
+  </div>
+  <div id="adminContent" style="display:none">
+    <div class="stat-grid">
+      <div class="stat"><b id="statVerified">0</b>Verified People</div>
+      <div class="stat"><b id="statPrayers">0</b>Prayer Requests</div>
+      <div class="stat"><b id="statToday">0</b>Today</div>
+    </div>
+    <button class="small-btn" onclick="loadAdminData()">🔄 Refresh Data</button>
+    <button class="small-btn" onclick="logoutAdmin()">Logout</button>
+    <button class="small-btn" onclick="backToSite()">← Back to Website</button>
+    <div class="admin-table"><h3>Verified People</h3><div id="verifiedList"><p>No data yet. Connect Firebase to see real data.</p></div></div>
+    <div class="admin-table"><h3>Prayer Requests</h3><div id="prayerList"><p>No prayers yet.</p></div></div>
+  </div>
+</div>
+
 <script>
-// ===== FIREBASE CONFIG - PASTE YOUR REAL CONFIG HERE =====
-// Go to console.firebase.google.com > Project Settings > Your apps > Copy config
-// Replace the values below with your real values. Site still works if you leave it.
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY_HERE",
   authDomain: "YOUR_PROJECT.firebaseapp.com",
@@ -132,39 +132,30 @@ const firebaseConfig = {
   messagingSenderId: "YOUR_SENDER_ID",
   appId: "YOUR_APP_ID"
 };
-
+const ADMIN_PASSWORD = "FOHGM2026";
 let db = null;
-let firebaseReady = false;
 try {
   if (firebaseConfig.apiKey !== "YOUR_API_KEY_HERE") {
     firebase.initializeApp(firebaseConfig);
     db = firebase.firestore();
-    firebaseReady = true;
     document.getElementById('status').textContent = "✓ Connected to FOHGM Firebase";
   } else {
     document.getElementById('status').textContent = "Firebase not configured yet - using local save. Site still works.";
   }
-} catch(e) {
-  document.getElementById('status').textContent = "Using local save. Site still works.";
-}
+} catch(e){ document.getElementById('status').textContent = "Using local save. Site still works."; }
 
 function verifyUser(){
   var name = document.getElementById('nameInput').value.trim();
   if(!name){ alert('Please enter your name'); return; }
   var reason = document.getElementById('reasonInput').value;
   var data = { name: name, reason: reason, pastor: "Sam Otema", ministry: "FOHGM", time: new Date().toISOString() };
-  try{ localStorage.setItem('fohgm_name', name); localStorage.setItem('fohgm_reason', reason); }catch(e){}
-  if(db){
-    db.collection("verifications").add(data).then(function(){
-      document.getElementById('status').textContent = "✓ Saved to Firebase";
-      showMain(name);
-    }).catch(function(){ showMain(name); });
-  } else {
-    showMain(name);
-  }
+  try{ localStorage.setItem('fohgm_name', name); }catch(e){}
+  let local = JSON.parse(localStorage.getItem('fohgm_verifications')||'[]'); local.push(data); localStorage.setItem('fohgm_verifications', JSON.stringify(local));
+  if(db){ db.collection("verifications").add(data).then(function(){ showMain(name); }).catch(function(){ showMain(name); }); } else { showMain(name); }
 }
 function showMain(name){
   document.getElementById('gate').style.display='none';
+  document.getElementById('adminPanel').style.display='none';
   document.getElementById('main').style.display='block';
   if(name){ document.getElementById('welcomeMsg').textContent = 'Welcome, ' + name + ' — Pastor Sam Otema and FOHGM welcome you!'; }
 }
@@ -173,16 +164,47 @@ function sendPrayer(){
   var t = document.getElementById('prayerText').value.trim();
   if(!t){ alert('Please write your prayer request'); return; }
   var data = { name: n || 'friend', prayer: t, time: new Date().toISOString() };
-  if(db){
-    db.collection("prayers").add(data).then(function(){
-      document.getElementById('prayerDone').textContent = 'Thank you ' + (n||'friend') + '. Saved to Firebase. Pastor Sam will pray for you.';
-    }).catch(function(){ document.getElementById('prayerDone').textContent = 'Thank you. We received your prayer.'; });
-  } else {
-    document.getElementById('prayerDone').textContent = 'Thank you ' + (n||'friend') + '. We received your prayer. We will pray for you.';
-  }
+  let local = JSON.parse(localStorage.getItem('fohgm_prayers')||'[]'); local.push(data); localStorage.setItem('fohgm_prayers', JSON.stringify(local));
+  if(db){ db.collection("prayers").add(data).then(function(){ document.getElementById('prayerDone').textContent = 'Thank you. Saved to Firebase. Pastor Sam will pray for you.'; }).catch(function(){ document.getElementById('prayerDone').textContent = 'Thank you. We received your prayer.'; }); } else { document.getElementById('prayerDone').textContent = 'Thank you ' + (n||'friend') + '. We received your prayer.'; }
   document.getElementById('prayerText').value='';
 }
+function openAdminLogin(){
+  document.getElementById('gate').style.display='none';
+  document.getElementById('main').style.display='none';
+  document.getElementById('adminPanel').style.display='block';
+  document.getElementById('adminLoginBox').style.display='block';
+  document.getElementById('adminContent').style.display='none';
+}
+function loginAdmin(){
+  var p = document.getElementById('adminPass').value;
+  if(p === ADMIN_PASSWORD){
+    document.getElementById('adminLoginBox').style.display='none';
+    document.getElementById('adminContent').style.display='block';
+    loadAdminData();
+  } else { alert('Wrong password. Try FOHGM2026'); }
+}
+function logoutAdmin(){ document.getElementById('adminContent').style.display='none'; document.getElementById('adminLoginBox').style.display='block'; document.getElementById('adminPass').value=''; }
+function backToSite(){ document.getElementById('adminPanel').style.display='none'; document.getElementById('main').style.display='block'; }
+async function loadAdminData(){
+  let ver = JSON.parse(localStorage.getItem('fohgm_verifications')||'[]');
+  let pra = JSON.parse(localStorage.getItem('fohgm_prayers')||'[]');
+  if(db){
+    try{
+      let s1 = await db.collection("verifications").orderBy("time","desc").limit(50).get();
+      if(!s1.empty){ ver = []; s1.forEach(function(d){ let x=d.data(); x.id=d.id; ver.push(x); }); }
+      let s2 = await db.collection("prayers").orderBy("time","desc").limit(50).get();
+      if(!s2.empty){ pra = []; s2.forEach(function(d){ let x=d.data(); x.id=d.id; pra.push(x); }); }
+    }catch(e){}
+  }
+  document.getElementById('statVerified').textContent = ver.length;
+  document.getElementById('statPrayers').textContent = pra.length;
+  let today = new Date().toISOString().slice(0,10);
+  document.getElementById('statToday').textContent = ver.filter(function(v){ return (v.time||'').slice(0,10)===today; }).length;
+  document.getElementById('verifiedList').innerHTML = ver.length ? ver.map(function(v){ return '<p><b>'+(v.name||'')+'</b> - '+(v.reason||'')+'<br><small>'+(v.time||'')+'</small></p>'; }).join('') : '<p>No verified people yet.</p>';
+  document.getElementById('prayerList').innerHTML = pra.length ? pra.map(function(v){ return '<p><b>'+(v.name||'')+'</b>: '+(v.prayer||'')+'<br><small>'+(v.time||'')+'</small></p>'; }).join('') : '<p>No prayers yet.</p>';
+}
 window.onload = function(){
+  if(window.location.search.includes('admin=1')){ openAdminLogin(); return; }
   try{ var saved = localStorage.getItem('fohgm_name'); if(saved){ showMain(saved); } }catch(e){}
 };
 </script>
