@@ -228,6 +228,22 @@ async function loadFromFirebase(){
     console.log("Loaded from Firebase:", snap.size, "Added:", added);
   }catch(e){ console.log("Load from Firebase failed", e); }
 }
+async function loadFromFirebase(){
+  try{
+    if(!window._db) return;
+    let c = window._firestore.collection(window._db, getFirebaseCollection());
+    let snap = await window._firestore.getDocs(c);
+    let d = getData();
+    let added = 0;
+    snap.forEach(doc=>{
+      let fb = doc.data();
+      if(!d.find(x=>x.id===fb.id)){ d.push(fb); added++; }
+    });
+    if(added>0) saveData(d);
+    updateCounts(); renderTable();
+    console.log("Loaded from Firebase:", snap.size, "Added:", added);
+  }catch(e){ console.log("Load from Firebase failed", e); }
+}
 function submitMainContact(e){
  e.preventDefault();
  let entry={id:Date.now(),type:"contact",form:"Contact Form",name:document.getElementById("mainFirst").value+" "+document.getElementById("mainLast").value,email:document.getElementById("mainEmail").value,phone:document.getElementById("mainPhone").value,message:document.getElementById("mainSubject").value+" - "+document.getElementById("mainMsg").value,reply:getAutoReply("contact"),date:new Date().toLocaleString(),status:"new"};
