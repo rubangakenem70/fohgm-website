@@ -270,4 +270,69 @@ function exportPDF(){window.print()}
 window.addEventListener('hashchange',()=>{if(location.hash==='#admin'){openAdmin();}});
 if(location.hash==='#admin'){setTimeout(openAdmin,300);}
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://elzzmongxtlnhxwacllb.supabase.co";
+const SUPABASE_KEY = "sb_publishable_OjuBw91V5bIQQlN4Mkyiew__nUExF1B";
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+function getTableName(form){
+  const text = (form.closest('section')?.innerText || form.innerText || '').toLowerCase();
+  if(text.includes('plan your visit')) return 'plan_your_visit';
+  if(text.includes('become a member') || text.includes('become member')) return 'become_member';
+  if(text.includes('baptism')) return 'baptism';
+  if(text.includes('volunteer')) return 'volunteers';
+  if(text.includes('small group')) return 'small_groups';
+  if(text.includes('testimon')) return 'testimonies';
+  if(text.includes('prayer')) return 'prayer_request';
+  if(text.includes('give') || text.includes('giving') || text.includes('donat')) return 'give_records';
+  return 'contact_messages';
+}
+function getVal(form, names){
+  for(const n of names){
+    const el = form.querySelector(`[name="${n}"], [id="${n}"]`);
+    if(el && el.value) return el.value.trim();
+  }
+  const inputs = [...form.querySelectorAll('input, textarea, select')];
+  return '';
+}
+document.addEventListener('submit', async function(e){
+  const form = e.target;
+  if(!form || form.tagName !== 'FORM') return;
+  const inputs = [...form.querySelectorAll('input, textarea, select')];
+  if(inputs.length === 0) return;
+  const data = {};
+  // Get values by position / placeholder / type
+  inputs.forEach(el => {
+    const ph = (el.placeholder||'').toLowerCase();
+    const nm = (el.name||el.id||'').toLowerCase();
+    const type = el.type;
+    const v = el.value.trim();
+    if(!v) return;
+    if(type==='email' || ph.includes('email') || nm.includes('email')) data.email = v;
+    else if(type==='tel' || ph.includes('phone') || nm.includes('phone')) data.phone = v;
+    else if(ph.includes('amount') || nm.includes('amount')) data.amount = v;
+    else if(ph.includes('subject') || nm.includes('subject')) data.subject = v;
+    else if(el.tagName==='TEXTAREA' || ph.includes('message') || ph.includes('prayer') || ph.includes('testimony') || ph.includes('detail')) data.message = v;
+    else if(!data.full_name) data.full_name = v;
+    else if(!data.message) data.message = v;
+  });
+  // Fallback: first input = name, second = email etc if still empty
+  if(!data.full_name && inputs[0]) data.full_name = inputs[0].value.trim();
+  if(!data.message){
+    const ta = form.querySelector('textarea');
+    if(ta) data.message = ta.value.trim();
+  }
+  if(!data.full_name) return;
+  const table = getTableName(form);
+  const { error } = await sb.from(table).insert([data]);
+  if(error){
+    console.log('Supabase Error:', error.message);
+    alert('Supabase Error: ' + error.message);
+  } else {
+    console.log('Saved to ' + table, data);
+  }
+}, true);
+</script>
+
 </body></html>
