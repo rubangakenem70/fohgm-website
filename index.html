@@ -6,13 +6,14 @@
 a{text-decoration:none !important}
 body{line-height:1.6;color:#222;background:#f8f6f0}
 body.dark{background:#111;color:#eee} body.dark section,body.dark .card,body.dark header,body.dark .form-box,body.dark .right-box{background:#222;color:#eee} body.dark .card,body.dark .form-box,body.dark .right-box{border-color:#444} body.dark input,body.dark select,body.dark textarea{background:#111;color:#eee;border-color:#444} body.dark .modal-box{background:#222;color:#eee}
+body.glow{background:#0a1633;color:#fff} body.glow section,body.glow .card,body.glow .form-box,body.glow .right-box{background:#122a5e;color:#fff;border-color:#d4af00} body.glow input,body.glow select,body.glow textarea{background:#0a1633;color:#fff;border-color:#d4af00} body.glow .modal-box{background:#122a5e;color:#fff}
 header{background:#0a1633;color:#fff;position:sticky;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:12px 4%;flex-wrap:wrap;gap:10px}
 .logo{font-family:Georgia,serif;font-size:24px;font-weight:900}.logo span{display:block;font-size:9px;letter-spacing:2px;color:#d4af5a;font-weight:800}
 nav{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.nav-item{position:relative;padding:10px 2px}.nav-item a{font-size:11px;font-weight:800;text-transform:uppercase;cursor:pointer;color:#fff}.dropdown{position:absolute;top:100%;left:0;background:#fff;min-width:240px;box-shadow:0 10px 30px rgba(0,0,0,.15);display:none;border-top:3px solid #1a7a2e;z-index:1001}.nav-item:hover .dropdown{display:block}.dropdown a{display:block;padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid #eee;text-transform:none;color:#222}.dropdown a:hover{background:#f7f7f7;color:#1a7a2e}
-.theme-btn{width:40px;height:40px;border-radius:50%;border:2px solid #d4af00;background:#111;color:#ffe95a;cursor:pointer;font-size:19px;box-shadow:0 0 12px #d4af00,0 0 24px #d4af00,0 0 34px rgba(212,175,0,.7)}
-body.dark .theme-btn{background:#000;color:#fff;box-shadow:0 0 14px #fff,0 0 28px #d4af00,0 0 40px rgba(255,255,255,.8)}
-.profile-circle{width:42px;height:42px;border-radius:50%;background:#d4af00;color:#111;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;cursor:pointer;overflow:hidden}.profile-circle img{width:100%;height:100%;object-fit:cover}
-.hero{height:72vh;min-height:480px;background:url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1600&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative}.hero:after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}.hero-content{position:relative;z-index:2;padding:20px}.hero-content h1{font-size:50px;line-height:1}
+.theme-btn{width:40px;height:40px;border-radius:50%;border:2px solid #d4af00;background:#fff;color:#111;cursor:pointer;font-size:19px;box-shadow:0 0 12px #d4af00}
+body.dark .theme-btn{background:#000;color:#fff;box-shadow:0 0 14px #fff,0 0 28px #d4af00}
+body.glow .theme-btn{background:#d4af00;color:#0a1633;box-shadow:0 0 14px #fff,0 0 28px #d4af00,0 0 40px #fff}
+.hero{height:72vh;min-height:480px;background:url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1600&q=80') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative}.hero:after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}.hero-content{position:relative;z-index:2;padding:20px}.hero-content h1{font-size:50px;line-height:1}
 .contact-hero{background:#0a1633;color:#fff;text-align:center;padding:38px 16px 32px}.contact-hero small{border:1px solid #d4af5a;color:#d4af5a;padding:5px 10px;border-radius:20px;font-size:10px;letter-spacing:1px}.contact-hero h1{font-family:Georgia,serif;font-size:34px;line-height:1.2;margin:16px 0 10px;color:#f5e6b8;font-weight:400}.contact-hero p{max-width:480px;margin:0 auto;font-size:13px;line-height:1.6;opacity:.85}
 .wrap{max-width:980px;margin:0 auto;padding:24px 14px}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}.card{background:#fff;border:1px solid #eee;border-radius:8px;padding:16px 12px;box-shadow:0 2px 10px rgba(0,0,0,.05)}.card h3{color:#8a6d2b;font-size:13px;margin:8px 0 6px}.card p{font-size:11px;line-height:1.5;color:#555}
@@ -27,25 +28,24 @@ textarea{height:90px;resize:vertical}
 .prayer{background:#0a1633;color:#fff;text-align:center;padding:20px;border-radius:10px;margin-top:16px}.prayer h3{color:#d4af5a;font-family:Georgia,serif}.prayer p{font-size:11px;opacity:.8;margin:6px 0 12px;line-height:1.5}.prayer button{background:transparent;border:1px solid #d4af5a;color:#d4af5a;padding:8px 14px;border-radius:4px;cursor:pointer}
 section{padding:50px 5%;max-width:1150px;margin:auto}section h2{text-align:center;font-size:28px}.sub{text-align:center;color:#666;max-width:700px;margin:0 auto 25px}
 .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-footer{background:#0a1633;color:#bbb;padding:40px 5%}.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px;max-width:1150px;margin:auto}footer h4{color:#fff}footer a{display:block;padding:3px 0;font-size:14px;color:#bbb}
+footer{background:#0a1633;color:#bbb;padding:40px 5% 80px}.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px;max-width:1150px;margin:auto}footer h4{color:#fff}footer a{display:block;padding:3px 0;font-size:14px;color:#bbb}
+.fixed-bar{position:fixed;bottom:0;left:0;right:0;background:#0a1633;color:#fff;display:flex;justify-content:center;gap:8px;padding:8px;z-index:1500;flex-wrap:wrap}.fixed-bar a{color:#d4af5a;font-size:12px;font-weight:800;padding:6px 10px;border:1px solid #d4af5a;border-radius:20px}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:2000;overflow:auto;padding:20px}.modal-box{background:#fff;max-width:1050px;margin:30px auto;padding:22px;border-radius:14px;color:#222}
 .form-modal{z-index:5000}.form-modal .modal-box{max-width:560px}
 table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}th,td{border:1px solid #ccc;padding:10px;text-align:left}th{background:#111;color:#fff}.tool{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.tool button{padding:8px 12px;border:none;border-radius:8px;cursor:pointer;font-weight:700;background:#eee}.tool button.primary{background:#1a7a2e;color:#fff}
 .notif{position:fixed;top:70px;right:12px;background:#fff;border:1px solid #d4af00;padding:14px;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.2);display:none;z-index:4000;max-width:320px;color:#222}
-.admin-card{background:#f8f5e6;border:1px solid #eee;border-radius:12px;padding:18px;cursor:pointer}.admin-card b{color:#1a7a2e;font-size:17px}
 .square-box{background:#f8f5e6;color:#222;border:1px solid #eee;border-radius:12px;padding:14px 10px;text-align:left;cursor:pointer;display:block;box-shadow:0 2px 10px rgba(0,0,0,.05)}.square-box b{font-size:15px;color:#1a7a2e;display:block}.square-box span{font-size:11px;color:#666}.square-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:100%;margin:14px auto}
-.square-box-light{background:#f8f5e6;color:#222;border:1px solid #eee}.square-box-light b{color:#1a7a2e}.square-box-light span{color:#666}
 .one-line-5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px auto}
 .one-line-4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px auto}
 .wide-box{background:#f8f5e6;border:1px solid #eee;border-radius:12px;padding:16px;text-align:center;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.05);margin:14px auto}.wide-box b{font-size:17px;color:#1a7a2e;display:block}.wide-box span{font-size:11px;color:#666}
 .admin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
 .admin-small{background:#fff;border:2px solid #e8ddb5;border-radius:12px;padding:14px 10px;text-align:center;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.admin-small:hover{border-color:#1a7a2e;transform:translateY(-2px)}
 .admin-small .num{font-size:32px;font-weight:900;color:#0a1633;line-height:1;margin:4px 0}
 .admin-small b{font-size:14px;color:#1a7a2e;display:block}
 .admin-small span{font-size:11px;color:#888}
 .admin-small .tap{font-size:10px;background:#1a7a2e;color:#fff;padding:4px 8px;border-radius:20px;display:inline-block;margin-top:6px}
-@media(max-width:700px){nav{display:none}.cards,.grid,.footer-grid{grid-template-columns:1fr 1fr}.main{grid-template-columns:1fr}.hero-content h1{font-size:34px}.contact-hero h1{font-size:26px}header{padding:10px 3%;gap:6px}.logo{font-size:19px}.profile-circle{width:38px;height:38px;font-size:18px}.theme-btn{width:38px;height:38px}.square-grid,.one-line-5,.one-line-4{grid-template-columns:1fr 1fr;gap:10px}.square-box{padding:12px 8px}.square-box b{font-size:14px}.modal{padding:10px}.modal-box{margin:10px auto;padding:16px}table{font-size:12px}th,td{padding:7px}.admin-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){nav{display:none}.cards,.grid,.footer-grid{grid-template-columns:1fr 1fr}.main{grid-template-columns:1fr}.hero-content h1{font-size:34px}.contact-hero h1{font-size:26px}header{padding:10px 3%;gap:6px}.logo{font-size:19px}.theme-btn{width:38px;height:38px}.square-grid,.one-line-5,.one-line-4{grid-template-columns:1fr 1fr;gap:10px}.modal{padding:10px}.modal-box{margin:10px auto;padding:16px}table{font-size:12px}th,td{padding:7px}.admin-grid{grid-template-columns:1fr 1fr}}
+@media print{header,.fixed-bar,.tool,.btn{display:none!important}body{background:#fff}}
 </style></head><body>
 
 <header><div class="logo">FOHGM<span>FOUNTAIN OF HIGHER GRACE - GULU - EST 2024</span></div>
@@ -57,7 +57,7 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}th,td{b
 <div class="nav-item"><a href="#resources-sermons">Resources</a><div class="dropdown"><a href="#resources-sermons">Sermons</a><a href="#resources-jesusfilm">Jesus Film Online</a><a href="#resources-bible">Bible Reading</a><a href="#resources-devotional">Devotionals</a><a href="#resources-media">Media</a></div></div>
 <div class="nav-item"><a href="#give-online">Give</a><div class="dropdown"><a href="#give-online">Give Online</a><a href="#give-momo">Mobile Money</a><a href="#give-partnership">Partnership</a><a href="#give-projects">Projects</a></div></div>
 </nav>
-<div style="display:flex;gap:8px;align-items:center"><button class="theme-btn" onclick="toggleTheme()" title="Change Theme">☀</button><div class="profile-circle" id="profileCircle" onclick="openProfile()" title="My Profile">?</div></div></header>
+<div style="display:flex;gap:8px;align-items:center"><button class="theme-btn" onclick="toggleTheme()" title="Change Theme - Light / Dark / Glow">☀</button></div></header>
 
 <div class="hero" id="home"><div class="hero-content"><span style="background:#d4af00;color:#111;padding:6px 14px;border-radius:20px;font-weight:900;font-size:12px">INTERNATIONAL WORSHIP - ALL NATIONS - BADEGE LAYIBI - GULU - EST. 2024</span><h1>Fountain of<br>Higher Grace</h1><p>Cell-based community church in Badege Layibi, Gulu, celebrating Christ, growing and multiplying as each one reaches one. Touching those around us with the love of Jesus, bringing healing to the cities and the nations. Where sin abounded, grace did much more abound - Romans 5:20.</p><p style="font-size:13px;margin:8px 0">International Worship - Every Nation, Every Tribe, One Voice For Jesus - From Gulu To The Nations.</p><a class="btn" href="#join-visit">Plan Your Visit</a><a class="btn btn-gold" href="#resources-jesusfilm">Watch Jesus Film</a><p style="margin-top:12px;font-size:13px">Pastor Sam Otema - 0771755800 - Sunday 9:00 AM - Badege Layibi, Gulu</p></div></div>
 
@@ -113,36 +113,34 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}th,td{b
 <section id="give-online"><h2>GIVE</h2><div class="one-line-4"><div class="square-box" onclick="openFormPage('form-go')"><b>Give Online</b><span>Tap To Open</span></div><div class="square-box" onclick="openFormPage('form-gm')"><b>Mobile Money</b><span>Tap To Open</span></div><div class="square-box" onclick="openFormPage('form-gp')"><b>Partnership</b><span>Tap To Open</span></div><div class="square-box" onclick="openFormPage('form-gpr')"><b>Project</b><span>Tap To Open</span></div></div><div class="card" style="margin-top:14px"><div><p>MTN MoMo: <b style="font-size:20px;color:#1a7a2e">0771755800 - Pastor Sam Otema - FOHGM</b><br>Airtel: <b>0771755800</b></p></div></div></section>
 
 <footer><div class="footer-grid"><div><h4>FOHGM</h4><p>Fountain of Higher Grace<br>Badege Layibi, Gulu<br>Est 2024<br>Pastor Sam Otema<br>0771755800</p></div><div><h4>About</h4><a href="#about-vision">Vision</a><a href="#about-leadership">Leadership</a><a href="#about-beliefs">Beliefs</a><a href="#about-history">History</a></div><div><h4>Join and Connect</h4><a href="#join-visit">Join Us</a><a href="#connect-prayer">Prayer</a><a href="#connect-testimony">Testimony</a><a href="#connect-contact">Contact</a></div><div><h4>Resources and Give</h4><a href="#resources-sermons">Sermons</a><a href="#resources-jesusfilm">Jesus Film</a><a href="#give-online">Give</a><a href="#connect-location">Location Map</a></div></div><p style="text-align:center;margin-top:20px">Copyright 2026 Fountain of Higher Grace - Badege Layibi, Gulu - Pastor Sam Otema - Each One Reach One<br>And this gospel of the kingdom shall be preached in all the world - Matthew 24:14</p></footer>
-
+<div class="fixed-bar"><a href="#home">↑ Top</a><a href="#join-visit">Join Us</a><a href="#connect-prayer">Prayer</a><a href="#give-online">Give</a><a href="#connect-contact">Contact</a><a href="#admin" onclick="openAdmin();return false">Pastor Login</a></div>
 <div class="notif" id="notif"><b>Pastor Sam Replied To You</b><p id="notifText" style="font-size:13px;margin-top:6px"></p><button class="btn" onclick="document.getElementById('notif').style.display='none'">Close</button></div>
-
 <div class="modal" id="pop-beliefs"><div class="modal-box"><h2>Beliefs</h2><div class="card"><div><p>Jesus is Lord. The Bible is truth. Grace lifts us higher. We believe in salvation, healing, the Holy Spirit, and the power of prayer. John 3:16, Romans 5:20.</p><p style="margin-top:10px">We believe Jesus Christ is the Son of God, He died for our sins, He rose again, and He is alive today. We believe the Bible is the true Word of God, it guides us, teaches us, and gives us life. We believe grace is greater than sin, grace forgives, grace heals, grace restores, and grace lifts a person higher than before. We believe in salvation by grace through faith, not by our works. We believe God still heals today, body, mind, heart, and family. We believe the Holy Spirit fills us, leads us, comforts us, and gives us power to live for God. We believe prayer changes things, prayer opens doors, prayer brings peace, and prayer brings miracles. We believe every person is loved by God, welcomed at the Fountain, and called to grow, serve, and reach one more person for Jesus.</p><p style="margin-top:10px">We also believe in the power of the blood of Jesus to wash away sin and make us new. We believe in water baptism, we believe in the Lord's Supper, we believe in the church as family, and we believe Jesus is coming again. We believe every believer has a gift, and every gift is for serving others. We believe God calls ordinary people in Layibi to do extraordinary things for His glory. We believe in love, forgiveness, unity, and living holy for God every day.</p></div></div><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-beliefs')">Close</button></div></div>
 <div class="modal" id="pop-history"><div class="modal-box"><h2>History</h2><div class="card"><div><p>Started in 2024 in Badege Layibi, Gulu with a small gathering under Pastor Sam Otema. Today we are a growing fountain for families in Layibi and beyond.</p><p style="margin-top:10px">In 2024, Pastor Sam Otema answered the call of God to start a church in Badege Layibi, Gulu. We started small, with a few families, in a simple gathering, with a big heart for God and for people. We prayed together, we worshipped together, we shared the Word together, and we loved one another like family. From that small beginning, God has grown us. Today we are a growing fountain for families in Layibi, in Gulu, and beyond. Every Sunday families come to worship, to learn, to pray, and to grow in grace. Every week cells meet in homes. Every month we reach out to the community. We are still growing, still believing, still reaching one more soul. This is only the beginning of what God will do through FOHGM.</p><p style="margin-top:10px">In the first year, we saw families restored, people healed, youth changed, and many giving their lives to Jesus. We started cell groups in homes, we started prayer meetings, we started kids programs, and we started outreach. The work is still growing. The vision is still burning. Pastor Sam and the team believe Gulu will be touched by the grace of God, one family at a time, one cell at a time, one soul at a time. We thank God for every person who prayed, gave, served, and believed with us from the beginning.</p></div></div><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-history')">Close</button></div></div>
 <div class="modal" id="pop-accountability"><div class="modal-box"><h2>Accountability</h2><div class="card"><div><p>Every gift is stewarded with integrity. Finances are accounted for, leadership is accountable, and the church is open.</p><p style="margin-top:10px">At FOHGM, we believe every gift belongs to God and must be handled with honesty, care, and transparency. When you give, your gift is recorded, it is prayed over, and it is used for the work of God in Badege Layibi, Gulu. Finances are accounted for, leadership is accountable, and the church is open to questions. Pastor Sam Otema and the leaders serve with a clean heart, with integrity, and with love for the people. We do not hide anything. We believe in doing things in the light, with truth, with order, and with respect for every giver. Your trust is precious to us, and we will protect it.</p><p style="margin-top:10px">We keep records of all giving. We pray for every giver by name. We use gifts for church land, church building, kids ministry, outreach, media, and helping families in need. If you ever have a question about giving, ask Pastor Sam openly. We will answer you with love and truth. No secrets, no fear, only integrity. Your giving is between you and God, and we honour it.</p></div></div><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-accountability')">Close</button></div></div>
 <div class="modal" id="pop-faqs"><div class="modal-box"><h2>FAQs</h2><div class="card"><div><p><b>Where is the church?</b> Badege Layibi, Gulu, Uganda. Fountain of Higher Grace, near the community of Badege Layibi. Come and you will be welcomed like family.</p><p><b>When are services?</b> Sunday 9:00 AM - Main Service, Worship, Word, and Prayer. Wednesday Prayer 6:00 PM - Midweek Prayer, come and pray with us. Friday Bible Study 6:00 PM - Learn the Word together, grow in grace, ask questions, and share life.</p><p><b>Who is the pastor?</b> Pastor Sam Otema, Founder and Senior Pastor since 2024. Phone 0771755800. Pastor Sam loves God, loves people, loves to pray with families, visit homes, and teach the Word with grace and truth.</p><p><b>Can I come if I am new?</b> Yes. Come as you are. You do not need to be perfect to come. You will be welcomed, loved, and prayed for. Bring your family and friends.</p><p><b>What should I wear?</b> Wear what you have. Come clean and comfortable. God looks at your heart, not your clothes.</p><p><b>Do you have programs for kids?</b> Yes. Kids are loved at FOHGM. They sing, learn Bible stories, pray, and play in a safe and happy place.</p><p><b>Do you pray for the sick?</b> Yes. Bring your prayer request. Pastor Sam and the prayer team will pray with you, visit you, and stand with you until you see breakthrough.</p><p><b>Can I get married at FOHGM?</b> Yes. Talk to Pastor Sam. We will counsel you, pray with you, and celebrate with you.</p><p><b>How can I join a cell group?</b> Fill the Small Groups form on this website. Tell us your area in Badege Layibi, and we will connect you to a cell near you.</p><p><b>How can I give?</b> You can give by Mobile Money 0771755800, or by Give Online form on this website. Thank you for giving with love.</p></div></div><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-faqs')">Close</button></div></div>
-<div class="modal" id="pop-privacy"><div class="modal-box"><h2>Privacy Policy</h2><div class="card"><div><p>We respect your information. We never share your prayer requests or personal details without permission. Your name is used only to welcome you and to follow up on your request.</p><p style="margin-top:10px">At FOHGM, we protect your privacy with love and respect. When you give us your name, email, phone, prayer request, testimony, or giving record, we keep it safe. We never share your prayer requests or personal details with others without your permission. Your name is used only to welcome you by your last name on the website, and to follow up on your request with prayer and care. Your prayer is sacred. Your story is precious. We will not sell your information. We will not post your testimony without asking you first. If you ever want us to delete your message, just tell Pastor Sam and we will do it. You are safe here at the Fountain.</p><p style="margin-top:10px">We also protect children. We never share photos of children without parent permission. We keep your giving records private. Only Pastor Sam and trusted leaders see your message, and only to pray for you and follow up. Your trust is a gift, and we will guard it. Your profile picture is only for you, it is saved on your own phone or computer, and you can change or remove it any time in your profile circle.</p></div></div><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-privacy')">Close</button></div></div>
+<div class="modal" id="pop-privacy"><div class="modal-box"><h2>Privacy Policy</h2><div class="card"><div><p>We respect your information. We never share your prayer requests or personal details without permission. Your name is used only to welcome you and to follow up on your request.</p><p style="margin-top:10px">At FOHGM, we protect your privacy with love and respect. When you give us your name, email, phone, prayer request, testimony, or giving record, we keep it safe. We never share your prayer requests or personal details with others without your permission. Your name is used only to welcome you and to follow up on your request with prayer and care. Your prayer is sacred. Your story is precious. We will not sell your information. We will not post your testimony without asking you first. If you ever want us to delete your message, just tell Pastor Sam and we will do it. You are safe here at the Fountain.</p><p style="margin-top:10px">We also protect children. We never share photos of children without parent permission. We keep your giving records private. Only Pastor Sam and trusted leaders see your message, and only to pray for you and follow up. Your trust is a gift, and we will guard it.</p></div></div><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-privacy')">Close</button></div></div>
 <div class="modal" id="pop-devotional"><div class="modal-box"><h2>Resources - Devotionals</h2><div class="card"><div><p><b>Today:</b> Grace did much more abound. Where you failed, grace is greater. Start today with prayer and the Word.</p><p style="margin-top:10px"><b>Devotional 1 - Grace Is Greater:</b> Grace did much more abound. Romans 5:20. Where you failed, grace is greater. Where you fell, grace lifts you up again. Do not stay in shame. Come to the Fountain today. Pray, read one verse, and let God speak to you. God has not finished with you.</p><p style="margin-top:10px"><b>Devotional 2 - Prayer Changes Things:</b> Pray first, worry later. Before you call anyone, call on God. Tell Him your fear, your need, your family, your job, your school. He hears you. He sees you. He will answer you in His time. Keep praying, keep believing, keep trusting.</p><p style="margin-top:10px"><b>Devotional 3 - The Fountain Never Dries:</b> John 4:14. Whoever drinks the water Jesus gives will never thirst. When you are tired, come and drink. When you are broken, come and drink. When you are happy, come and drink. The Fountain in Badege Layibi is open for you every day in prayer.</p><p style="margin-top:10px"><b>Devotional 4 - Each One Reach One:</b> You are called to reach one. One neighbour, one friend, one family member. Share your testimony. Invite one person to church. Pray for one person today. God will use your one to change many.</p></div></div><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-devotional')">Close</button></div></div>
 <div class="modal" id="pop-media"><div class="modal-box"><h2>Resources - Media</h2><div class="card"><div><p>Photos from FOHGM Badege Layibi. Services, worship, outreach, testimonies, kids ministry, and community.</p><p style="margin-top:10px"><b>Sunday Worship:</b> Families come together in Badege Layibi to worship, sing, pray, and hear the Word. Come and feel the joy of the Fountain.</p><p style="margin-top:10px"><b>Kids Ministry:</b> Kids are loved at FOHGM. They sing, learn Bible stories, pray, and play in a safe and happy place. Your child will be loved here.</p><p style="margin-top:10px"><b>Outreach And Community:</b> We visit homes, pray with families, help the needy, and share the love of Jesus in Layibi and beyond. This is the heart of the Fountain.</p><p style="margin-top:10px"><b>Testimonies And Celebrations:</b> Baptisms, weddings, birthdays, healing testimonies, and new beginnings. God is doing great things in Gulu, and we celebrate together.</p></div></div><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-media')">Close</button></div></div>
 
-<div class="modal form-modal" id="form-contact"><div class="modal-box"><h2>How Can We Serve You?</h2><p>Have a specific question? You can reach the team by filling in this form directly, or by emailing the relevant department. For urgent prayer, please use the prayer form on this page. We love to hear from you, and we will reply to your message as soon as possible with prayer and care.</p><form onsubmit="submitMainContact(event)"><div class="row"><div><label>First Name *</label><input id="mainFirst" required placeholder="Enter First Name"></div><div><label>Last Name</label><input id="mainLast" placeholder="Enter Last Name"></div></div><div class="row"><div><label>Your Email *</label><input id="mainEmail" type="email" required placeholder="Enter Your Email Address"></div><div><label>Phone Number</label><input id="mainPhone" placeholder="Enter Phone Number"></div></div><label>Subject *</label><select id="mainSubject"><option>Please choose an option</option><option>Prayer Request</option><option>Testimony</option><option>Partnership / Giving</option><option>Visit / Planning a Visit</option><option>General Question</option><option>Become a Member</option></select><label>Your Message *</label><textarea id="mainMsg" required placeholder="How can we help you? Tell us your prayer, testimony or question in detail. We are here to listen and stand with you in faith. No problem is too big for God."></textarea><button class="send" type="submit">SEND MESSAGE</button><p id="mainDone" style="font-weight:800;margin-top:10px;color:green"></p></form><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-contact')">Close</button></div></div>
-<div class="modal form-modal" id="form-prayer"><div class="modal-box" style="background:#0a1633;color:#fff"><h2 style="color:#d4af5a">Need Urgent Prayer?</h2><p>Our prayer team is available to pray with you. No problem is too big for God. Pastor Sam and the team will stand with you.</p><label style="color:#fff">Your Name *</label><input id="pName" placeholder="Enter your Name"><label style="color:#fff">Your Email *</label><input id="pEmail" type="email" placeholder="Enter your Email"><label style="color:#fff">Prayer Request *</label><textarea id="pText" placeholder="Tell us in detail how we can pray for you. Healing, family, job, school, peace, anything."></textarea><button class="btn" onclick="submitForm('prayer','Prayer Request','pName','','pText','pDone','pEmail')">SEND PRAYER REQUEST</button><p id="pDone" style="color:#d4af5a;font-weight:800;font-size:12px"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-prayer')">Close</button></div></div>
+<div class="modal form-modal" id="form-contact"><div class="modal-box"><h2>How Can We Serve You?</h2><p>Have a specific question? You can reach the team by filling in this form directly. We love to hear from you, and we will reply to your message as soon as possible with prayer and care.</p><form onsubmit="submitMainContact(event)"><div class="row"><div><label>First Name *</label><input id="mainFirst" required placeholder="Enter First Name"></div><div><label>Last Name</label><input id="mainLast" placeholder="Enter Last Name"></div></div><div class="row"><div><label>Your Email *</label><input id="mainEmail" type="email" required placeholder="Enter Your Email Address"></div><div><label>Phone Number</label><input id="mainPhone" placeholder="Enter Phone Number"></div></div><label>Subject *</label><select id="mainSubject"><option>Please choose an option</option><option>Prayer Request</option><option>Testimony</option><option>Partnership / Giving</option><option>Visit / Planning a Visit</option><option>General Question</option><option>Become a Member</option></select><label>Your Message *</label><textarea id="mainMsg" required placeholder="How can we help you? Tell us your prayer, testimony or question in detail."></textarea><button class="send" type="submit">SEND MESSAGE</button><p id="mainDone" style="font-weight:800;margin-top:10px;color:green"></p></form><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-contact')">Close</button></div></div>
+<div class="modal form-modal" id="form-prayer"><div class="modal-box" style="background:#0a1633;color:#fff"><h2 style="color:#d4af5a">Need Urgent Prayer?</h2><p>Our prayer team is available to pray with you. No problem is too big for God. Pastor Sam and the team will stand with you.</p><label style="color:#fff">Your Name *</label><input id="pName" placeholder="Enter your Name"><label style="color:#fff">Your Email *</label><input id="pEmail" type="email" placeholder="Enter your Email"><label style="color:#fff">Phone Number</label><input id="pPhone" placeholder="Enter Phone Number"><label style="color:#fff">Prayer Request *</label><textarea id="pText" placeholder="Tell us in detail how we can pray for you. Healing, family, job, school, peace, anything."></textarea><button class="btn" onclick="submitForm('prayer','Prayer Request','pName','pPhone','pText','pDone','pEmail')">SEND PRAYER REQUEST</button><p id="pDone" style="color:#d4af5a;font-weight:800;font-size:12px"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-prayer')">Close</button></div></div>
 <div class="modal form-modal" id="form-jv"><div class="modal-box"><h2>Join Us - Plan Your Visit</h2><label>Full Name *</label><input id="jvName" placeholder="Enter your Full Name"><label>Your Email Address *</label><input id="jvEmail" type="email" placeholder="Enter your Email Address"><label>Phone Number</label><input id="jvPhone" placeholder="Enter your Phone Number"><label>When Will You Visit?</label><textarea id="jvMsg" placeholder="Tell us when you plan to visit, who you will come with, and how we can prepare to welcome you."></textarea><button class="btn" onclick="submitForm('join','Plan Your Visit','jvName','jvPhone','jvMsg','jvDone','jvEmail')">Submit Plan Your Visit</button><p id="jvDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-jv')">Close</button></div></div>
 <div class="modal form-modal" id="form-jm"><div class="modal-box"><h2>Join Us - Become a Member</h2><label>Full Name *</label><input id="jmName" placeholder="Enter your Full Name"><label>Your Email Address *</label><input id="jmEmail" type="email" placeholder="Enter your Email Address"><label>Phone Number</label><input id="jmPhone" placeholder="Enter your Phone Number"><label>Why Do You Want To Join?</label><textarea id="jmMsg" placeholder="Tell us why you want to join FOHGM and how we can walk with you."></textarea><button class="btn" onclick="submitForm('join','Become a Member','jmName','jmPhone','jmMsg','jmDone','jmEmail')">Submit Become a Member</button><p id="jmDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-jm')">Close</button></div></div>
 <div class="modal form-modal" id="form-jb"><div class="modal-box"><h2>Join Us - Baptism</h2><label>Full Name *</label><input id="jbName" placeholder="Enter your Full Name"><label>Your Email Address *</label><input id="jbEmail" type="email" placeholder="Enter your Email Address"><label>Phone Number</label><input id="jbPhone" placeholder="Enter your Phone Number"><label>Your Message</label><textarea id="jbMsg" placeholder="Tell us about your decision to be baptised."></textarea><button class="btn" onclick="submitForm('join','Baptism','jbName','jbPhone','jbMsg','jbDone','jbEmail')">Submit Baptism</button><p id="jbDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-jb')">Close</button></div></div>
 <div class="modal form-modal" id="form-jvol"><div class="modal-box"><h2>Join Us - Volunteer</h2><label>Full Name *</label><input id="jvolName" placeholder="Enter your Full Name"><label>Your Email Address *</label><input id="jvolEmail" type="email" placeholder="Enter your Email Address"><label>Phone Number</label><input id="jvolPhone" placeholder="Enter your Phone Number"><label>Where Do You Want To Serve?</label><select id="jvolMsg"><option>Ushering</option><option>Media</option><option>Kids</option><option>Worship</option><option>Outreach</option></select><button class="btn" onclick="submitForm('join','Volunteer','jvolName','jvolPhone','jvolMsg','jvolDone','jvolEmail')">Submit Volunteer</button><p id="jvolDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-jvol')">Close</button></div></div>
 <div class="modal form-modal" id="form-jc"><div class="modal-box"><h2>Join Us - Small Groups - Cells</h2><label>Full Name *</label><input id="jcName" placeholder="Enter your Full Name"><label>Your Email Address *</label><input id="jcEmail" type="email" placeholder="Enter your Email Address"><label>Phone Number</label><input id="jcPhone" placeholder="Enter your Phone Number"><label>Your Area In Badege Layibi</label><textarea id="jcMsg" placeholder="Tell us your area and best day for a cell group."></textarea><button class="btn" onclick="submitForm('join','Small Group Cell','jcName','jcPhone','jcMsg','jcDone','jcEmail')">Submit Small Group</button><p id="jcDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-jc')">Close</button></div></div>
-<div class="modal form-modal" id="form-testimony"><div class="modal-box"><h2>Connect - Testimonies</h2><label>Your Name *</label><input id="tName" placeholder="Enter your Name"><label>Your Email Address *</label><input id="tEmail" type="email" placeholder="Enter your Email Address"><label>Your Testimony *</label><textarea id="tText" placeholder="Tell us in detail what God has done for you."></textarea><button class="btn" onclick="submitForm('testimony','Testimony','tName','','tText','tDone','tEmail')">Share Testimony</button><p id="tDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-testimony')">Close</button></div></div>
+<div class="modal form-modal" id="form-testimony"><div class="modal-box"><h2>Connect - Testimonies</h2><label>Your Name *</label><input id="tName" placeholder="Enter your Name"><label>Your Email Address *</label><input id="tEmail" type="email" placeholder="Enter your Email Address"><label>Phone Number</label><input id="tPhone" placeholder="Enter Phone Number"><label>Your Testimony *</label><textarea id="tText" placeholder="Tell us in detail what God has done for you."></textarea><button class="btn" onclick="submitForm('testimony','Testimony','tName','tPhone','tText','tDone','tEmail')">Share Testimony</button><p id="tDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-testimony')">Close</button></div></div>
 <div class="modal form-modal" id="form-go"><div class="modal-box"><h2>Give - Give Online</h2><label>Your Name *</label><input id="goName" placeholder="Enter your Name"><label>Your Email Address *</label><input id="goEmail" type="email" placeholder="Enter your Email Address"><label>Amount UGX</label><input id="goAmount" placeholder="Enter Amount UGX"><label>Note - Tithe, Offering, etc</label><textarea id="goMsg" placeholder="Tell us what this gift is for - Tithe, Offering, Project. Thank you for giving with love."></textarea><button class="btn" onclick="submitForm('give','Give Online','goName','goAmount','goMsg','goDone','goEmail')">Record Give Online</button><p id="goDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-go')">Close</button></div></div>
 <div class="modal form-modal" id="form-gm"><div class="modal-box"><h2>Give - Mobile Money</h2><p>MTN MoMo: <b style="font-size:20px;color:#1a7a2e">0771755800 - Pastor Sam Otema - FOHGM</b><br>Airtel: <b>0771755800</b></p><label>Your Name *</label><input id="gmName" placeholder="Enter your Name"><label>Your Email Address *</label><input id="gmEmail" type="email" placeholder="Enter your Email Address"><label>Amount UGX</label><input id="gmAmount" placeholder="Enter Amount UGX"><label>Transaction ID or Note</label><input id="gmMsg" placeholder="Enter Transaction ID or Note"><button class="btn" onclick="submitForm('give','Mobile Money','gmName','gmAmount','gmMsg','gmDone','gmEmail')">Record Mobile Money Giving</button><p id="gmDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-gm')">Close</button></div></div>
 <div class="modal form-modal" id="form-gp"><div class="modal-box"><h2>Give - Partnership</h2><label>Your Name *</label><input id="gpName" placeholder="Enter your Name"><label>Your Email Address *</label><input id="gpEmail" type="email" placeholder="Enter your Email Address"><label>Phone Number</label><input id="gpPhone" placeholder="Enter your Phone Number"><label>Choose Partnership</label><select id="gpMsg"><option>Monthly Partner - 50000 UGX</option><option>Monthly Partner - 100000 UGX</option><option>Monthly Partner - Other Amount</option></select><button class="btn" onclick="submitForm('give','Partnership','gpName','gpPhone','gpMsg','gpDone','gpEmail')">Become a Partner</button><p id="gpDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-gp')">Close</button></div></div>
 <div class="modal form-modal" id="form-gpr"><div class="modal-box"><h2>Give - Projects</h2><label>Your Name *</label><input id="gprName" placeholder="Enter your Name"><label>Your Email Address *</label><input id="gprEmail" type="email" placeholder="Enter your Email Address"><label>Amount UGX</label><input id="gprAmount" placeholder="Enter Amount UGX"><label>Choose Project</label><select id="gprMsg"><option>Church Land</option><option>Church Building</option><option>Kids Ministry</option><option>Outreach</option></select><button class="btn" onclick="submitForm('give','Projects','gprName','gprAmount','gprMsg','gprDone','gprEmail')">Give to Project</button><p id="gprDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-gpr')">Close</button></div></div>
 
-<div class="modal" id="profileModal"><div class="modal-box" style="max-width:420px;text-align:center"><p style="font-size:12px;color:#1a7a2e;font-weight:900;letter-spacing:1px">WELCOME TO FOHGM - FOUNTAIN OF HIGHER GRACE</p><h2 style="margin:6px 0">My Profile</h2><div id="profileBig" class="profile-circle" style="width:110px;height:110px;font-size:48px;margin:12px auto">?</div><p id="profileName" style="font-weight:800"></p><p style="font-size:12px;color:#666">Tap Browse to change your profile picture. It is saved on this phone / computer only.</p><label style="text-align:left">Browse / Change Profile Picture</label><input type="file" id="picInput" accept="image/*" onchange="changePic(event)"><button class="btn" style="width:100%" onclick="removePic()">Remove Picture</button><button class="btn" style="width:100%;background:#c00" onclick="logoutVisitor()">Logout - Let Another Person Login</button><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('profileModal')">Close</button></div></div>
-<div class="modal" id="loginModal"><div class="modal-box" style="max-width:380px;text-align:center;border-top:6px solid #d4af00;padding:30px 24px"><div style="width:70px;height:70px;background:#0a1633;color:#d4af00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;margin:0 auto 12px">S</div><h2 style="margin:0">Pastor Login</h2><p style="font-size:12px;color:#666;margin:6px 0 16px">FOHGM - Fountain of Higher Grace<br>Only Pastor Sam - Badege Layibi, Gulu</p><label style="text-align:left">Username</label><input id="loginUser" placeholder="Username: sam" value="sam"><label style="text-align:left">Password</label><input id="loginPass" type="password" placeholder="Password" value="FOHGM2026"><button class="btn" style="width:100%;padding:13px;border-radius:30px;margin-top:14px" onclick="doLogin()">Login as Pastor Sam →</button><p id="loginMsg" style="color:red;text-align:center;margin-top:10px"></p><button class="btn" style="background:#eee;color:#111;width:100%;border-radius:30px" onclick="closeModal('loginModal')">Back To Website</button></div></div>
+<div class="modal" id="loginModal"><div class="modal-box" style="max-width:380px;text-align:center;border-top:6px solid #d4af00;padding:30px 24px"><div style="width:70px;height:70px;background:#0a1633;color:#d4af00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;margin:0 auto 12px">S</div><h2 style="margin:0">Pastor Login</h2><p style="font-size:12px;color:#666;margin:6px 0 16px">FOHGM - Fountain of Higher Grace<br>Only Pastor Sam - Badege Layibi, Gulu</p><label style="text-align:left">Username</label><input id="loginUser" placeholder="Username: sam" value="sam"><label style="text-align:left">Password</label><div style="display:flex;gap:6px"><input id="loginPass" type="password" placeholder="Password" value="FOHGM2026" style="flex:1"><button type="button" onclick="togglePass()" style="padding:10px 12px;border-radius:5px;border:1px solid #ddd;background:#eee;cursor:pointer;font-size:16px" id="eyeBtn">👁️</button></div><button class="btn" style="width:100%;padding:13px;border-radius:30px;margin-top:14px" onclick="doLogin()">Login as Pastor Sam →</button><p id="loginMsg" style="color:red;text-align:center;margin-top:10px"></p><button class="btn" style="background:#eee;color:#111;width:100%;border-radius:30px" onclick="closeModal('loginModal')">Back To Website</button></div></div>
 
 <div class="modal" id="adminModal"><div class="modal-box">
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap"><h2>FOHGM Admin Dashboard</h2><button class="btn" style="background:#c00" onclick="logout()">Logout Admin</button></div>
-<p style="font-size:12px;color:#666">All Forms - Small Cards - Tap To Open - Number = People Who FILLED</p>
+<p style="font-size:12px;color:#666">All Forms - Tap Card To Open - Number = People Who FILLED - Email & Phone Now Separate Columns</p>
 <div id="adminHome">
 <div class="admin-grid">
 <div class="admin-small" onclick="openAdminDetail('contact')"><b>Contact</b><div class="num" id="count-contact">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
@@ -164,132 +162,246 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}th,td{b
 <button class="btn" style="background:#0a1633" onclick="backToAdminHome()">← Back To Admin Cards</button>
 <h3 id="detailTitle" style="margin:12px 0 4px">Detail</h3>
 <p id="detailDesc" style="font-size:12px;color:#666"></p>
-<div class="tool"><input id="searchBox" placeholder="Search name, phone, message..." style="flex:1;margin:0" oninput="renderTable()"><select id="sortBox" onchange="renderTable()" style="max-width:160px;margin:0"><option value="new">Sort: Newest First</option><option value="old">Sort: Oldest First</option><option value="name">Sort: Name A-Z</option></select><button class="primary" onclick="renderTable()">Refresh</button><button onclick="exportExcel()">Export Excel CSV</button><button onclick="exportPDF()">Export PDF Print</button><button onclick="emptyTrash()" style="background:#c00;color:#fff">Empty Trash Forever</button></div>
+<div class="tool"><input id="searchBox" placeholder="Search name, phone, email, message..." style="flex:1;margin:0" oninput="renderTable()"><select id="sortBox" onchange="renderTable()" style="max-width:160px;margin:0"><option value="new">Sort: Newest First</option><option value="old">Sort: Oldest First</option><option value="name">Sort: Name A-Z</option></select><button class="primary" onclick="renderTable()">Refresh</button><button onclick="exportExcel()">Export Excel CSV</button><button onclick="exportPDF()">Export PDF / Print</button><button onclick="emptyTrash()" style="background:#c00;color:#fff">Empty Trash Forever</button></div>
+<div class="tool" style="background:#f8f5e6;padding:10px;border-radius:8px"><b style="font-size:12px">BULK - Select Many:</b><button onclick="selectAllRows(true)">Select All</button><button onclick="selectAllRows(false)">Unselect All</button><button onclick="bulkDelete()" style="background:#c00;color:#fff">Delete Selected</button><button onclick="bulkEmail()" style="background:#0a1633;color:#fff">Bulk Email Selected</button><button onclick="bulkWhatsApp()" style="background:#25D366;color:#fff">Bulk WhatsApp Selected</button><button onclick="bulkAutoReply()" style="background:#d4af00;color:#111">Send Auto Reply To Selected</button><span id="selectedCount" style="font-size:12px;font-weight:800"></span></div>
 <div id="tableWrap" style="overflow-x:auto"></div>
 <div style="display:flex;justify-content:space-between;margin-top:12px;align-items:center"><button onclick="changePage(-1)">Prev</button><span id="pageInfo"></span><button onclick="changePage(1)">Next</button></div>
 </div>
 <button class="btn" style="background:#ddd;color:#111;margin-top:14px" onclick="closeModal('adminModal')">Close Dashboard</button>
 </div></div>
-<div class="modal" id="rowModal"><div class="modal-box" style="max-width:520px"><h2>View / Edit Record</h2><label>Name</label><input id="editName"><label>Email / Phone</label><input id="editPhone"><label>Message / Details</label><textarea id="editMsg"></textarea><label>Pastor Reply - This Will Notify The Person</label><textarea id="editReply" placeholder="Write your reply here. The person will see it when they press Check For Pastor Reply."></textarea><button class="btn" onclick="saveEntry()">Save Changes</button><button class="btn" style="background:#1a7a2e" onclick="restoreCurrent()">Restore From Trash</button><button class="btn" style="background:#c00" onclick="trashCurrent()">Move To Trash / Delete</button><button class="btn" style="background:#111" onclick="deletePermanentCurrent()">Delete Permanent Forever</button><button class="btn" style="background:#ddd;color:#111" onclick="closeModal('rowModal')">Close</button></div></div>
-
+<div class="modal" id="rowModal"><div class="modal-box" style="max-width:520px"><h2>View / Edit Record</h2><label>Name</label><input id="editName"><label>Phone Number</label><input id="editPhone"><label>Email Address</label><input id="editEmail"><label>Message / Details</label><textarea id="editMsg"></textarea><label>Pastor Reply - This Will Notify The Person</label><textarea id="editReply" placeholder="Write your reply here. The person will see it when they press Check For Pastor Reply."></textarea><div style="display:flex;gap:6px;flex-wrap:wrap;margin:10px 0"><button class="btn" style="background:#25D366" onclick="sendWhatsAppCurrent()">WhatsApp This Person</button><button class="btn" style="background:#0a1633" onclick="sendEmailCurrent()">Email This Person</button><button class="btn" style="background:#1a7a2e" onclick="sendSMSCurrent()">SMS This Person</button><button class="btn" style="background:#d4af00;color:#111" onclick="sendAutoReplyCurrent()">Send Auto Reply</button></div><button class="btn" onclick="saveEntry()">Save Changes</button><button class="btn" style="background:#1a7a2e" onclick="restoreCurrent()">Restore From Trash</button><button class="btn" style="background:#c00" onclick="trashCurrent()">Move To Trash / Delete</button><button class="btn" style="background:#111" onclick="deletePermanentCurrent()">Delete Permanent Forever</button><button class="btn" style="background:#ddd;color:#111" onclick="closeModal('rowModal')">Close</button></div></div>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {getFirestore,collection,addDoc,getDocs,doc,updateDoc,deleteDoc,setDoc} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const firebaseConfig={apiKey:"AIzaSyB8j4X8o5u7Y8h6L8yQW6mGg6RrBbCcDdEe",authDomain:"fohgm-church.firebaseapp.com",projectId:"fohgm-church",storageBucket:"fohgm-church.appspot.com",messagingSenderId:"123456789012",appId:"1:123456789012:web:abcdef123456"};
+const app=initializeApp(firebaseConfig); const db=getFirestore(app);
+window._db=db; window._firestore={collection,addDoc,getDocs,doc,updateDoc,deleteDoc,setDoc};
+</script>
 <script>
-let currentTab='contact', currentPage=1, perPage=5, editId=null, currentDetail='contact';
-function toggleTheme(){let cur=document.body.className;let next=cur==='dark'?'':'dark';document.body.className=next;localStorage.setItem('fohgm_theme',next);let b=document.querySelector('.theme-btn');if(b)b.textContent=(next==='dark'?'☾':'☀')}
-if(localStorage.getItem('fohgm_theme')){document.body.className=localStorage.getItem('fohgm_theme');let b=document.querySelector('.theme-btn');if(b)b.textContent=(document.body.className==='dark'?'☾':'☀')}
-function openPop(id){document.getElementById(id).style.display='block'}
-function openFormPage(id){document.getElementById(id).style.display='block'}
-function updateProfileCircle(){let f=localStorage.getItem('fohgm_first')||'';let l=localStorage.getItem('fohgm_last')||'';let pic=localStorage.getItem('fohgm_pic')||'';let c=document.getElementById('profileCircle');let b=document.getElementById('profileBig');let letter=(l||f||'?').charAt(0).toUpperCase();if(pic){c.innerHTML='<img src="'+pic+'">';if(b)b.innerHTML='<img src="'+pic+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%">'}else{c.textContent=letter;if(b)b.textContent=letter}let n=document.getElementById('profileName');if(n)n.textContent=(f+' '+l).trim()||'Guest - FOHGM'}
-updateProfileCircle();
-function openProfile(){updateProfileCircle();document.getElementById('profileModal').style.display='block'}
-function changePic(e){let file=e.target.files[0];if(!file)return;let r=new FileReader();r.onload=function(){try{localStorage.setItem('fohgm_pic',r.result)}catch(err){alert('Picture too big, try small picture')}updateProfileCircle();alert('Profile picture changed. Thank you.')};r.readAsDataURL(file)}
-function removePic(){localStorage.removeItem('fohgm_pic');updateProfileCircle();alert('Picture removed')}
-function logoutVisitor(){if(!confirm('Logout? Another person can login with their own name.'))return;localStorage.removeItem('fohgm_first');localStorage.removeItem('fohgm_last');localStorage.removeItem('fohgm_pic');closeModal('profileModal');updateProfileCircle();alert('Logged out. Welcome to FOHGM.')}
-function getData(){try{return JSON.parse(localStorage.getItem('fohgm_data')||'[]')}catch(e){return[]}}
-function setData(d){localStorage.setItem('fohgm_data',JSON.stringify(d))}
-function clearForm(ids){ids.forEach(id=>{let el=document.getElementById(id);if(el)el.value=''})}
-function getFirebaseCollection(type, sub){
-  if(type==='contact') return 'contact_us';
-  if(type==='prayer') return 'prayer_requests';
-  if(type==='testimony') return 'testimonies';
-  if(type==='join' && sub==='Plan Your Visit') return 'plan_your_visit';
-  if(type==='join' && sub==='Become a Member') return 'become_a_member';
-  if(type==='join' && sub==='Baptism') return 'baptism';
-  if(type==='join' && sub==='Volunteer') return 'volunteer';
-  if(type==='join' && sub==='Small Group Cell') return 'small_groups';
-  if(type==='give' && sub==='Give Online') return 'giving';
-  if(type==='give' && sub==='Mobile Money') return 'giving_mobile';
-  if(type==='give' && sub==='Partnership') return 'partnership';
-  if(type==='give' && sub==='Projects') return 'project';
-  return 'contact_us';
+let ALL=[],CUR=[],CURTYPE="",CURID=null,page=1,pageSize=20;
+function getFirebaseCollection(){return "fohgm_forms";} // SINGLE collection - all forms in one place
+function getData(){try{return JSON.parse(localStorage.getItem("fohgm_data")||"[]")}catch(e){return[]}}
+function saveData(d){localStorage.setItem("fohgm_data",JSON.stringify(d));updateCounts()}
+function getAutoReply(form){
+ if(form==="prayer") return "Praise God! Pastor Sam received your prayer request. We are praying for you right now. Do not give up. God hears you. Pastor Sam will reply to you personally soon. Stay in faith. - FOHGM Badege Layibi";
+ if(form==="contact"||form==="main") return "Thank you for contacting FOHGM! Pastor Sam received your message. We will reply with love and prayer as soon as possible. God bless you. - FOHGM Badege Layibi";
+ if(form==="testimony") return "Hallelujah! Thank you for sharing your testimony. Your story will encourage many in Gulu and beyond. Pastor Sam will read it and may share it to bless others. God bless you! - FOHGM";
+ if(form==="join") return "Welcome to the FOHGM family! Thank you for wanting to join us. Pastor Sam received your form. We will welcome you and walk with you. Come Sunday 9:00 AM Badege Layibi. - FOHGM";
+ if(form==="give") return "Thank you for giving with love! God loves a cheerful giver. Your gift is recorded and prayed over. May God bless you abundantly. - FOHGM Pastor Sam";
+ return "Thank you! Pastor Sam received your message. We will reply with prayer and love soon. - FOHGM Badege Layibi, Gulu";
 }
-function submitMainContact(e){e.preventDefault();let first=document.getElementById('mainFirst').value;let last=document.getElementById('mainLast').value;let email=document.getElementById('mainEmail').value;let phone=document.getElementById('mainPhone').value;let sub=document.getElementById('mainSubject').value;let msg=document.getElementById('mainMsg').value;let all=getData();let entry={id:Date.now(),type:'contact',sub:sub,name:first+' '+last,phone:phone+' | Email: '+email,msg:msg,date:new Date().toLocaleString(),trash:false,reply:''};all.unshift(entry);setData(all);if(window.firebaseSave) window.firebaseSave('contact_us',{fullName:first+' '+last, emailAddress:email, phoneNumber:phone, subject:sub, contactMessage:msg});let auto='Thank you '+first+'. We received your '+sub+'. This is an automatic reply from FOHGM, Fountain of Higher Grace, Badege Layibi, Gulu. Pastor Sam Otema and the team are praying for you. We have saved your message and Pastor Sam will reply to you right here on this website. Please press Check For Pastor Reply. God bless you. Romans 5:20.';document.getElementById('mainDone').textContent='Saved. Automatic Reply: '+auto;alert(auto);clearForm(['mainFirst','mainLast','mainEmail','mainPhone','mainMsg']);}
-function submitForm(type,sub,nameId,phoneId,msgId,doneId,emailId){let name=document.getElementById(nameId).value; let phone=phoneId?document.getElementById(phoneId).value:''; let msg=document.getElementById(msgId).value; let email=emailId?document.getElementById(emailId).value:''; if(!name||!msg){alert('Please fill Name and Message');return} if(emailId && !email){alert('Please enter your Email Address so Pastor Sam can reply to you');return} let all=getData(); let entry={id:Date.now(),type:type,sub:sub||'',name:name,phone:(phone||'')+' | Email: '+(email||''),msg:msg,date:new Date().toLocaleString(),trash:false,reply:''}; all.unshift(entry); setData(all); let col=getFirebaseCollection(type,sub); let fbData={fullName:name, emailAddress:email, phoneNumber:phone, message:msg, sub:sub, type:type}; if(type==='give' && (sub==='Give Online'||sub==='Mobile Money'||sub==='Projects')){ fbData.amountUGX=Number(phone)||0; fbData.transactionId=msg; fbData.givingNote=msg; } if(type==='give' && sub==='Partnership'){ fbData.partnershipType=msg; } if(type==='prayer'){ fbData.prayerMessage=msg; } if(type==='testimony'){ fbData.testimonyMessage=msg; } if(window.firebaseSave) window.firebaseSave(col, fbData); let auto='Thank you '+name+'. We received your '+sub+'. This is an automatic reply from FOHGM, Fountain of Higher Grace, Badege Layibi, Gulu. Pastor Sam Otema and the team are praying for you. Pastor Sam will reply to you right here on this website. Please press Check For Pastor Reply. God bless you richly. Romans 5:20.'; document.getElementById(doneId).textContent='Saved. Automatic Reply: '+auto; alert(auto); if(type==='prayer'){alert('Prayer Auto Reply: '+name+', we are praying for you right now. Father, we lift up '+name+' to You. Heal, comfort, provide, and give peace. In Jesus name, Amen. Pastor Sam will also reply to you here soon.');} clearForm([nameId,phoneId,msgId,emailId]);}
-function checkReply(type,boxId){let all=getData(); let last=all.find(x=>x.type===type && !x.trash && x.reply); if(last){document.getElementById(boxId).innerText='Pastor Sam Reply: '+last.reply; document.getElementById('notifText').innerText=last.reply; document.getElementById('notif').style.display='block';} else {document.getElementById(boxId).innerText='No reply yet. Pastor Sam will reply soon. Keep checking here. We are praying for you.';}}
-function openAdmin(){let isAuth=localStorage.getItem('fohgm_auth')==='yes'; if(isAuth){document.getElementById('adminModal').style.display='block';updateCounts();backToAdminHome()} else {document.getElementById('loginModal').style.display='block'}}
-function closeModal(id){document.getElementById(id).style.display='none'}
-function doLogin(){let u=(document.getElementById('loginUser').value||'').trim().toLowerCase(); let p=(document.getElementById('loginPass').value||'').trim(); if((u==='sam'||u===''||u==='pastor') && (p==='FOHGM2026'||p==='0771755800'||p==='fohgm2026')){localStorage.setItem('fohgm_auth','yes'); closeModal('loginModal'); document.getElementById('adminModal').style.display='block'; updateCounts(); backToAdminHome()} else {document.getElementById('loginMsg').textContent='Wrong. Use sam - FOHGM2026'}}
-function logout(){localStorage.removeItem('fohgm_auth'); closeModal('adminModal'); alert('Admin logged out. Visitor is still logged in.');}
-function matchDetail(r,detail){
- if(r.trash) return false;
- if(detail==='contact') return r.type==='contact';
- if(detail==='prayer') return r.type==='prayer';
- if(detail==='visit') return r.type==='join' && r.sub==='Plan Your Visit';
- if(detail==='member') return r.type==='join' && r.sub==='Become a Member';
- if(detail==='baptism') return r.type==='join' && r.sub==='Baptism';
- if(detail==='volunteer') return r.type==='join' && r.sub==='Volunteer';
- if(detail==='smallgroup') return r.type==='join' && r.sub==='Small Group Cell';
- if(detail==='testimony') return r.type==='testimony';
- if(detail==='partners') return r.type==='give' && r.sub==='Partnership';
- if(detail==='momo') return r.type==='give' && r.sub==='Mobile Money';
- if(detail==='giveonline') return r.type==='give' && r.sub==='Give Online';
- if(detail==='trash') return r.trash;
+function toggleTheme(){
+ let b=document.body;
+ if(!b.classList.contains("dark") && !b.classList.contains("glow")){b.classList.add("dark");document.querySelector(".theme-btn").textContent="🌙";localStorage.setItem("fohgm_theme","dark");}
+ else if(b.classList.contains("dark")){b.classList.remove("dark");b.classList.add("glow");document.querySelector(".theme-btn").textContent="✨";localStorage.setItem("fohgm_theme","glow");}
+ else{b.classList.remove("glow");document.querySelector(".theme-btn").textContent="☀";localStorage.setItem("fohgm_theme","light");}
+}
+(function(){let t=localStorage.getItem("fohgm_theme");if(t==="dark"){document.body.classList.add("dark");document.querySelector(".theme-btn").textContent="🌙"} if(t==="glow"){document.body.classList.add("glow");document.querySelector(".theme-btn").textContent="✨"}})();
+function openPop(id){document.getElementById(id).style.display="block";document.body.style.overflow="hidden"}
+function openFormPage(id){document.getElementById(id).style.display="block";document.body.style.overflow="hidden"}
+function closeModal(id){document.getElementById(id).style.display="none";document.body.style.overflow="auto"}
+window.onclick=function(e){if(e.target.classList.contains("modal")){e.target.style.display="none";document.body.style.overflow="auto"}}
+function togglePass(){let p=document.getElementById("loginPass");if(p.type==="password"){p.type="text";document.getElementById("eyeBtn").textContent="🙈"}else{p.type="password";document.getElementById("eyeBtn").textContent="👁️"}}
+// HERO auto-scroll after 4 seconds so user sees full site
+setTimeout(()=>{let el=document.getElementById("connect-contact");if(el) el.scrollIntoView({behavior:"smooth"})},4000);
+</script>
+<script>
+async function saveToFirebase(entry){
+ try{
+  if(window._db){let c=window._firestore.collection(window._db,getFirebaseCollection());await window._firestore.addDoc(c,entry);return true}
+ }catch(e){console.log("Firebase save failed, using local only",e)}
  return false;
 }
+function submitMainContact(e){
+ e.preventDefault();
+ let entry={id:Date.now(),type:"contact",form:"Contact Form",name:document.getElementById("mainFirst").value+" "+document.getElementById("mainLast").value,email:document.getElementById("mainEmail").value,phone:document.getElementById("mainPhone").value,message:document.getElementById("mainSubject").value+" - "+document.getElementById("mainMsg").value,reply:getAutoReply("contact"),date:new Date().toLocaleString(),status:"new"};
+ let d=getData();d.push(entry);saveData(d);saveToFirebase(entry);
+ document.getElementById("mainDone").textContent="✅ Sent! Pastor Sam received it. Auto Reply: "+getAutoReply("contact");
+ document.getElementById("mainReply").textContent="Auto Reply: "+getAutoReply("contact");
+ showNotif("Pastor Sam received your message. Auto Reply: "+getAutoReply("contact"));
+ return false;
+}
+function submitForm(type,title,nameId,phoneId,msgId,doneId,emailId){
+ let name=document.getElementById(nameId).value.trim();
+ let phone=document.getElementById(phoneId).value.trim();
+ let msgEl=document.getElementById(msgId);
+ let msg=msgEl?msgEl.value.trim():"";
+ let emailEl=emailId?document.getElementById(emailId):null;
+ let email=emailEl?emailEl.value.trim():"";
+ if(!name){alert("Please enter your name");return}
+ if(!email && !phone){alert("Please enter your Email or Phone so Pastor can reply to you");return}
+ let formKey=type;
+ if(title==="Prayer Request") formKey="prayer";
+ if(title==="Testimony") formKey="testimony";
+ if(title==="Give Online"||title==="Mobile Money"||title==="Partnership"||title==="Projects") formKey="give";
+ if(title==="Plan Your Visit"||title==="Become a Member"||title==="Baptism"||title==="Volunteer"||title==="Small Group Cell") formKey="join";
+ let entry={id:Date.now(),type:type,form:title,name:name,email:email,phone:phone,message:msg,reply:getAutoReply(formKey),date:new Date().toLocaleString(),status:"new"};
+ let d=getData();d.push(entry);saveData(d);saveToFirebase(entry);
+ let done=document.getElementById(doneId);
+ if(done) done.textContent="✅ Sent! Pastor Sam received it. Auto Reply: "+getAutoReply(formKey);
+ showNotif("Thank you "+name+"! "+getAutoReply(formKey));
+ // clear fields
+ if(msgEl) msgEl.value="";
+}
+function checkReply(type,elId){
+ let d=getData();
+ let el=document.getElementById(elId);
+ // find latest for this type - each form has its own reply
+ let found=d.filter(x=>x.type===type||(type==="contact"&&x.type==="contact")||(type==="prayer"&&x.type==="prayer")).slice(-1)[0];
+ if(found && found.reply){el.textContent="Pastor Reply: "+found.reply;showNotif(found.reply);}
+ else if(found){el.textContent="Pastor has received it. No personal reply yet. Auto Reply: "+getAutoReply(type);}
+ else{el.textContent="No reply yet. Send a form first, then check here again."}
+}
+function showNotif(text){
+ let n=document.getElementById("notif");let t=document.getElementById("notifText");
+ if(n&&t){t.textContent=text;n.style.display="block";setTimeout(()=>{n.style.display="none"},8000)}
+}
+function openAdmin(){document.getElementById("loginModal").style.display="block"}
+function doLogin(){
+ let u=document.getElementById("loginUser").value.trim().toLowerCase();
+ let p=document.getElementById("loginPass").value.trim();
+ if(u==="sam"&&p==="FOHGM2026"){closeModal("loginModal");document.getElementById("adminModal").style.display="block";updateCounts();renderTable();document.getElementById("adminHome").style.display="block";document.getElementById("adminDetail").style.display="none";}
+ else{document.getElementById("loginMsg").textContent="Wrong username or password. Try sam / FOHGM2026"}
+}
+function logout(){closeModal("adminModal");document.getElementById("loginModal").style.display="block"}
 function updateCounts(){
- let all=getData();
- let map={contact:'count-contact',prayer:'count-prayer',visit:'count-visit',member:'count-member',baptism:'count-baptism',volunteer:'count-volunteer',smallgroup:'count-smallgroup',testimony:'count-testimony',partners:'count-partners',momo:'count-momo',giveonline:'count-giveonline'};
- for(let k in map){ let el=document.getElementById(map[k]); if(el) el.textContent=all.filter(r=>matchDetail(r,k)).length; }
- let t=document.getElementById('count-trash'); if(t) t.textContent=all.filter(r=>r.trash).length;
+ let d=getData();
+ let map={contact:"contact",prayer:"prayer",visit:"visit",member:"member",baptism:"baptism",volunteer:"volunteer",smallgroup:"smallgroup",testimony:"testimony",partners:"partners",momo:"momo",giveonline:"giveonline"};
+ // count by form title
+ function countFor(key){
+  if(key==="contact") return d.filter(x=>x.form==="Contact Form"||x.type==="contact").length;
+  if(key==="prayer") return d.filter(x=>x.form==="Prayer Request").length;
+  if(key==="visit") return d.filter(x=>x.form==="Plan Your Visit").length;
+  if(key==="member") return d.filter(x=>x.form==="Become a Member").length;
+  if(key==="baptism") return d.filter(x=>x.form==="Baptism").length;
+  if(key==="volunteer") return d.filter(x=>x.form==="Volunteer").length;
+  if(key==="smallgroup") return d.filter(x=>x.form==="Small Group Cell").length;
+  if(key==="testimony") return d.filter(x=>x.form==="Testimony").length;
+  if(key==="partners") return d.filter(x=>x.form==="Partnership").length;
+  if(key==="momo") return d.filter(x=>x.form==="Mobile Money").length;
+  if(key==="giveonline") return d.filter(x=>x.form==="Give Online"||x.form==="Projects").length;
+  return 0;
+ }
+ for(let k in map){let el=document.getElementById("count-"+k);if(el) el.textContent=countFor(k)}
+ let trash=d.filter(x=>x.deleted).length;let te=document.getElementById("count-trash");if(te) te.textContent=trash;
 }
-function openAdminDetail(detail){
- currentDetail=detail; currentPage=1;
- document.getElementById('adminHome').style.display='none';
- document.getElementById('adminDetail').style.display='block';
- let titles={contact:'Contact',prayer:'Prayer',visit:'Plan a Visit',member:'Become Member',baptism:'Baptism',volunteer:'Volunteer',smallgroup:'Small Group',testimony:'Testimony',partners:'Partners',momo:'Mobile Money',giveonline:'Give Online',trash:'Trash - Deleted Records'};
- document.getElementById('detailTitle').textContent=titles[detail]||detail;
- document.getElementById('detailDesc').textContent='Showing only '+ (titles[detail]||detail) +' records. Tap any row to View, Reply, Delete, Restore.';
- renderTable();
-}
-function backToAdminHome(){ updateCounts(); document.getElementById('adminDetail').style.display='none'; document.getElementById('adminHome').style.display='block'; }
-function openAdminTable(t){
- if(t==='join') return openAdminDetail('visit');
- if(t==='give') return openAdminDetail('giveonline');
- if(t==='trash') return openAdminDetail('trash');
- return openAdminDetail(t);
-}
-function changePage(d){currentPage+=d; if(currentPage<1)currentPage=1; renderTable()}
-function renderTable(){
- let all=getData(); let filtered;
- if(currentDetail==='trash'){ filtered=all.filter(x=>x.trash); }
- else { filtered=all.filter(x=>matchDetail(x,currentDetail)); }
- let q=(document.getElementById('searchBox').value||'').toLowerCase(); if(q) filtered=filtered.filter(x=>(x.name+x.msg+x.phone+x.sub).toLowerCase().includes(q));
- let sort=document.getElementById('sortBox')?document.getElementById('sortBox').value:'new';
- if(sort==='old') filtered=filtered.slice().reverse();
- if(sort==='name') filtered=filtered.slice().sort((a,b)=>a.name.localeCompare(b.name));
- let totalPages=Math.max(1,Math.ceil(filtered.length/perPage)); if(currentPage>totalPages)currentPage=totalPages; let start=(currentPage-1)*perPage; let pageData=filtered.slice(start,start+perPage); document.getElementById('pageInfo').textContent='Page '+currentPage+' of '+totalPages+' - Total: '+filtered.length; let html='<table><tr><th>Name</th><th>Category</th><th>Email / Phone</th><th>Message</th><th>Date</th><th>Pastor Reply</th><th>Action</th></tr>'; if(pageData.length===0) html+='<tr><td colspan="7" style="text-align:center">No records yet. Submit a form to see it here.</td></tr>'; pageData.forEach(r=>{html+='<tr onclick="editRow('+r.id+')" style="cursor:pointer"><td>'+escapeHtml(r.name)+'</td><td>'+escapeHtml(r.sub||'')+'</td><td>'+escapeHtml(r.phone)+'</td><td>'+escapeHtml(r.msg)+'</td><td>'+r.date+'</td><td>'+escapeHtml(r.reply||'No reply yet')+'</td><td><button onclick="event.stopPropagation();editRow('+r.id+')">View</button></td></tr>'}); html+='</table><p style="font-size:12px;margin-top:8px">Tap any row to View, Edit, Delete, Restore, Delete Permanent.</p>'; document.getElementById('tableWrap').innerHTML=html;
-}
-function escapeHtml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;')}
-function editRow(id){let r=getData().find(x=>x.id===id); if(!r)return; editId=id; document.getElementById('editName').value=r.name; document.getElementById('editPhone').value=r.phone; document.getElementById('editMsg').value=r.msg; document.getElementById('editReply').value=r.reply||''; document.getElementById('rowModal').style.display='block';}
-function saveEntry(){let name=document.getElementById('editName').value; let phone=document.getElementById('editPhone').value; let msg=document.getElementById('editMsg').value; let reply=document.getElementById('editReply').value; if(!name){alert('Name required');return} let d=getData(); d=d.map(x=>x.id===editId?{...x,name,phone,msg,reply}:x); setData(d); closeModal('rowModal'); renderTable(); updateCounts(); alert('Saved. The person will see your Pastor Reply when they press Check For Pastor Reply.');}
-function trashCurrent(){if(!confirm('Move this record to Trash?'))return; let d=getData(); d=d.map(x=>x.id===editId?{...x,trash:true}:x); setData(d); closeModal('rowModal'); renderTable(); updateCounts();}
-function restoreCurrent(){let d=getData(); d=d.map(x=>x.id===editId?{...x,trash:false}:x); setData(d); closeModal('rowModal'); renderTable(); updateCounts(); alert('Restored.');}
-function deletePermanentCurrent(){if(!confirm('Delete this record PERMANENT forever? No restore.'))return; setData(getData().filter(x=>x.id!==editId)); closeModal('rowModal'); renderTable(); updateCounts();}
-function emptyTrash(){if(!confirm('Delete ALL trash forever?'))return; setData(getData().filter(x=>!x.trash)); renderTable(); updateCounts();}
-function exportExcel(){let all=getData(); let filtered = currentDetail==='trash'? all.filter(x=>x.trash) : all.filter(x=>matchDetail(x,currentDetail)); let csv='Type,Category,Name,Phone Email,Message,Date,Reply\n'+filtered.map(r=>'"'+r.type+'","'+(r.sub||'')+'","'+r.name.replace(/"/g,'')+'","'+r.phone.replace(/"/g,'')+'","'+r.msg.replace(/"/g,'')+'","'+r.date+'","'+(r.reply||'').replace(/"/g,'')+'"').join('\n'); let blob=new Blob([csv],{type:'text/csv'}); let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='FOHGM-'+currentDetail+'.csv'; a.click()}
-function exportPDF(){window.print()}
-window.addEventListener('hashchange',()=>{if(location.hash==='#admin'){openAdmin();}});
-if(location.hash==='#admin'){setTimeout(openAdmin,300);}
+updateCounts();
 </script>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-const firebaseConfig = {
-  apiKey: "AIzaSyD5pAy_ZgGQh9dRbBa0k7NxDUOppoQfBdw",
-  authDomain: "fohgm-c90bb.firebaseapp.com",
-  projectId: "fohgm-c90bb",
-  storageBucket: "fohgm-c90bb.firebasestorage.app",
-  messagingSenderId: "306120403166",
-  appId: "1:306120403166:web:f57469d9060c8065ebfa4f"
-};
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-window.firebaseSave = async function(collectionName, data){
-  try{
-    await addDoc(collection(db, collectionName), { ...data, status: "new", pastorReply: "", createdAt: serverTimestamp() });
-    console.log("Saved to Firebase:", collectionName);
-    return true;
-  }catch(e){ alert("Firebase Error: " + e.message); console.log(e); return false; }
+
+<script>
+function openAdminDetail(type){
+ CURTYPE=type;page=1;
+ document.getElementById("adminHome").style.display="none";
+ document.getElementById("adminDetail").style.display="block";
+ let titles={contact:"Contact",prayer:"Prayer",visit:"Plan a Visit",member:"Become Member",baptism:"Baptism",volunteer:"Volunteer",smallgroup:"Small Group",testimony:"Testimony",partners:"Partners",momo:"Mobile Money",giveonline:"Give Online",trash:"Trash - Deleted Items"};
+ document.getElementById("detailTitle").textContent=titles[type]||type;
+ document.getElementById("detailDesc").textContent="Showing "+(titles[type]||type)+" - Email and Phone are separate columns. Tick boxes to Bulk Delete / Email / WhatsApp.";
+ renderTable();
 }
+function backToAdminHome(){document.getElementById("adminHome").style.display="block";document.getElementById("adminDetail").style.display="none";updateCounts()}
+function getFiltered(){
+ let d=getData();
+ let q=(document.getElementById("searchBox")?.value||"").toLowerCase();
+ let s=document.getElementById("sortBox")?.value||"new";
+ let list=[];
+ if(CURTYPE==="trash"){list=d.filter(x=>x.deleted)}
+ else if(CURTYPE==="contact"){list=d.filter(x=>!x.deleted&&(x.form==="Contact Form"||x.type==="contact"))}
+ else if(CURTYPE==="prayer"){list=d.filter(x=>!x.deleted&&x.form==="Prayer Request")}
+ else if(CURTYPE==="visit"){list=d.filter(x=>!x.deleted&&x.form==="Plan Your Visit")}
+ else if(CURTYPE==="member"){list=d.filter(x=>!x.deleted&&x.form==="Become a Member")}
+ else if(CURTYPE==="baptism"){list=d.filter(x=>!x.deleted&&x.form==="Baptism")}
+ else if(CURTYPE==="volunteer"){list=d.filter(x=>!x.deleted&&x.form==="Volunteer")}
+ else if(CURTYPE==="smallgroup"){list=d.filter(x=>!x.deleted&&x.form==="Small Group Cell")}
+ else if(CURTYPE==="testimony"){list=d.filter(x=>!x.deleted&&x.form==="Testimony")}
+ else if(CURTYPE==="partners"){list=d.filter(x=>!x.deleted&&x.form==="Partnership")}
+ else if(CURTYPE==="momo"){list=d.filter(x=>!x.deleted&&x.form==="Mobile Money")}
+ else if(CURTYPE==="giveonline"){list=d.filter(x=>!x.deleted&&(x.form==="Give Online"||x.form==="Projects"))}
+ else{list=d.filter(x=>!x.deleted)}
+ if(q) list=list.filter(x=>((x.name||"")+" "+(x.email||"")+" "+(x.phone||"")+" "+(x.message||"")).toLowerCase().includes(q));
+ if(s==="new") list.sort((a,b)=>b.id-a.id);
+ if(s==="old") list.sort((a,b)=>a.id-b.id);
+ if(s==="name") list.sort((a,b)=>(a.name||"").localeCompare(b.name||""));
+ CUR=list; return list;
+}
+function renderTable(){
+ let list=getFiltered();
+ let totalPages=Math.max(1,Math.ceil(list.length/pageSize));
+ if(page>totalPages) page=totalPages;
+ let start=(page-1)*pageSize; let slice=list.slice(start,start+pageSize);
+ let html="<table><tr><th><input type='checkbox' onchange='selectAllRows(this.checked)'></th><th>Name</th><th>Email Address</th><th>Phone Number</th><th>Message / Details</th><th>Pastor Reply</th><th>Date</th><th>Action</th></tr>";
+ if(slice.length===0) html+="<tr><td colspan='8' style='text-align:center;padding:20px'>No records yet in this section.</td></tr>";
+ slice.forEach(x=>{
+  html+="<tr><td><input type='checkbox' class='rowCheck' data-id='"+x.id+"'></td><td><b>"+(x.name||"")+"</b></td><td>"+(x.email||"-")+"</td><td>"+(x.phone||"-")+"</td><td>"+(x.message||"").substring(0,80)+"</td><td>"+(x.reply||"").substring(0,60)+"</td><td>"+(x.date||"")+"</td><td><button onclick='openRow("+x.id+")'>View / Reply</button></td></tr>";
+ });
+ html+="</table>";
+ document.getElementById("tableWrap").innerHTML=html;
+ document.getElementById("pageInfo").textContent="Page "+page+" of "+totalPages+" - Total: "+list.length;
+ updateSelectedCount();
+}
+function changePage(dir){let list=getFiltered();let totalPages=Math.max(1,Math.ceil(list.length/pageSize));page+=dir;if(page<1)page=1;if(page>totalPages)page=totalPages;renderTable()}
+function selectAllRows(val){document.querySelectorAll(".rowCheck").forEach(c=>c.checked=val);updateSelectedCount()}
+function updateSelectedCount(){let n=document.querySelectorAll(".rowCheck:checked").length;let el=document.getElementById("selectedCount");if(el) el.textContent=n?("Selected: "+n):""}
+document.addEventListener("change",e=>{if(e.target.classList.contains("rowCheck")) updateSelectedCount()});
+function getSelectedIds(){return Array.from(document.querySelectorAll(".rowCheck:checked")).map(c=>parseInt(c.dataset.id))}
+function bulkDelete(){let ids=getSelectedIds();if(!ids.length){alert("Tick some boxes first");return}if(!confirm("Move "+ids.length+" to Trash?"))return;let d=getData();d.forEach(x=>{if(ids.includes(x.id)) x.deleted=true});saveData(d);renderTable();alert(ids.length+" moved to Trash.")}
+function bulkEmail(){let ids=getSelectedIds();if(!ids.length){alert("Tick some boxes first");return}let d=getData();let emails=d.filter(x=>ids.includes(x.id)&&x.email).map(x=>x.email).join(",");if(!emails){alert("No emails in selected");return}window.open("mailto:"+emails+"?subject=FOHGM - Message From Pastor Sam&body=God bless you, Pastor Sam and FOHGM family are praying for you.")}
+function bulkWhatsApp(){let ids=getSelectedIds();if(!ids.length){alert("Tick some boxes first");return}let d=getData();let first=d.find(x=>ids.includes(x.id)&&x.phone);if(!first){alert("No phone in selected");return}let phone=first.phone.replace(/\D/g,"");if(phone.startsWith("0")) phone="256"+phone.slice(1);window.open("https://wa.me/"+phone+"?text="+encodeURIComponent("God bless you! This is Pastor Sam from FOHGM Badege Layibi. We are praying for you."),"_blank")}
+function bulkAutoReply(){let ids=getSelectedIds();if(!ids.length){alert("Tick some boxes first");return}let d=getData();let count=0;d.forEach(x=>{if(ids.includes(x.id)){x.reply=getAutoReply(x.type||"contact");count++}});saveData(d);renderTable();alert("Auto Reply sent to "+count+" people. They will see it when they press Check For Pastor Reply.")}
+function exportExcel(){let list=getFiltered();if(!list.length){alert("No data to export");return}let csv="Name,Email,Phone,Form,Message,Pastor Reply,Date\n";list.forEach(x=>{csv+='"'+(x.name||"").replace(/"/g,"")+'","'+(x.email||"")+'","'+(x.phone||"")+'","'+(x.form||"")+'","'+(x.message||"").replace(/"/g,"").replace(/\n/g," ")+'","'+(x.reply||"").replace(/"/g,"")+'","'+(x.date||"")+'"\n'});let blob=new Blob([csv],{type:"text/csv"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="FOHGM_"+CURTYPE+".csv";a.click()}
+function exportPDF(){window.print()}
+function emptyTrash(){if(!confirm("Delete ALL trash forever? This cannot be undone."))return;let d=getData().filter(x=>!x.deleted);saveData(d);renderTable();alert("Trash emptied.")}
+function openRow(id){
+ let d=getData();let x=d.find(e=>e.id===id);if(!x) return;CURID=id;
+ document.getElementById("editName").value=x.name||"";
+ document.getElementById("editPhone").value=x.phone||"";
+ document.getElementById("editEmail").value=x.email||"";
+ document.getElementById("editMsg").value=x.message||"";
+ document.getElementById("editReply").value=x.reply||"";
+ document.getElementById("rowModal").style.display="block";
+}
+function saveEntry(){
+ let d=getData();let x=d.find(e=>e.id===CURID);if(!x) return;
+ x.name=document.getElementById("editName").value;
+ x.phone=document.getElementById("editPhone").value;
+ x.email=document.getElementById("editEmail").value;
+ x.message=document.getElementById("editMsg").value;
+ x.reply=document.getElementById("editReply").value;
+ saveData(d);renderTable();alert("Saved! Person will see your reply when they press Check For Pastor Reply.");closeModal("rowModal");
+}
+function trashCurrent(){let d=getData();let x=d.find(e=>e.id===CURID);if(x){x.deleted=true;saveData(d);renderTable();closeModal("rowModal");alert("Moved to Trash. You can restore it from Trash.")}}
+function restoreCurrent(){let d=getData();let x=d.find(e=>e.id===CURID);if(x){x.deleted=false;saveData(d);renderTable();closeModal("rowModal");alert("Restored!")}}
+function deletePermanentCurrent(){if(!confirm("Delete this forever? Cannot undo."))return;let d=getData().filter(e=>e.id!==CURID);saveData(d);renderTable();closeModal("rowModal");alert("Deleted forever.")}
+function sendWhatsAppCurrent(){
+ let phone=document.getElementById("editPhone").value.trim();if(!phone){alert("No phone number");return}
+ let p=phone.replace(/\D/g,"");if(p.startsWith("0")) p="256"+p.slice(1);
+ let msg=document.getElementById("editReply").value||"God bless you! Pastor Sam from FOHGM";
+ window.open("https://wa.me/"+p+"?text="+encodeURIComponent(msg),"_blank");
+}
+function sendEmailCurrent(){
+ let email=document.getElementById("editEmail").value.trim();if(!email){alert("No email");return}
+ let msg=document.getElementById("editReply").value||"God bless you! Pastor Sam from FOHGM";
+ window.open("mailto:"+email+"?subject=FOHGM - Reply From Pastor Sam&body="+encodeURIComponent(msg));
+}
+function sendSMSCurrent(){
+ let phone=document.getElementById("editPhone").value.trim();if(!phone){alert("No phone");return}
+ let msg=document.getElementById("editReply").value||"God bless you! Pastor Sam from FOHGM";
+ window.open("sms:"+phone+"?body="+encodeURIComponent(msg));
+}
+function sendAutoReplyCurrent(){
+ let d=getData();let x=d.find(e=>e.id===CURID);if(!x) return;
+ let auto=getAutoReply(x.type||"contact");
+ document.getElementById("editReply").value=auto;
+ x.reply=auto;saveData(d);renderTable();alert("Auto Reply set: "+auto);
+}
+// Auto check for new replies every 30 seconds for visitors
+setInterval(()=>{
+ let d=getData();
+ let last=d.slice(-1)[0];
+ if(last && last.reply && last.reply.length>20){
+  // only show if user has submitted before - stored in localStorage flag
+  if(localStorage.getItem("fohgm_submitted")==="1"){showNotif("Pastor Sam replied: "+last.reply)}
+ }
+},30000);
 </script>
 </body></html>
