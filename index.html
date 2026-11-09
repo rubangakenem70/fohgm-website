@@ -212,6 +212,16 @@ async function saveToFirebase(entry){
  }catch(e){console.log("Firebase save failed, using local only",e)}
  return false;
 }
+async function deleteFromFirebase(localId){
+ try{
+  if(!window._db) return;
+  let c = window._firestore.collection(window._db, getFirebaseCollection());
+  let q = window._firestore.query(c, window._firestore.where("id","==",localId));
+  let snap = await window._firestore.getDocs(q);
+  for(let doc of snap.docs){ await window._firestore.deleteDoc(doc.ref); }
+  console.log("Deleted from Firebase:", localId, snap.size);
+ }catch(e){ console.log("Firebase delete failed", e); }
+}
 async function loadFromFirebase(){
   try{
     if(!window._db) { console.log("DB not ready yet"); return; }
@@ -371,7 +381,7 @@ function renderTable(){
  updateSelectedCount();
 }
 function changePage(dir){let list=getFiltered();let totalPages=Math.max(1,Math.ceil(list.length/pageSize));page+=dir;if(page<1)page=1;if(page>totalPages)page=totalPages;renderTable()}
-function selectAllRows(val){document.querySelectorAll(".rowCheck").forEach(c=>c.checked=val);updateSelectedCount()}
+function emptyTrash(){if(!confirm("Delete ALL trash forever? This cannot be undone."))return;let trashed=getData().filter(x=>x.deleted);trashed.forEach(x=>deleteFromFirebase(x.id));let d=getData().filter(x=>!x.deleted);saveData(d);renderTable();alert("Trash emptied.")}
 function updateSelectedCount(){let n=document.querySelectorAll(".rowCheck:checked").length;let el=document.getElementById("selectedCount");if(el) el.textContent=n?("Selected: "+n):""}
 document.addEventListener("change",e=>{if(e.target.classList.contains("rowCheck")) updateSelectedCount()});
 function getSelectedIds(){return Array.from(document.querySelectorAll(".rowCheck:checked")).map(c=>parseInt(c.dataset.id))}
@@ -392,7 +402,7 @@ function openRow(id){
  document.getElementById("rowModal").style.display="block";
 }
 function saveEntry(){
- let d=getData();let x=d.find(e=>e.id===CURID);if(!x) return;
+    function deletePermanentCurrent(){if(!confirm("Delete this forever? Cannot undo."))return;let d=getData().filter(e=>e.id!==CURID);saveData(d);deleteFromFirebase(CURID);renderTable();closeModal("rowModal");alert("Deleted forever.")}
  x.name=document.getElementById("editName").value;
  x.phone=document.getElementById("editPhone").value;
  x.email=document.getElementById("editEmail").value;
