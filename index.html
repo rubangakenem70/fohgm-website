@@ -212,6 +212,22 @@ async function saveToFirebase(entry){
  }catch(e){console.log("Firebase save failed, using local only",e)}
  return false;
 }
+async function loadFromFirebase(){
+  try{
+    if(!window._db) { console.log("DB not ready yet"); return; }
+    let c = window._firestore.collection(window._db, getFirebaseCollection());
+    let snap = await window._firestore.getDocs(c);
+    let d = getData();
+    let added = 0;
+    snap.forEach(doc=>{
+      let fb = doc.data();
+      if(!d.find(x=>x.id===fb.id)){ d.push(fb); added++; }
+    });
+    if(added>0) saveData(d);
+    updateCounts(); renderTable();
+    console.log("Loaded from Firebase:", snap.size, "Added:", added);
+  }catch(e){ console.log("Load from Firebase failed", e); }
+}
 function submitMainContact(e){
  e.preventDefault();
  let entry={id:Date.now(),type:"contact",form:"Contact Form",name:document.getElementById("mainFirst").value+" "+document.getElementById("mainLast").value,email:document.getElementById("mainEmail").value,phone:document.getElementById("mainPhone").value,message:document.getElementById("mainSubject").value+" - "+document.getElementById("mainMsg").value,reply:getAutoReply("contact"),date:new Date().toLocaleString(),status:"new"};
@@ -260,7 +276,7 @@ function openAdmin(){document.getElementById("loginModal").style.display="block"
 function doLogin(){
  let u=document.getElementById("loginUser").value.trim().toLowerCase();
  let p=document.getElementById("loginPass").value.trim();
- if(u==="sam"&&p==="FOHGM2026"){closeModal("loginModal");document.getElementById("adminModal").style.display="block";updateCounts();renderTable();document.getElementById("adminHome").style.display="block";document.getElementById("adminDetail").style.display="none";}
+ if(u==="sam"&&p==="FOHGM2026"){closeModal("loginModal");document.getElementById("adminModal").style.display="block";loadFromFirebase();updateCounts();renderTable();
  else{document.getElementById("loginMsg").textContent="Wrong username or password. Try sam / FOHGM2026"}
 }
 function logout(){closeModal("adminModal");document.getElementById("loginModal").style.display="block"}
