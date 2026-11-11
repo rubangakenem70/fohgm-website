@@ -11,15 +11,18 @@
 .hero-pastor { animation: slowFadeIn 4s ease-in-out forwards; }
 .hero-pastor img { animation: slowZoom 12s ease-in-out infinite alternate; }
 .hero-text { animation: slowFadeIn 5s ease-in-out forwards; }
-/* PHONE - 3 LINES MENU */
+/* PHONE - 3 LINES MENU - LINKS INVISIBLE UNTIL TAP */
 .hamburger { display:none; font-size:28px; background:none; border:none; color:#fff; cursor:pointer; padding:5px 10px; }
+#mainNav { display:flex; }
 @media (max-width: 850px) {
-  .hamburger { display:block; }
+  .hamburger { display:block !important; }
   #mainNav { display:none !important; position:absolute; top:70px; left:0; right:0; background:#0a1a3a; flex-direction:column; padding:15px; z-index:999; }
   #mainNav.open { display:flex !important; }
   #mainNav .nav-item { width:100%; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.1); }
   #mainNav .dropdown { position:static; display:none; box-shadow:none; background:#132a55; }
   #mainNav .nav-item:hover .dropdown { display:block; }
+  .hero-pastor { height:430px !important; }
+  .hero-text h1 { font-size:22px !important; }
 }
 </style>
 
@@ -87,7 +90,7 @@
 </div>
 <section id="about-vision"><h2>Vision And Values</h2><p style="text-align:center;max-width:750px;margin:14px auto;font-size:18px">We are a cell-based community church in Badege Layibi, Gulu, celebrating Christ, growing and multiplying as each one reaches one; touching those around us with the love of Jesus, bringing healing to the cities and the nations.</p><p style="text-align:center"><b>Values:</b> Grace, Prayer, Word, Family, Outreach, Integrity</p></section>
 <div style="display:flex;gap:20px;align-items:flex-start;background:#fffaf0;border:1px solid #f0e8d0;border-radius:16px;padding:20px;flex-wrap:wrap">
-<img src="pastor.jpeg" alt="Pastor Sam Otema" style="width:360px;height:500px;object-fit:cover;object-position:top;border-radius:16px;border:4px solid #d4af00;box-shadow:0 8px 20px rgba(0,0,0,.2)">
+<img src="pastor.jpeg" alt="Pastor Sam Otema" style="width:360px;max-width:100%;height:520px;object-fit:cover;object-position:top;border-radius:16px;border:4px solid #d4af00;box-shadow:0 8px 20px rgba(0,0,0,.2)">
 <div style="flex:1;min-width:260px">
 <h3 style="font-size:24px;margin:0">Pastor Sam Otema</h3>
 <p style="color:#1a7a2e;font-weight:900;margin:6px 0">Founder and Senior Pastor - Oracle of God | I Am a Covenant Practitioner</p>
@@ -104,7 +107,7 @@
 <p style="text-align:center;color:#666">What God Has Done Through Prayer at FOHGM</p>
 
 <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-top:15px">
-<img src="testimony.jpeg" alt="Miracle Baby Girl - Aber Alice Testimony" style="width:300px;height:380px;object-fit:cover;border-radius:16px;border:4px solid #d4af00;box-shadow:0 8px 20px rgba(0,0,0,.2)">
+<img src="testimony.jpeg" alt="Miracle Baby Girl - Aber Alice Testimony" style="width:300px;max-width:100%;height:400px;object-fit:cover;border-radius:16px;border:4px solid #d4af00;box-shadow:0 8px 20px rgba(0,0,0,.2)">
 <div style="flex:1;min-width:260px">
 <h3 style="color:#b8860b;margin:0">1. After 6 Years Barren - Baby Girl Born!</h3>
 <p><b>A Woman Named Aber Alice</b> was barren for <b>6 years</b>. She came to FOHGM, Pastor Sam prayed for her, and God answered! She gave birth to a <b>bouncing Baby Girl</b> - this beautiful baby in the photo!</p>
