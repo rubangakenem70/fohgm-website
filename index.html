@@ -441,5 +441,24 @@ function prayAgain(){
  saveData(d);updateInFirebase(x);alert("🙏 Prayed AGAIN for "+x.name+" on "+today);openRow(CURID);renderTable();
 }
 function markDone(){let d=getData();let x=d.find(e=>e.id===CURID);if(!x)return;x.status="Done";x.prayerStatus="Done";saveData(d);updateInFirebase(x);alert("Marked Done for "+x.name);openRow(CURID);renderTable();}
+</script><script>
+document.querySelectorAll('#mainNav a').forEach(function(link){
+  link.addEventListener('click', function(){
+    document.getElementById('mainNav').classList.remove('open');
+    var target = link.getAttribute('href');
+    var pastor = document.querySelector('.hero-pastor');
+    if(pastor){
+      if(target === '#home'){
+        pastor.style.display = 'block';
+        pastor.style.animation = 'none';
+        void pastor.offsetWidth;
+        pastor.style.animation = 'slowFadeIn 4s ease-in-out forwards';
+        window.scrollTo({top:0, behavior:'smooth'});
+      } else {
+        pastor.style.display = 'none';
+      }
+    }
+  });
+});
 </script>
 </body></html>
