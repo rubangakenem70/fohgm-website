@@ -158,7 +158,7 @@
 <div style="text-align:center;margin-bottom:14px">
 <label style="font-weight:900">Quick Open Table: </label>
 <select id="adminDropdown" onchange="if(this.value) openAdminDetail(this.value)" style="padding:10px 14px;border-radius:8px;font-weight:800;max-width:260px">
-<option value=""> Choose ...</option>
+<option value=""> Choose ... -</option>
 <option value="contact">Contact</option>
 <option value="prayer">Prayer</option>
 <option value="visit">Plan a Visit</option>
@@ -464,44 +464,65 @@ document.querySelectorAll('#mainNav a').forEach(function(link){
 });
 </script>
 <script>
-// FIX: Stay in Admin after refresh + Solid design
-document.getElementById("adminModal").style.background="#0a1633";
-var _oldClose = closeModal;
-closeModal = function(id){
-  document.getElementById(id).style.display="none";
-  document.body.style.overflow="auto";
-};
-doLogin = function(){
-  var u=document.getElementById("loginUser").value.trim().toLowerCase();
-  var p=document.getElementById("loginPass").value.trim();
-  if(u==="sam" && p==="FOHGM2026"){
-    sessionStorage.setItem("fohgm_admin","1");
-    location.hash="#admin";
-    document.getElementById("loginModal").style.display="none";
-    document.getElementById("adminModal").style.display="block";
-    loadFromFirebase(); updateCounts(); renderTable();
-  } else {
-    document.getElementById("loginMsg").textContent="Wrong username or password.";
-  }
-};
-logout = function(){
-  sessionStorage.removeItem("fohgm_admin");
-  document.getElementById("adminModal").style.display="none";
-  document.getElementById("loginModal").style.display="block";
-};
-checkAdminHash = function(){
-  if(location.hash==="#admin"){
-    if(sessionStorage.getItem("fohgm_admin")==="1"){
+// FIX 2: Stay in Admin + White Table
+(function(){
+  // 1. Force admin white
+  var m = document.getElementById("adminModal");
+  if(m){ m.style.background="#0a1633"; }
+  
+  // 2. Remember which table you were in
+  var _oldDetail = openAdminDetail;
+  openAdminDetail = function(type){
+    try{ sessionStorage.setItem("fohgm_last_table", type); }catch(e){}
+    _oldDetail(type);
+  };
+  
+  // 3. New login - save session
+  doLogin = function(){
+    var u=document.getElementById("loginUser").value.trim().toLowerCase();
+    var p=document.getElementById("loginPass").value.trim();
+    if(u==="sam" && p==="FOHGM2026"){
+      sessionStorage.setItem("fohgm_admin","1");
+      location.hash="#admin";
+      document.getElementById("loginModal").style.display="none";
       document.getElementById("adminModal").style.display="block";
       loadFromFirebase(); updateCounts(); renderTable();
     } else {
-      document.getElementById("loginModal").style.display="block";
+      document.getElementById("loginMsg").textContent="Wrong username or password.";
     }
+  };
+  
+  // 4. New close - DO NOT delete #admin
+  closeModal = function(id){
+    document.getElementById(id).style.display="none";
+    document.body.style.overflow="auto";
+  };
+  
+  logout = function(){
+    sessionStorage.removeItem("fohgm_admin");
+    sessionStorage.removeItem("fohgm_last_table");
+    document.getElementById("adminModal").style.display="none";
+    document.getElementById("loginModal").style.display="block";
+  };
+  
+  // 5. On REFRESH - skip login, go straight to Admin + last table
+  if(location.hash==="#admin" && sessionStorage.getItem("fohgm_admin")==="1"){
+    setTimeout(function(){
+      document.getElementById("loginModal").style.display="none";
+      document.getElementById("adminModal").style.display="block";
+      loadFromFirebase(); updateCounts();
+      var last = sessionStorage.getItem("fohgm_last_table") || "prayer";
+      openAdminDetail(last);
+    }, 300);
   }
-};
+})();
 </script>
 <style>
 #adminModal{background:#0a1633 !important}
-#adminModal .modal-box{background:#fff !important;opacity:1 !important;max-width:1200px !important;width:96% !important}
+#adminModal .modal-box{background:#fff !important;opacity:1 !important;max-width:1200px !important;width:96% !important;color:#111 !important}
+#adminDetail, #tableWrap, #tableWrap table{background:#fff !important;color:#111 !important}
+#tableWrap tr, #tableWrap td, #tableWrap th{background:#fff !important;color:#111 !important}
+#tableWrap tr:nth-child(even) td{background:#f2f2f2 !important}
+#tableWrap td{color:#111 !important}
 </style>
 </body></html>
