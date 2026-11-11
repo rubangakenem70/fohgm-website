@@ -90,34 +90,32 @@
 <div class="modal form-modal" id="form-gm"><div class="modal-box"><h2>Give - Mobile Money</h2><p>MTN MoMo: <b style="font-size:20px;color:#1a7a2e">0771755800 - Pastor Sam Otema - FOHGM</b><br>Airtel: <b>0771755800</b></p><label>Your Name *</label><input id="gmName" placeholder="Enter your Name"><label>Your Email Address *</label><input id="gmEmail" type="email" placeholder="Enter your Email Address"><label>Amount UGX</label><input id="gmAmount" placeholder="Enter Amount UGX"><label>Transaction ID or Note</label><input id="gmMsg" placeholder="Enter Transaction ID or Note"><button class="btn" onclick="submitForm('give','Mobile Money','gmName','gmAmount','gmMsg','gmDone','gmEmail')">Record Mobile Money Giving</button><p id="gmDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-gm')">Close</button></div></div>
 <div class="modal form-modal" id="form-gp"><div class="modal-box"><h2>Give - Partnership</h2><label>Your Name *</label><input id="gpName" placeholder="Enter your Name"><label>Your Email Address *</label><input id="gpEmail" type="email" placeholder="Enter your Email Address"><label>Phone Number</label><input id="gpPhone" placeholder="Enter your Phone Number"><label>Choose Partnership</label><select id="gpMsg"><option>Monthly Partner - 50000 UGX</option><option>Monthly Partner - 100000 UGX</option><option>Monthly Partner - Other Amount</option></select><button class="btn" onclick="submitForm('give','Partnership','gpName','gpPhone','gpMsg','gpDone','gpEmail')">Become a Partner</button><p id="gpDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-gp')">Close</button></div></div>
 <div class="modal form-modal" id="form-gpr"><div class="modal-box"><h2>Give - Projects</h2><label>Your Name *</label><input id="gprName" placeholder="Enter your Name"><label>Your Email Address *</label><input id="gprEmail" type="email" placeholder="Enter your Email Address"><label>Amount UGX</label><input id="gprAmount" placeholder="Enter Amount UGX"><label>Choose Project</label><select id="gprMsg"><option>Church Land</option><option>Church Building</option><option>Kids Ministry</option><option>Outreach</option></select><button class="btn" onclick="submitForm('give','Projects','gprName','gprAmount','gprMsg','gprDone','gprEmail')">Give to Project</button><p id="gprDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-gpr')">Close</button></div></div>
-<div class="modal" id="loginModal"><div class="modal-box" style="max-width:380px;text-align:center;border-top:6px solid #d4af00;padding:30px 24px"><div style="width:70px;height:70px;background:#0a1633;color:#d4af00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;margin:0 auto 12px">S</div><h2 style="margin:0">Pastor Login</h2><p style="font-size:12px;color:#666;margin:6px 0 16px">FOHGM - Fountain of Higher Grace<br>Only Pastor Sam - Badege Layibi, Gulu</p><label style="text-align:left">Username</label><input id="loginUser" placeholder="Username" autocomplete="off"><label style="text-align:left">Password</label><div style="display:flex;gap:6px"><input id="loginPass" type="password" placeholder="Password" autocomplete="off" style="flex:1"><button type="button" onclick="togglePass()" style="padding:10px 12px;border-radius:5px;border:1px solid #ddd;background:#eee;cursor:pointer;font-size:16px" id="eyeBtn">👁️</button></div><button class="btn" style="width:100%;padding:13px;border-radius:30px;margin-top:14px" onclick="doLogin()">Login as Pastor Sam →</button><p id="loginMsg" style="color:red;text-align:center;margin-top:10px"></p><button class="btn" style="background:#eee;color:#111;width:100%;border-radius:30px" onclick="closeModal('loginModal')">Back To Website</button></div></div>
+<div class="modal" id="loginModal"><div class="modal-box" style="max-width:380px;text-align:center;border-top:6px solid #d4af00;padding:30px 24px"><div style="width:70px;height:70px;background:#0a1633;color:#d4af00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;margin:0 auto 12px">S</div><h2 style="margin:0">Pastor Login</h2><p style="font-size:12px;color:#666;margin:6px 0 16px">FOHGM - Fountain of Higher Grace<br>Only Pastor Sam - Badege Layibi, Gulu</p><label style="text-align:left">Username</label><input id="loginUser" placeholder="Username" autocomplete="off"><label style="text-align:left">Password</label><div style="display:flex;gap:6px"><input id="loginPass" type="password" placeholder="Password" autocomplete="off" style="flex:1"><button type="button" onclick="togglePass()" style="padding:10px 12px;border-radius:5px;border:1px solid #ddd;background:#eee;cursor:pointer;font-size:16px" id="eyeBtn">👁️</button></div><button class="btn" style="width:100%;padding:13px;border-radius:30px;margin-top:14px" onclick="doLogin()">Login as Pastor Sam </button><p id="loginMsg" style="color:red;text-align:center;margin-top:10px"></p><button class="btn" style="background:#eee;color:#111;width:100%;border-radius:30px" onclick="closeModal('loginModal')">Back To Website</button></div></div>
 
 <div class="modal" id="adminModal"><div class="modal-box">
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap"><h2>FOHGM Admin Dashboard</h2><button class="btn" style="background:#c00" onclick="logout()">Logout Admin</button></div>
-<p style="font-size:12px;color:#666">All Forms - Tap Card To Open - Number = People Who FILLED - Email & Phone Now Separate Columns</p>
 <div id="adminHome">
 <div class="admin-grid">
-<div class="admin-small" onclick="openAdminDetail('contact')"><b>Contact</b><div class="num" id="count-contact">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
-<div class="admin-small" onclick="openAdminDetail('prayer')"><b>Prayer</b><div class="num" id="count-prayer">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
-<div class="admin-small" onclick="openAdminDetail('visit')"><b>Plan a Visit</b><div class="num" id="count-visit">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
-<div class="admin-small" onclick="openAdminDetail('member')"><b>Become Member</b><div class="num" id="count-member">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
-<div class="admin-small" onclick="openAdminDetail('baptism')"><b>Baptism</b><div class="num" id="count-baptism">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
-<div class="admin-small" onclick="openAdminDetail('volunteer')"><b>Volunteer</b><div class="num" id="count-volunteer">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
-<div class="admin-small" onclick="openAdminDetail('smallgroup')"><b>Small Group</b><div class="num" id="count-smallgroup">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
-<div class="admin-small" onclick="openAdminDetail('testimony')"><b>Testimony</b><div class="num" id="count-testimony">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
-<div class="admin-small" onclick="openAdminDetail('partners')"><b>Partners</b><div class="num" id="count-partners">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
-<div class="admin-small" onclick="openAdminDetail('momo')"><b>Mobile Money</b><div class="num" id="count-momo">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
-<div class="admin-small" onclick="openAdminDetail('giveonline')"><b>Give Online</b><div class="num" id="count-giveonline">0</div><span>People Filled</span><br><span class="tap">Tap To Open →</span></div>
-<div class="admin-small" onclick="openAdminDetail('trash')" style="border-color:#c00"><b>Trash</b><div class="num" id="count-trash" style="color:#c00">0</div><span>Deleted - Restore Here</span><br><span class="tap" style="background:#c00">Open Trash →</span></div>
+<div class="admin-small" onclick="openAdminDetail('contact')"><b>Contact</b><div class="num" id="count-contact">0</div><span>People Filled</span><br><span class="tap">Tap To Open </span></div>
+<div class="admin-small" onclick="openAdminDetail('prayer')"><b>Prayer</b><div class="num" id="count-prayer">0</div><span>People Filled</span><br><span class="tap">Tap To Open </span></div>
+<div class="admin-small" onclick="openAdminDetail('visit')"><b>Plan a Visit</b><div class="num" id="count-visit">0</div><span>People Filled</span><br><span class="tap">Tap To Open </span></div>
+<div class="admin-small" onclick="openAdminDetail('member')"><b>Become Member</b><div class="num" id="count-member">0</div><span>People Filled</span><br><span class="tap">Tap To Open </span></div>
+<div class="admin-small" onclick="openAdminDetail('baptism')"><b>Baptism</b><div class="num" id="count-baptism">0</div><span>People Filled</span><br><span class="tap">Tap To Open </span></div>
+<div class="admin-small" onclick="openAdminDetail('volunteer')"><b>Volunteer</b><div class="num" id="count-volunteer">0</div><span>People Filled</span><br><span class="tap">Tap To Open </span></div>
+<div class="admin-small" onclick="openAdminDetail('smallgroup')"><b>Small Group</b><div class="num" id="count-smallgroup">0</div><span>People Filled</span><br><span class="tap">Tap To Open </span></div>
+<div class="admin-small" onclick="openAdminDetail('testimony')"><b>Testimony</b><div class="num" id="count-testimony">0</div><span>People Filled</span><br><span class="tap">Tap To Open </span></div>
+<div class="admin-small" onclick="openAdminDetail('partners')"><b>Partners</b><div class="num" id="count-partners">0</div><span>People Filled</span><br><span class="tap">Tap To Open </span></div>
+<div class="admin-small" onclick="openAdminDetail('momo')"><b>Mobile Money</b><div class="num" id="count-momo">0</div><span>People Filled</span><br><span class="tap">Tap To Open </span></div>
+<div class="admin-small" onclick="openAdminDetail('giveonline')"><b>Give Online</b><div class="num" id="count-giveonline">0</div><span>People Filled</span><br><span class="tap">Tap To Open </span></div>
+<div class="admin-small" onclick="openAdminDetail('trash')" style="border-color:#c00"><b>Trash</b><div class="num" id="count-trash" style="color:#c00">0</div><span>Deleted - Restore Here</span><br><span class="tap" style="background:#c00">Open Trash </span></div>
 </div>
-<p style="font-size:11px;color:#888;text-align:center">Tip: Tap any card to open its own page with full table.</p>
 </div>
 <div id="adminDetail" style="display:none">
-<button class="btn" style="background:#0a1633" onclick="backToAdminHome()">← Back To Admin Cards</button>
+<button class="btn" style="background:#0a1633" onclick="backToAdminHome()"> Back To Admin Cards</button>
 <h3 id="detailTitle" style="margin:12px 0 4px">Detail</h3>
 <p id="detailDesc" style="font-size:12px;color:#666"></p>
 <div class="tool"><input id="searchBox" placeholder="Search name, phone, email, message..." style="flex:1;margin:0" oninput="renderTable()"><select id="sortBox" onchange="renderTable()" style="max-width:160px;margin:0"><option value="new">Sort: Newest First</option><option value="old">Sort: Oldest First</option><option value="name">Sort: Name A-Z</option></select><button class="primary" onclick="renderTable()">Refresh</button><button onclick="exportExcel()">Export Excel CSV</button><button onclick="exportPDF()">Export PDF / Print</button><button onclick="emptyTrash()" style="background:#c00;color:#fff">Empty Trash Forever</button></div>
-<div class="tool" style="background:#f8f5e6;padding:10px;border-radius:8px"><b style="font-size:12px">BULK - Select Many:</b><button onclick="selectAllRows(true)">Select All</button><button onclick="selectAllRows(false)">Unselect All</button><button onclick="bulkDelete()" style="background:#c00;color:#fff">Delete Selected</button><button onclick="bulkEmail()" style="background:#0a1633;color:#fff">Bulk Email Selected</button><button onclick="bulkWhatsApp()" style="background:#25D366;color:#fff">Bulk WhatsApp Selected</button><button onclick="bulkAutoReply()" style="background:#d4af00;color:#111">Send Auto Reply To Selected</button><span id="selectedCount" style="font-size:12px;font-weight:800"></span></div>
+<div class="tool" style="background:#f8f5e6;padding:10px;border-radius:8px"><b style="font-size:12px"> </b><button onclick="selectAllRows(true)">Select All</button><button onclick="selectAllRows(false)">Unselect All</button><button onclick="bulkDelete()" style="background:#c00;color:#fff">Delete</button><button onclick="bulkEmail()" style="background:#0a1633;color:#fff">Bulk Email</button><button onclick="bulkWhatsApp()" style="background:#25D366;color:#fff">Bulk WhatsApp</button><button onclick="bulkAutoReply()" style="background:#d4af00;color:#111">Send Auto Reply To</button><span id="selectedCount" style="font-size:12px;font-weight:800"></span></div>
 <div id="tableWrap" style="overflow-x:auto"></div>
 <div style="display:flex;justify-content:space-between;margin-top:12px;align-items:center"><button onclick="changePage(-1)">Prev</button><span id="pageInfo"></span><button onclick="changePage(1)">Next</button></div>
 </div>
@@ -138,10 +136,10 @@ function getFirebaseCollection(){return "fohgm_forms";}
 function getData(){try{return JSON.parse(localStorage.getItem("fohgm_data")||"[]")}catch(e){return[]}}
 function saveData(d){localStorage.setItem("fohgm_data",JSON.stringify(d));updateCounts()}
 function getAutoReply(form){
- if(form==="prayer") return "Praise God! Pastor Sam received your prayer request. We are praying for you right now. Do not give up. God hears you. Pastor Sam will reply to you personally soon. Stay in faith. - FOHGM Badege Layibi";
+ if(form==="prayer") return "Praise God! Pastor Sam received your prayer request. We are praying for you right now. Do not give up. God hears you. FOHGM Badege Layibi";
  if(form==="contact"||form==="main") return "Thank you for contacting FOHGM! Pastor Sam received your message. We will reply with love and prayer as soon as possible. God bless you. - FOHGM Badege Layibi";
- if(form==="testimony") return "Hallelujah! Thank you for sharing your testimony. Your story will encourage many in Gulu and beyond. Pastor Sam will read it and may share it to bless others. God bless you! - FOHGM";
- if(form==="join") return "Welcome to the FOHGM family! Thank you for wanting to join us. Pastor Sam received your form. We will welcome you and walk with you. Come Sunday 9:00 AM Badege Layibi. - FOHGM";
+ if(form==="testimony") return "Hallelujah! Thank you for sharing your testimony. Your story will encourage many in Gulu and beyond. God bless you! - FOHGM";
+ if(form==="join") return "Welcome to the FOHGM family! Thank you for wanting to join us. FOHGM";
  if(form==="give") return "Thank you for giving with love! God loves a cheerful giver. Your gift is recorded and prayed over. May God bless you abundantly. - FOHGM Pastor Sam";
  return "Thank you! Pastor Sam received your message. We will reply with prayer and love soon. - FOHGM Badege Layibi, Gulu";
 }
@@ -195,9 +193,9 @@ function submitMainContact(e){
  e.preventDefault();
  let entry={id:Date.now(),type:"contact",form:"Contact Form",name:document.getElementById("mainFirst").value+" "+document.getElementById("mainLast").value,email:document.getElementById("mainEmail").value,phone:document.getElementById("mainPhone").value,message:document.getElementById("mainSubject").value+" - "+document.getElementById("mainMsg").value,reply:getAutoReply("contact"),date:new Date().toLocaleString(),status:"new"};
  let d=getData();d.push(entry);saveData(d);saveToFirebase(entry);
- document.getElementById("mainDone").textContent="✅ Sent! Pastor Sam received it. Auto Reply: "+getAutoReply("contact");
- document.getElementById("mainReply").textContent="Auto Reply: "+getAutoReply("contact");
- showNotif("Pastor Sam received your message. Auto Reply: "+getAutoReply("contact")); return false;
+ document.getElementById("mainDone").textContent=" Sent! Pastor Sam received it.  "+getAutoReply("contact");
+ document.getElementById("mainReply").textContent=" "+getAutoReply("contact");
+ showNotif("Pastor Sam received your message.  "+getAutoReply("contact")); return false;
 }
 function submitForm(type,title,nameId,phoneId,msgId,doneId,emailId){
  let name=document.getElementById(nameId).value.trim();
@@ -213,14 +211,14 @@ function submitForm(type,title,nameId,phoneId,msgId,doneId,emailId){
  if(title==="Plan Your Visit"||title==="Become a Member"||title==="Baptism"||title==="Volunteer"||title==="Small Group Cell") formKey="join";
  let entry={id:Date.now(),type:type,form:title,name:name,email:email,phone:phone,message:msg,reply:getAutoReply(formKey),date:new Date().toLocaleString(),status:"new"};
  let d=getData();d.push(entry);saveData(d);saveToFirebase(entry);
- let done=document.getElementById(doneId); if(done) done.textContent="✅ Sent! Pastor Sam received it. Auto Reply: "+getAutoReply(formKey);
+ let done=document.getElementById(doneId); if(done) done.textContent=" Sent! Pastor Sam received it.  "+getAutoReply(formKey);
  showNotif("Thank you "+name+"! "+getAutoReply(formKey)); if(msgEl) msgEl.value="";
 }
 function checkReply(type,elId){
  let d=getData(); let el=document.getElementById(elId);
  let found=d.filter(x=>x.type===type||(type==="contact"&&x.type==="contact")||(type==="prayer"&&x.type==="prayer")).slice(-1)[0];
  if(found && found.reply){el.textContent="Pastor Reply: "+found.reply;showNotif(found.reply);}
- else if(found){el.textContent="Pastor has received it. No personal reply yet. Auto Reply: "+getAutoReply(type);}
+ else if(found){el.textContent="Pastor has received it. No personal reply yet.  "+getAutoReply(type);}
  else{el.textContent="No reply yet. Send a form first, then check here again."}
 }
 function showNotif(text){ let n=document.getElementById("notif");let t=document.getElementById("notifText"); if(n&&t){t.textContent=text;n.style.display="block";setTimeout(()=>{n.style.display="none"},8000)} }
@@ -298,9 +296,9 @@ function selectAllRows(v){document.querySelectorAll(".rowCheck").forEach(c=>c.ch
 function getSelectedIds(){return Array.from(document.querySelectorAll(".rowCheck:checked")).map(c=>Number(c.dataset.id))}
 // --- FIXED: Bulk Delete now deletes from Firebase too ---
 async function bulkDelete(){let ids=getSelectedIds();if(!ids.length){alert("Tick some rows first");return}if(!confirm("Delete "+ids.length+" from phone AND Firebase?"))return; for(let id of ids){ await deleteFromFirebase(id); } let d=getData().filter(x=>!ids.includes(x.id)); saveData(d); renderTable(); alert("Deleted from Firebase too. Will NOT come back.");}
-function bulkEmail(){let ids=getSelectedIds();let d=getData().filter(x=>ids.includes(x.id)&&x.email);if(!d.length){alert("No email for selected");return}window.open("mailto:"+d.map(x=>x.email).join(","))}
-function bulkWhatsApp(){let ids=getSelectedIds();let d=getData().filter(x=>ids.includes(x.id)&&x.phone);if(!d.length){alert("No phone for selected");return}d.forEach(x=>{window.open("https://wa.me/256"+String(x.phone).replace(/^0/,"").replace(/[^0-9]/g,""))})}
-function bulkAutoReply(){let ids=getSelectedIds();let d=getData();d.forEach(x=>{if(ids.includes(x.id)) x.reply=getAutoReply(x.type||"contact")});saveData(d);alert("Auto reply sent to selected");renderTable()}
+function bulkEmail(){let ids=getSelectedIds();let d=getData().filter(x=>ids.includes(x.id)&&x.email);if(!d.length){alert("No email for");return}window.open("mailto:"+d.map(x=>x.email).join(","))}
+function bulkWhatsApp(){let ids=getSelectedIds();let d=getData().filter(x=>ids.includes(x.id)&&x.phone);if(!d.length){alert("No phone for");return}d.forEach(x=>{window.open("https://wa.me/256"+String(x.phone).replace(/^0/,"").replace(/[^0-9]/g,""))})}
+function bulkAutoReply(){let ids=getSelectedIds();let d=getData();d.forEach(x=>{if(ids.includes(x.id)) x.reply=getAutoReply(x.type||"contact")});saveData(d);alert("Auto reply sent to");renderTable()}
 function exportExcel(){let list=getFiltered();let csv="Name,Phone,Email,Message,Date\n"+list.map(x=>'"'+(x.name||"").replace(/"/g,"")+'","'+(x.phone||"")+'","'+(x.email||"")+'","'+(x.message||"").replace(/"/g,"").replace(/\n/g," ")+'","'+(x.date||"")+'"').join("\n");let a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));a.download=CURTYPE+".csv";a.click()}
 function exportPDF(){window.print()}
 // --- FIXED: Empty Trash now deletes from Firebase too ---
