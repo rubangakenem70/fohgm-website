@@ -393,7 +393,7 @@ function renderTable(){
   let hist=(x.prayerHistory||[]).join("<br>");
 let histCount=(x.prayerHistory||[]).length;
 let histLabel = x.prayerHistory?.length ? "Prayed ("+histCount+") - Tap for options" : "- Not Prayed Yet - Tap";
-let histDropdown='<select onchange="changePrayerHistory('+x.id+',this.value)" style="padding:6px;border-radius:6px;font-weight:800;font-size:11px;max-width:190px;background:#fff3cd;border:1px solid #d4af00;cursor:pointer">';
+let histDropdown='<select onchange="changePrayerHistory('+x.id+',this.value)" style="padding:6px;border-radius:6px;font-weight:800;font-size:11px;max-width:190px;background:#fff3cd;border:1px solid #d4af00;cursor:pointer">' +
 
 +'<option value="">▼ '+histLabel+'</option>'
 +'<option value="prayed"> Mark Prayed For Today</option>'
@@ -502,7 +502,7 @@ document.querySelectorAll('#mainNav a').forEach(function(link){
   // 2. Remember which table you were in
   var _oldDetail = openAdminDetail;
   openAdminDetail = function(type){
-    try{ sessionStorage.setItem("fohgm_last_table", type); }catch(e){}
+    localStorage.setItem("fohgm_last_table", type)
     _oldDetail(type);
   };
   
@@ -511,7 +511,7 @@ document.querySelectorAll('#mainNav a').forEach(function(link){
     var u=document.getElementById("loginUser").value.trim().toLowerCase();
     var p=document.getElementById("loginPass").value.trim();
     if(u==="samuel22331996" && p==="kokoboy2233"){
-      sessionStorage.setItem("fohgm_admin","1");
+      localStorage.setItem("fohgm_admin","1")
       location.hash="#admin";
       document.getElementById("loginModal").style.display="none";
       document.getElementById("adminModal").style.display="block";
@@ -528,19 +528,19 @@ document.querySelectorAll('#mainNav a').forEach(function(link){
   };
   
   logout = function(){
-    sessionStorage.removeItem("fohgm_admin");
-    sessionStorage.removeItem("fohgm_last_table");
+    localStorage.removeItem("fohgm_admin")
+    localStorage.removeItem("fohgm_last_table")
     document.getElementById("adminModal").style.display="none";
     document.getElementById("loginModal").style.display="block";
   };
   
   // 5. On REFRESH - skip login, go straight to Admin + last table
-  if(location.hash==="#admin" && sessionStorage.getItem("fohgm_admin")==="1"){
+  if(localStorage.getItem("fohgm_admin")==="1"){
     setTimeout(function(){
       document.getElementById("loginModal").style.display="none";
       document.getElementById("adminModal").style.display="block";
       loadFromFirebase(); updateCounts();
-      var last = sessionStorage.getItem("fohgm_last_table") || "prayer";
+      var last = localStorage.getItem("fohgm_last_table") || "prayer";
       openAdminDetail(last);
     }, 300);
   }
@@ -558,6 +558,7 @@ function showCustomAmount(val){
     box.required=false;
     box.value='';
   }
+}
   document.addEventListener('DOMContentLoaded', function(){
   let selects = document.querySelectorAll('select');
   selects.forEach(function(s){
