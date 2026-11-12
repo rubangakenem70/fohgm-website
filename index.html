@@ -123,7 +123,7 @@
 </div>
 <section id="about-beliefs"><h2>About - Beliefs, History, Accountability, FAQs, Privacy</h2><div class="one-line-5"><div class="square-box" onclick="openPop('pop-beliefs')"><b>Beliefs</b><span>Tap To Open</span></div><div class="square-box" onclick="openPop('pop-history')"><b>History - Est 2024</b><span>Tap To Open</span></div><div class="square-box" onclick="openPop('pop-accountability')"><b>Accountability</b><span>Tap To Open</span></div><div class="square-box" onclick="openPop('pop-faqs')"><b>FAQs</b><span>Tap To Open</span></div><div class="square-box" onclick="openPop('pop-privacy')"><b>Privacy Policy</b><span>Tap To Open</span></div></div></section>
 <section id="join-visit"><h2>JOIN US</h2><p class="sub">We cannot wait to meet you. Plan your visit today. Come as you are, bring your family and friends.</p><div class="one-line-5"><div class="square-box" onclick="openFormPage('form-jv')"><b>Plan Your Visit</b><span>Tap To Open</span></div><div class="square-box" onclick="openFormPage('form-jm')"><b>Become Member</b><span>Tap To Open</span></div><div class="square-box" onclick="openFormPage('form-jb')"><b>Baptism</b><span>Tap To Open</span></div><div class="square-box" onclick="openFormPage('form-jvol')"><b>Volunteer</b><span>Tap To Open</span></div><div class="square-box" onclick="openFormPage('form-jc')"><b>Small Groups</b><span>Tap To Open</span></div></div></section>
-<section id="connect-testimony"><div class="wide-box" onclick="openFormPage('form-testimony')"><b>Share Testimony</b><span>Tap To Open</span></div><p style="text-align:center">I came broken to Badege Layibi, and God healed me at the Fountain. - Mary, Gulu<br>My family was restored through grace. - David, Layibi</p></section>
+<section id="connect-testimony"><div class="wide-box" onclick="openFormPage('form-testimony')"><b>Share Testimony</b><span>Tap To Open</span></div><p style="text-align:center">I came broken to Badege Layibi, and God healed me at the Fountain. - Mary, Gulu<br>My family was restored through grace. - David, Layibi</p><p style="text-align:center;margin-top:12px"><a href="javascript:void(0)" onclick="openPop('pop-all-testimonies')" style="display:inline-block;background:#1a7a2e;color:#fff;padding:10px 22px;border-radius:25px;text-decoration:none;font-weight:900">View All Testimonies </a></p></section>
 <section id="connect-location"><h2>Connect - Location - Google Map</h2><div class="card"><div><p><b>Fountain of Higher Grace, Badege Layibi, Gulu, Uganda</b><br>Pastor Sam: 0771755800 - Sunday 9:00 AM</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Badege+Layibi+Gulu+Uganda" target="_blank">Open in Google Maps</a><br><br><iframe src="https://www.google.com/maps?q=Badege%20Layibi%2C%20Gulu%2C%20Uganda&output=embed" width="100%" height="300" style="border:0;border-radius:12px" loading="lazy"></iframe></div></div></section>
 <section id="resources-sermons"><h2>RESOURCES</h2><div class="one-line-5" style="grid-template-columns:1fr 1fr"><div class="square-box" onclick="openPop('pop-devotional')"><b>Devotional</b><span>Tap To Open</span></div><div class="square-box" onclick="openPop('pop-media')"><b>Media</b><span>Tap To Open</span></div></div><div class="grid" style="margin-top:14px"><div class="card"><div><h3>Higher Grace</h3><p>Romans 5:20 - Grace lifts you higher.</p></div></div><div class="card"><div><h3>Each One Reach One</h3><p>One life can change a family in Layibi.</p></div></div><div class="card"><div><h3>The Fountain That Never Dries</h3><p>John 4:14 - Whoever drinks the water Jesus gives will never thirst.</p></div></div></div></section>
 <section id="resources-jesusfilm" style="background:#0a1931;color:#fff;border-radius:16px"><h2 style="color:#FFD700">Resources - Jesus Film Online</h2><p style="text-align:center;color:#ddd">Watch the story of Jesus - free, in your language. The life, love, death, and resurrection of Jesus Christ.</p><div style="text-align:center;margin:16px"><a class="btn btn-gold" href="https://www.jesusfilm.org/watch/jesus.html/english.html" target="_blank">Watch Jesus Film Now</a> <a class="btn" style="background:#fff;color:#111" href="https://www.jesusfilm.org/" target="_blank">Visit JesusFilm.org</a></div></section>
@@ -153,9 +153,11 @@
 
 
 <div class="modal form-modal" id="form-gpr"><div class="modal-box"><h2>Give - Projects</h2><label>Your Name *</label><input id="gprName" placeholder="Enter your Name"><label>Your Email Address *</label><input id="gprEmail" type="email" placeholder="Enter your Email Address"><label>Amount UGX</label><input id="gprAmount" placeholder="Enter Amount UGX"><label>Choose Project</label><select id="gprMsg"><option>Church Land</option><option>Church Building</option><option>Kids Ministry</option><option>Outreach</option></select><button class="btn" onclick="submitForm('give','Projects','gprName','gprAmount','gprMsg','gprDone','gprEmail')">Give to Project</button><p id="gprDone" style="color:green;font-weight:800"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-gpr')">Close</button></div></div>
-<div class="modal" id="loginModal"><div class="modal-box" style="max-width:380px;text-align:center;border-top:6px solid #d4af00;padding:30px 24px"><div style="width:70px;height:70px;background:#0a1633;color:#d4af00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;margin:0 auto 12px">S</div><h2 style="margin:0">Pastor Login</h2><p style="font-size:12px;color:#666;margin:6px 0 16px">FOHGM - Fountain of Higher Grace<br>Only Pastor Sam - Badege Layibi, Gulu</p><label style="text-align:left">Username</label><input id="loginUser" placeholder="Username" autocomplete="off"><label style="text-align:left">Password</label><div style="display:flex;gap:6px"><input id="loginPass" type="password" placeholder="Password" autocomplete="off" style="flex:1"><button type="button" onclick="togglePass()" style="padding:10px 12px;border-radius:5px;border:1px solid #ddd;background:#eee;cursor:pointer;font-size:16px" id="eyeBtn">👁️</button></div><button class="btn" style="width:100%;padding:13px;border-radius:30px;margin-top:14px" onclick="doLogin()">Login as Pastor Sam </button><p id="loginMsg" style="color:red;text-align:center;margin-top:10px"></p><button class="btn" style="background:#eee;color:#111;width:100%;border-radius:30px" onclick="closeModal('loginModal')">Back To Website</button></div></div>
-<div class="modal" id="adminModal"><div class="modal-box">
-<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap"><h2>FOHGM Admin Dashboard</h2><button class="btn" style="background:#c00" onclick="logout()">Logout Admin</button></div>
+<div class="modal" id="pop-all-testimonies"><div class="modal-box"><h2 style="text-align:center;color:#1a7a2e">All Testimonies - Miracles of Grace</h2><p style="text-align:center;color:#666">What God Has Done Through Prayer at FOHGM</p><div id="allTestimoniesList"></div><div class="card"><div><p style="background:#1a7a2e;color:#fff;padding:12px;border-radius:10px;text-align:center"><b>Your Testimony Is Next!</b><br>Come for Prayer - Sundays at Badege Layibi, Gulu | Call: 0771755800</p></div></div><button class="btn" style="background:#1a7a2e;width:100%;margin-top:10px" onclick="openFormPage('form-testimony');closeModal('pop-all-testimonies')">Share Your Testimony</button><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-all-testimonies')">Close</button></div></div>
+<button id="saveTestBtn" class="btn" style="background:#1a7a2e;width:100%" onclick="saveNewTestimony()">Save Testimony </button>
+onclick="document.getElementById('pop-all-testimonies').style.display='flex'"
+<div class="modal" id="adminModal"><div class="modal-box"><h2><button id="addTestBtn" class="btn" style="background:#1a7a2e" onclick="document.getElementById('addTestimonyModal').style.display='flex'">✚ Add Testimony</button> <button id="viewAllAdminBtn2" class="btn" style="background:#111" onclick="document.getElementById('testimoniesModal').style.display='flex'">View All Testimonies - Admin</button></h2>
+
 <div id="adminHome">
 <div style="text-align:center;margin-bottom:14px">
 <label style="font-weight:900">Quick Open Table: </label>
@@ -254,7 +256,7 @@ function toggleTheme(){
  else{b.classList.remove("glow");document.querySelector(".theme-btn").textContent="☀";localStorage.setItem("fohgm_theme","light");}
 }
 (function(){let t=localStorage.getItem("fohgm_theme");if(t==="dark"){document.body.classList.add("dark");document.querySelector(".theme-btn").textContent="🌙"} if(t==="glow"){document.body.classList.add("glow");document.querySelector(".theme-btn").textContent="✨"}})();
-function openPop(id){document.getElementById(id).style.display="block";document.body.style.overflow="hidden"}
+function openPop(id){ if(id==="pop-all-testimonies") renderTestimonies(); document.getElementById(id).style.display="block";document.body.style.overflow="hidden" }
 function openFormPage(id){document.getElementById(id).style.display="block";document.body.style.overflow="hidden"}
 function closeModal(id){document.getElementById(id).style.display="none";document.body.style.overflow="auto";if(id==="loginModal"){history.replaceState(null,"",location.pathname)}}
 window.onclick=function(e){if(e.target.classList.contains("modal")){e.target.style.display="none";document.body.style.overflow="auto"}}
@@ -325,8 +327,94 @@ function checkReply(type,elId){
  else if(found){el.textContent="Pastor has received it. No personal reply yet.  "+getAutoReply(type);}
  else{el.textContent="No reply yet. Send a form first, then check here again."}
 }
+function getTestimonies(){ try{ return JSON.parse(localStorage.getItem("fohgm_testimonies")||"[]") }catch(e){ return [] } }
+function saveTestimonies(list){ localStorage.setItem("fohgm_testimonies", JSON.stringify(list)); }
+function getDefaultTestimonies(){ return [
+{ name:"Aber Alice", title:"1. After 6 Years Barren - Baby Girl Born!", text:"Aber Alice was barren for 6 years. Pastor Sam prayed for her, and God answered! She gave birth to a bouncing Baby Girl!", quote:"What God cannot do does not exist! - Aber Alice" },
+{ name:"Elizabeth", title:"2. After 15 Years Barren - Baby Boy Born!", text:"Elizabeth was barren for 15 years. Prayer was made at FOHGM, and God did it! She gave birth to a bouncing Baby Boy!", quote:"15 years of tears turned to testimony! - Elizabeth" },
+{ name:"Mary, Gulu", title:"3. Healed At The Fountain", text:"I came broken to Badege Layibi, and God healed me at the Fountain.", quote:"- Mary, Gulu" },
+{ name:"David, Layibi", title:"4. Family Restored", text:"My family was restored through grace.", quote:"- David, Layibi" }
+]; }
+let testPage=1; let testPageSize=5;
+function getViewedTests(){ try{return JSON.parse(localStorage.getItem("fohgm_viewed_tests")||"[]")}catch(e){return []} }
+function renderTestimonies(){
+  let defaults = getDefaultTestimonies();
+  let added = getTestimonies();
+  let all = defaults.concat(added);
+  let box = document.getElementById("allTestimoniesList");
+  if(!box) return;
+  let totalPages = Math.max(1, Math.ceil(all.length / testPageSize));
+  if(testPage > totalPages) testPage = totalPages;
+  if(testPage < 1) testPage = 1;
+  let start = (testPage-1)*testPageSize;
+  let pageList = all.slice(start, start+testPageSize);
+  let viewed = getViewedTests();
+  let html = "";
+  pageList.forEach((t)=>{
+    let realIndex = all.indexOf(t);
+    let isViewed = viewed.includes(realIndex) ? "<span style='background:#1a7a2e;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px'>Viewed ✓</span>" : "<span style='background:#d4af00;color:#111;padding:2px 8px;border-radius:10px;font-size:11px'>New - Tap to View</span>";
+    html += '<div onclick="openTestimonyDetail('+realIndex+')" style="border:1px solid #ddd;padding:12px;border-radius:10px;margin-bottom:8px;cursor:pointer;background:#fff"><b>'+t.title+'</b><br><span style="font-size:12px;color:#666">By: '+t.name+' - Tap to Open & Read</span><br>'+isViewed+'</div>';
+  });
+  html += '<div style="display:flex;gap:8px;justify-content:center;margin-top:10px"><button class="btn" onclick="testPage--;renderTestimonies()">⬅ Prev</button><span style="padding:8px;font-weight:800">Page '+testPage+' of '+totalPages+' - Total '+all.length+'</span><button class="btn" onclick="testPage++;renderTestimonies()">Next ➡</button></div>';
+  box.innerHTML = html;
+}
+function openTestimonyDetail(i){
+  let all = getDefaultTestimonies().concat(getTestimonies());
+  let t = all[i]; if(!t) return;
+  let viewed = getViewedTests();
+  if(!viewed.includes(i)){ viewed.push(i); localStorage.setItem("fohgm_viewed_tests", JSON.stringify(viewed)); }
+  document.getElementById("testDetailTitle").textContent = t.title;
+  document.getElementById("testDetailBody").innerHTML = "<p><b>By:</b> "+t.name+"</p><p>"+t.text+"</p><p><i>\""+t.quote+"\"</i></p>";
+let delBtn = document.getElementById("testDetailDelete"); let isAdmin = window.location.hash.includes('admin') || localStorage.getItem("fohgm_admin_logged")==="1"; if(isAdmin){ delBtn.style.display="block"; delBtn.onclick = function(){ deleteTestimonyFromDetail(i); }; } else { delBtn.style.display="none"; }
+  document.getElementById("testDetailModal").style.display="flex";
+  renderTestimonies();
+}
+function deleteTestimonyFromDetail(i){
+  if(i < 4){ alert("This is one of the 4 old testimonies. You cannot delete it here."); return; }
+  if(!confirm("Admin: Delete this testimony forever?")) return;
+  let list = getTestimonies();
+  list.splice(i-4,1);
+  saveTestimonies(list);
+  closeModal('testDetailModal');
+  renderTestimonies();
+  alert("Deleted!");
+}
+function openAddTestimony(){
+document.getElementById("adminModal").style.display="none"; var m=document.getElementById("addTestimonyModal"); m.style.display="block"; m.style.zIndex="9999";
+  let list = getTestimonies();
+  let box = document.getElementById("adminTestList");
+  if(box){
+    if(list.length===0) box.innerHTML="<p style='font-size:13px'>No extra testimonies yet. Your 4 old ones are always there.</p>";
+    else box.innerHTML = "<h4>Your Added Testimonies:</h4>" + list.map((t,i)=>"<p style='font-size:13px;border:1px solid #ddd;padding:8px;border-radius:8px'><b>"+t.title+"</b><br>"+t.text+" <button onclick='deleteTestimony("+i+")' style='background:#c00;color:#fff;border:none;padding:4px 8px;border-radius:4px;cursor:pointer'>Delete</button></p>").join("");
+  }
+}
+function saveNewTestimony(){
+  let name = document.getElementById("newTestName").value.trim();
+  let title = document.getElementById("newTestTitle").value.trim();
+  let text = document.getElementById("newTestText").value.trim();
+  if(!name || !title || !text){ alert("Please fill Name, Title and Testimony"); return; }
+  let list = getTestimonies();
+  let num = getDefaultTestimonies().length + list.length + 1;
+  list.push({ name:name, title:num+". "+title, text:text, quote:name });
+  saveTestimonies(list);
+  document.getElementById("newTestName").value="";
+  document.getElementById("newTestTitle").value="";
+  document.getElementById("newTestText").value="";
+  renderTestimonies();
+  alert("Testimony Saved! It will now show in View All Testimonies.");
+  closeModal('addTestimonyModal'); openPop('pop-all-testimonies');
+}
+function deleteTestimony(i){
+  if(!confirm("Delete this testimony?")) return;
+  let list = getTestimonies();
+  list.splice(i,1);
+  saveTestimonies(list);
+  renderTestimonies();
+  openAddTestimony();
+}
+renderTestimonies();
 function showNotif(text){ let n=document.getElementById("notif");let t=document.getElementById("notifText"); if(n&&t){t.textContent=text;n.style.display="block";setTimeout(()=>{n.style.display="none"},8000)} }
-function openAdmin(){document.getElementById("loginModal").style.display="block";document.body.style.overflow="hidden"}
+function openAdmin(){ var l=document.getElementById("loginModal"); if(l){ l.style.display="block"; } else { document.getElementById("adminModal").style.display="block"; } document.body.style.overflow="hidden" }
 function checkAdminHash(){if(location.hash==="#admin"){openAdmin()}}
 window.addEventListener("hashchange",checkAdminHash); window.addEventListener("load",checkAdminHash); checkAdminHash();
 function doLogin(){ let u=document.getElementById("loginUser").value.trim().toLowerCase(); let p=document.getElementById("loginPass").value.trim(); if(u==="samuel22331996"&&p==="kokoboy2233"){closeModal("loginModal");document.getElementById("adminModal").style.display="block";loadFromFirebase();updateCounts();renderTable();} else{document.getElementById("loginMsg").textContent="Wrong username or password."} }
@@ -537,9 +625,9 @@ document.querySelectorAll('#mainNav a').forEach(function(link){
   // 5. On REFRESH - skip login, go straight to Admin + last table
   if(localStorage.getItem("fohgm_admin")==="1"){
     setTimeout(function(){
-      document.getElementById("loginModal").style.display="none";
-      document.getElementById("adminModal").style.display="block";
-      loadFromFirebase(); updateCounts();
+let lm = document.getElementById("loginModal"); if(lm) lm.style.display="none";
+let am = document.getElementById("adminModal"); if(am) am.style.display="block";
+loadFromFirebase(); updateCounts();
       var last = localStorage.getItem("fohgm_last_table") || "prayer";
       openAdminDetail(last);
     }, 300);
@@ -567,6 +655,31 @@ function showCustomAmount(val){
     }
   });
 });
+  // BELIEVER: NO Save, NO Delete, NO View All Admin - ADMIN ONLY
+let isAdmin2 = window.location.hash.includes('admin') || localStorage.getItem("fohgm_admin_logged")==="1";
+let sBtn = document.getElementById("saveTestBtn");
+let vBtn = document.getElementById("viewAllAdminBtn");
+let dBtn = document.getElementById("testDetailDelete");
+let aBtn = document.getElementById("addTestBtn");
+if(sBtn && !isAdmin2) sBtn.style.display="none";
+if(vBtn && !isAdmin2) vBtn.style.display="none";
+if(dBtn && !isAdmin2) dBtn.style.display="none";
+
+ // FIXED - Real IDs: form-testimony + pop-all-testimonies
+let addB = document.getElementById("addTestBtn");
+let addModal = document.getElementById("form-testimony");
+let viewB = null;
+document.querySelectorAll("button").forEach(b=>{
+  if(b.textContent.includes("View All Testimonies")) viewB = b;
+});
+let viewModal = document.getElementById("pop-all-testimonies");
+if(addB && addModal){
+  addB.onclick = ()=>{ addModal.style.display="flex"; };
+}
+if(viewB && viewModal){
+  viewB.onclick = ()=>{ viewModal.style.display="flex"; };
+}}
+if(aBtn && !isAdmin2) aBtn.style.display="none";
   </script>
 <style>
 #adminModal{background:#0a1633 !important}
@@ -582,5 +695,15 @@ img[src*="pastor"]{
   object-fit:contain !important;
   object-position:top !important;
 }
+
 </style>
+<div id="testDetailModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:99999;align-items:center;justify-content:center;padding:15px;box-sizing:border-box">
+  <div style="background:#fff;width:100%;max-width:500px;max-height:85vh;overflow-y:auto;padding:20px;border-radius:12px">
+    
+    <h3 id="testDetailTitle"></h3>
+    <div id="testDetailBody"></div>
+    <button class="btn" style="background:#c00" id="testDetailDelete">🗑 Admin Delete This Testimony</button>
+    <button class="btn" style="background:#ddd;color:#111" onclick="document.getElementById('testDetailModal').style.display='none'">Close</button>
+  </div>
+</div>
 </body></html>

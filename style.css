@@ -77,3 +77,11 @@ table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}th,td{b
 /* MOBILE */
 @media(max-width:700px){nav{display:none}.cards,.grid,.footer-grid{grid-template-columns:1fr 1fr}.main{grid-template-columns:1fr}.hero-content h1{font-size:34px}.contact-hero h1{font-size:27px}header{padding:10px 3%;gap:6px}.logo{font-size:19px}.theme-btn{width:30px;height:30px;font-size:13px}.square-grid,.one-line-5,.one-line-4{grid-template-columns:1fr 1fr;gap:10px}.modal{padding:10px}.modal-box{margin:10px auto;padding:18px}table{font-size:12px}th,td{padding:7px}.admin-grid{grid-template-columns:1fr 1fr}section{padding:40px 4%}section h2{font-size:24px}}
 @media print{header,.fixed-bar,.tool,.btn{display:none!important}body{background:#fff}}
+#testList, #allTestList, #adminTestList{
+  display:grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap:12px !important;
+}
+@media(max-width:700px){
+  #testList, #allTestList, #adminTestList{ grid-template-columns:1fr !important; }
+}
