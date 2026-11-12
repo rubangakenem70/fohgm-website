@@ -558,6 +558,14 @@ function showCustomAmount(val){
     box.required=false;
     box.value='';
   }
+  document.addEventListener('DOMContentLoaded', function(){
+  let selects = document.querySelectorAll('select');
+  selects.forEach(function(s){
+    if(s.textContent.includes('Other Amount')){
+      s.addEventListener('change', function(){ showCustomAmount(this.value); });
+    }
+  });
+});
   </script>
 <style>
 #adminModal{background:#0a1633 !important}
