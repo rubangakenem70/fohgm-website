@@ -156,6 +156,14 @@
 <div class="modal" id="pop-all-testimonies"><div class="modal-box"><h2 style="text-align:center;color:#1a7a2e">All Testimonies - Miracles of Grace</h2><p style="text-align:center;color:#666">What God Has Done Through Prayer at FOHGM</p><div id="allTestimoniesList"></div><div class="card"><div><p style="background:#1a7a2e;color:#fff;padding:12px;border-radius:10px;text-align:center"><b>Your Testimony Is Next!</b><br>Come for Prayer - Sundays at Badege Layibi, Gulu | Call: 0771755800</p></div></div><button class="btn" style="background:#1a7a2e;width:100%;margin-top:10px" onclick="openFormPage('form-testimony');closeModal('pop-all-testimonies')">Share Your Testimony</button><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-all-testimonies')">Close</button></div></div>
 <button id="saveTestBtn" class="btn" style="background:#1a7a2e;width:100%" onclick="saveNewTestimony()">Save Testimony </button>
 onclick="document.getElementById('pop-all-testimonies').style.display='flex'"
+<div class="modal" id="loginModal"><div class="modal-box" style="max-width:400px">
+<h2>Pastor Login</h2>
+<label>Username</label><input id="loginUser" placeholder="Username">
+<label>Password</label><input id="loginPass" type="password" placeholder="Password">
+<button class="btn" onclick="doLogin()">Login</button>
+<p id="loginMsg" style="color:#c00;font-weight:800"></p>
+<button class="btn" style="background:#ddd;color:#111" onclick="closeModal('loginModal')">Close</button>
+</div></div>
 <div class="modal" id="adminModal"><div class="modal-box"><h2><button id="addTestBtn" class="btn" style="background:#1a7a2e" onclick="document.getElementById('addTestimonyModal').style.display='flex'">✚ Add Testimony</button> <button id="viewAllAdminBtn2" class="btn" style="background:#111" onclick="document.getElementById('testimoniesModal').style.display='flex'">View All Testimonies - Admin</button></h2>
 
 <div id="adminHome">
@@ -215,7 +223,7 @@ onclick="document.getElementById('pop-all-testimonies').style.display='flex'"
 </div>
 <h3 id="detailTitle" style="margin:12px 0 4px;text-align:center">Detail</h3>
 <p id="detailDesc" style="font-size:12px;color:#666"></p>
-<div class="tool"><input id="searchBox" placeholder="Search name, phone, email, message..." style="flex:1;margin:0" oninput="renderTable()"><select id="sortBox" onchange="renderTable()" style="max-width:160px;margin:0"><option value="new">Sort: Newest First</option><option value="old">Sort: Oldest First</option><option value="name">Sort: Name A-Z</option></select><button class="primary" onclick="renderTable()">Refresh</button><button onclick="exportExcel()">Export Excel CSV</button><button onclick="exportPDF()">Export PDF / Print</button><button onclick="emptyTrash()" style="background:#c00;color:#fff">Empty Trash Forever</button></div>
+<div class="tool"><input id="searchBox" placeholder="Search name, phone, email, message..." style="flex:1;margin:0" oninput="renderTable()"><select id="sortBox" onchange="renderTable()" style="max-width:160px;margin:0"><option value="new">Sort: Newest First</option><option value="old">Sort: Oldest First</option><option value="name">Sort: Name A-Z</option></select><button class="primary" onclick="renderTable()">Refresh</button><button onclick="forceLoadTest()" style="background:#c00;color:#fff">FORCE LOAD FROM FIREBASE</button><button onclick="exportExcel()">Export Excel CSV</button><button onclick="exportPDF()">Export PDF / Print</button><button onclick="emptyTrash()" style="background:#c00;color:#fff">Empty Trash Forever</button></div>
 <div class="tool" style="background:#f8f5e6;padding:10px;border-radius:8px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px;text-align:center"><button onclick="selectAllRows(true)">Select All</button><button onclick="selectAllRows(false)">Unselect All</button><button onclick="bulkDelete()" style="background:#c00;color:#fff">Delete</button><button onclick="bulkEmail()" style="background:#0a1633;color:#fff">Bulk Email</button><button onclick="bulkWhatsApp()" style="background:#25D366;color:#fff">Bulk WhatsApp</button><button onclick="bulkAutoReply()" style="background:#d4af00;color:#111">Send Auto Reply To</button><span id="selectedCount" style="font-size:12px;font-weight:800"></span></div>
 <div id="tableWrap" style="overflow-x:auto"></div>
 <div style="display:flex;justify-content:space-between;margin-top:12px;align-items:center;flex-wrap:wrap;gap:8px"><label style="color:white">Show: <select onchange="pageSize=parseInt(this.value);page=1;renderTable();" style="padding:6px;border-radius:6px"><option value="5">5</option><option value="10">10</option><option value="20" selected>20</option><option value="50">50</option></select></label><button onclick="changePage(-1)">Prev</button><span id="pageInfo"></span><button onclick="changePage(1)">Next</button></div>
@@ -224,7 +232,7 @@ onclick="document.getElementById('pop-all-testimonies').style.display='flex'"
 </div></div>
 <div class="modal" id="rowModal"><div class="modal-box" style="max-width:520px"><h2>View / Edit Record</h2>
 <div id="prayerHistoryBox" style="display:none;background:#fff3cd;padding:10px;border-radius:8px;font-size:13px;margin-bottom:10px"></div>
-<label>Name</label><input id="editName"><label>Phone Number</label><input id="editPhone"><label>Email Address</label><input id="editEmail"><label>Message / Details</label><textarea id="editMsg"></textarea>
+<label>Name</label><input id="editName"><label>Phone Number</label><input id="editPhone"><label>Email </label><input id="editEmail"><label>Message / Details</label><textarea id="editMsg"></textarea>
 <label>Status</label><select id="editStatus" style="width:100%;padding:10px;border-radius:5px"><option value="Pending">Pending - Not Yet Replied</option><option value="Prayed For">Prayed For</option><option value="Done">Done</option><option value="Replied">Replied</option></select>
 <label>Pastor Reply - This Will Notify The Person</label><textarea id="editReply" placeholder="Write your reply here. The person will see it when they press Check For Pastor Reply."></textarea>
 <div id="prayerBtns" style="display:none;gap:6px;flex-wrap:wrap;margin:10px 0"><button class="btn" style="background:#1a7a2e" onclick="markPrayed()">🙏 Mark Prayed For Today</button><button class="btn" style="background:#d4af00;color:#111" onclick="prayAgain()">🔁 Pray Again Tomorrow / Again</button><button class="btn" style="background:#0a1633" onclick="markDone()"> Mark Done</button></div>
@@ -419,6 +427,17 @@ function checkAdminHash(){if(location.hash==="#admin"){openAdmin()}}
 window.addEventListener("hashchange",checkAdminHash); window.addEventListener("load",checkAdminHash); checkAdminHash();
 function doLogin(){ let u=document.getElementById("loginUser").value.trim().toLowerCase(); let p=document.getElementById("loginPass").value.trim(); if(u==="samuel22331996"&&p==="kokoboy2233"){closeModal("loginModal");document.getElementById("adminModal").style.display="block";loadFromFirebase();updateCounts();renderTable();} else{document.getElementById("loginMsg").textContent="Wrong username or password."} }
 function logout(){closeModal("adminModal");document.getElementById("loginModal").style.display="block"}
+async function forceLoadTest(){
+  try{
+    if(!window._db){ alert("NO DB - Firebase not connected!"); return; }
+    let c = window._firestore.collection(window._db, "fohgm_forms");
+    let snap = await window._firestore.getDocs(c);
+    alert("Firebase HAS: " + snap.size + " docs. LocalStorage HAS: " + getData().length + " docs.");
+    await loadFromFirebase();
+    updateCounts(); renderTable();
+    alert("After load, Admin now has: " + getData().length);
+  }catch(e){ alert("FIREBASE READ BLOCKED! Error: " + e.message); }
+}
 function updateCounts(){
  let d=getData();
  function countFor(key){
@@ -680,6 +699,17 @@ if(viewB && viewModal){
   viewB.onclick = ()=>{ viewModal.style.display="flex"; };
 }}
 if(aBtn && !isAdmin2) aBtn.style.display="none";
+  // FIX: Admin must pull from Firebase, not just localStorage
+window.addEventListener('load', () => {
+  loadFromFirebase();
+});
+
+// FIX: Every time Admin opens, refresh from Firebase
+let _oldOpenAdminDetail = openAdminDetail;
+openAdminDetail = async function(type){
+  await loadFromFirebase();
+  _oldOpenAdminDetail(type);
+};
   </script>
 <style>
 #adminModal{background:#0a1633 !important}
