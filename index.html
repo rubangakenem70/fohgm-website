@@ -883,4 +883,79 @@ window.addTestimony = doSubmitTestimony;
 window.saveTestimony = doSubmitTestimony;
 window.postTestimony = doSubmitTestimony;
 </script>
+<script>
+// FIX SAVE BUTTON - STOP FORM RELOAD
+function getTestimonyFromButton(btn){
+  // 1. Look inside the same form / modal as the button first
+  var container = btn.closest('form') || btn.closest('[id*="testimony"]') || btn.closest('[id*="Testimony"]') || btn.closest('[id*="share"]') || btn.closest('[id*="Share"]') || document;
+  var text = '';
+  var name = '';
+
+  var ta = container.querySelector('textarea');
+  if(ta && ta.value.trim()) text = ta.value.trim();
+
+  var inputs = container.querySelectorAll('input[type="text"], input:not([type="submit"]):not([type="button"]):not([type="hidden"]):not([type="checkbox"])');
+  inputs.forEach(function(inp){
+    if(inp.value.trim() && !name) name = inp.value.trim();
+  });
+
+  // Fallback: if textarea was empty, use last visible input as text
+  if(!text){
+    var all = document.querySelectorAll('textarea, input');
+    all.forEach(function(el){ if(el.offsetParent!==null && el.value.trim()) text = el.value.trim(); });
+    name = 'Anonymous';
+  }
+  return {name: name || 'Anonymous', text: text};
+}
+
+function realSaveTestimony(e){
+  if(e) { e.preventDefault(); e.stopPropagation(); }
+  var btn = (e && e.target) ? e.target.closest('button') : null;
+  var data = getTestimonyFromButton(btn || document);
+
+  if(!data.text){ alert('Please type your testimony first'); return false; }
+
+  // Save to Firebase
+  firebase.database().ref('testimonies').push({ name: data.name, text: data.text, time: Date.now() })
+  .then(function(){
+    alert('Testimony saved! Everyone can now see it.');
+    // clear only testimony boxes
+    document.querySelectorAll('textarea, input').forEach(function(el){ if(el.offsetParent!==null) el.value=''; });
+    var all = document.getElementById('pop-all-testimonies');
+    if(all) all.style.display='block';
+  })
+  .catch(function(err){ alert('Firebase Error: '+err.message); });
+  return false;
+}
+
+// Override old functions
+window.submitTestimony = realSaveTestimony;
+window.addTestimony = realSaveTestimony;
+window.saveTestimony = realSaveTestimony;
+window.postTestimony = realSaveTestimony;
+
+// Attach to EVERY button that says Save / Submit / Share / Post Testimony
+function attachSaveButtons(){
+  var btns = document.querySelectorAll('button, input[type="submit"], input[type="button"], a');
+  btns.forEach(function(b){
+    var txt = (b.innerText || b.value || '').toLowerCase();
+    if(txt.includes('save') || txt.includes('submit') || txt.includes('share testimony') || txt.includes('post testimony')){
+      if(!b.dataset.fixed){
+        b.dataset.fixed = '1';
+        b.addEventListener('click', realSaveTestimony);
+      }
+    }
+  });
+  // Also stop any form from reloading page
+  document.querySelectorAll('form').forEach(function(f){
+    if(!f.dataset.fixed){
+      f.dataset.fixed='1';
+      f.addEventListener('submit', realSaveTestimony);
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', attachSaveButtons);
+setInterval(attachSaveButtons, 1000);
+attachSaveButtons();
+</script>
 </body></html>
