@@ -118,7 +118,6 @@
 </div>
 </div>
 </div>
-
 <section id="about-beliefs"><h2>About - Beliefs, History, Accountability, FAQs, Privacy</h2><div class="one-line-5"><div class="square-box" onclick="openPop('pop-beliefs')"><b>Beliefs</b><span>Tap To Open</span></div><div class="square-box" onclick="openPop('pop-history')"><b>History - Est 2024</b><span>Tap To Open</span></div><div class="square-box" onclick="openPop('pop-accountability')"><b>Accountability</b><span>Tap To Open</span></div><div class="square-box" onclick="openPop('pop-faqs')"><b>FAQs</b><span>Tap To Open</span></div><div class="square-box" onclick="openPop('pop-privacy')"><b>Privacy Policy</b><span>Tap To Open</span></div></div></section>
 
 <section id="join-visit"><h2>JOIN US</h2><p class="sub">We cannot wait to meet you. Plan your visit today. Come as you are, bring your family and friends.</p><div class="one-line-5"><div class="square-box" onclick="openFormPage('form-jv')"><b>Plan Your Visit</b><span>Tap To Open</span></div><div class="square-box" onclick="openFormPage('form-jm')"><b>Become Member</b><span>Tap To Open</span></div><div class="square-box" onclick="openFormPage('form-jb')"><b>Baptism</b><span>Tap To Open</span></div><div class="square-box" onclick="openFormPage('form-jvol')"><b>Volunteer</b><span>Tap To Open</span></div><div class="square-box" onclick="openFormPage('form-jc')"><b>Small Groups</b><span>Tap To Open</span></div></div></section>
@@ -151,7 +150,6 @@
 <div class="modal" id="pop-devotional"><div class="modal-box"><h2>Resources - Devotionals</h2><div class="card"><div><p><b>Today:</b> Grace did much more abound. Where you failed, grace is greater. Start today with prayer and the Word.</p><p style="margin-top:10px"><b>Devotional 1 - Grace Is Greater:</b> Grace did much more abound. Romans 5:20. Where you failed, grace is greater. Where you fell, grace lifts you up again. Do not stay in shame. Come to the Fountain today. Pray, read one verse, and let God speak to you. God has not finished with you.</p><p style="margin-top:10px"><b>Devotional 2 - Prayer Changes Things:</b> Pray first, worry later. Before you call anyone, call on God. Tell Him your fear, your need, your family, your job, your school. He hears you. He sees you. He will answer you in His time. Keep praying, keep believing, keep trusting.</p><p style="margin-top:10px"><b>Devotional 3 - The Fountain Never Dries:</b> John 4:14. Whoever drinks the water Jesus gives will never thirst. When you are tired, come and drink. When you are broken, come and drink. When you are happy, come and drink. The Fountain in Badege Layibi is open for you every day in prayer.</p><p style="margin-top:10px"><b>Devotional 4 - Each One Reach One:</b> You are called to reach one. One neighbour, one friend, one family member. Share your testimony. Invite one person to church. Pray for one person today. God will use your one to change many.</p></div></div><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-devotional')">Close</button></div></div>
 
 <div class="modal" id="pop-media"><div class="modal-box"><h2>Resources - Media</h2><div class="card"><div><p>Photos from FOHGM Badege Layibi. Services, worship, outreach, testimonies, kids ministry, and community.</p><p style="margin-top:10px"><b>Sunday Worship:</b> Families come together in Badege Layibi to worship, sing, pray, and hear the Word. Come and feel the joy of the Fountain.</p><p style="margin-top:10px"><b>Kids Ministry:</b> Kids are loved at FOHGM. They sing, learn Bible stories, pray, and play in a safe and happy place. Your child will be loved here.</p><p style="margin-top:10px"><b>Outreach And Community:</b> We visit homes, pray with families, help the needy, and share the love of Jesus in Layibi and beyond. This is the heart of the Fountain.</p><p style="margin-top:10px"><b>Testimonies And Celebrations:</b> Baptisms, weddings, birthdays, healing testimonies, and new beginnings. God is doing great things in Gulu, and we celebrate together.</p></div></div><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('pop-media')">Close</button></div></div>
-
 <div class="modal form-modal" id="form-contact"><div class="modal-box"><h2>How Can We Serve You?</h2><p>Have a specific question? You can reach the team by filling in this form directly. We love to hear from you, and we will reply to your message as soon as possible with prayer and care.</p><form onsubmit="submitMainContact(event)"><div class="row"><div><label>First Name *</label><input id="mainFirst" required placeholder="Enter First Name"></div><div><label>Last Name</label><input id="mainLast" placeholder="Enter Last Name"></div></div><div class="row"><div><label>Your Email *</label><input id="mainEmail" type="email" required placeholder="Enter Your Email Address"></div><div><label>Phone Number</label><input id="mainPhone" placeholder="Enter Phone Number"></div></div><label>Subject *</label><select id="mainSubject"><option>Please choose an option</option><option>Prayer Request</option><option>Testimony</option><option>Partnership / Giving</option><option>Visit / Planning a Visit</option><option>General Question</option><option>Become a Member</option></select><label>Your Message *</label><textarea id="mainMsg" required placeholder="How can we help you? Tell us your prayer, testimony or question in detail."></textarea><button class="send" type="submit">SEND MESSAGE</button><p id="mainDone" style="font-weight:800;margin-top:10px;color:green"></p></form><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-contact')">Close</button></div></div>
 
 <div class="modal form-modal" id="form-prayer"><div class="modal-box" style="background:#0a1633;color:#fff"><h2 style="color:#d4af5a">Need Urgent Prayer?</h2><p>Our prayer team is available to pray with you. No problem is too big for God. Pastor Sam and the team will stand with you.</p><label style="color:#fff">Your Name *</label><input id="pName" placeholder="Enter your Name"><label style="color:#fff">Your Email *</label><input id="pEmail" type="email" placeholder="Enter your Email"><label style="color:#fff">Phone Number</label><input id="pPhone" placeholder="Enter Phone Number"><label style="color:#fff">Prayer Request *</label><textarea id="pText" placeholder="Tell us in detail how we can pray for you. Healing, family, job, school, peace, anything."></textarea><button class="btn" onclick="submitForm('prayer','Prayer Request','pName','pPhone','pText','pDone','pEmail')">SEND PRAYER REQUEST</button><p id="pDone" style="color:#d4af5a;font-weight:800;font-size:12px"></p><button class="btn" style="background:#ddd;color:#111;width:100%" onclick="closeModal('form-prayer')">Close</button></div></div>
@@ -217,7 +215,6 @@
 <div class="admin-small" onclick="openAdminDetail('trash')" style="border-color:#c00"><b>Trash</b><div class="num" id="count-trash" style="color:#c00">0</div><span>Deleted - Restore Here</span><br><span class="tap" style="background:#c00">Open Trash </span></div>
 </div>
 </div>
-
 <div id="adminDetail" style="display:none">
 <button class="btn" style="background:#0a1633" onclick="backToAdminHome()"> Back To Admin Cards</button>
 <div style="text-align:center;margin:10px 0">
@@ -254,7 +251,6 @@
 <div id="prayerBtns" style="display:none;gap:6px;flex-wrap:wrap;margin:10px 0"><button class="btn" style="background:#1a7a2e" onclick="markPrayed()">🙏 Mark Prayed For Today</button><button class="btn" style="background:#d4af00;color:#111" onclick="prayAgain()">🔁 Pray Again Tomorrow / Again</button><button class="btn" style="background:#0a1633" onclick="markDone()"> Mark Done</button></div>
 <div style="display:flex;gap:6px;flex-wrap:wrap;margin:10px 0"><button class="btn" style="background:#25D366" onclick="sendWhatsAppCurrent()">WhatsApp This Person</button><button class="btn" style="background:#0a1633" onclick="sendEmailCurrent()">Email This Person</button><button class="btn" style="background:#1a7a2e" onclick="sendSMSCurrent()">SMS This Person</button><button class="btn" style="background:#d4af00;color:#111" onclick="sendAutoReplyCurrent()">Send Auto Reply</button></div><button class="btn" onclick="saveEntry()">Save Changes</button><button class="btn" style="background:#1a7a2e" onclick="restoreCurrent()">Restore From Trash</button><button class="btn" style="background:#c00" onclick="trashCurrent()">Move To Trash / Delete</button><button class="btn" style="background:#111" onclick="deletePermanentCurrent()">Delete Permanent Forever</button><button class="btn" style="background:#ddd;color:#111" onclick="closeModal('rowModal')">Close</button></div></div>
 
-<!-- NEW TESTIMONY FORM - ADMIN ONLY - NO LIST UNDER IT -->
 <div class="modal" id="addTestimonyModal"><div class="modal-box" style="max-width:520px">
 <div style="background:#fffaf0;border:2px solid #d4af00;border-radius:16px;padding:22px;text-align:center">
 <h2 style="color:#1a7a2e;margin:0">✨ Add New Testimony</h2>
@@ -408,7 +404,6 @@ function renderTestimonies(){
   html += '<div style="display:flex;gap:8px;justify-content:center;margin-top:10px"><button class="btn" onclick="testPage--;renderTestimonies()">⬅ Prev</button><span style="padding:8px;font-weight:800">Page '+testPage+' of '+totalPages+' - Total '+all.length+'</span><button class="btn" onclick="testPage++;renderTestimonies()">Next ➡</button></div>';
   box.innerHTML = html;
 }
-
 function openTestimonyDetail(i){
   let all = getDefaultTestimonies().concat(getTestimonies());
   let t = all[i]; if(!t) return;
@@ -426,16 +421,48 @@ function openTestimonyDetail(i){
   document.getElementById("testDetailModal").style.display="flex";
   renderTestimonies();
 }
-
+async function saveTestimonyToFirebase(t){
+  try{
+    if(!window._db) return;
+    let c = window._firestore.collection(window._db, "fohgm_testimonies");
+    await window._firestore.addDoc(c, t);
+  }catch(e){ console.log("Testimony Firebase save failed", e); }
+}
+async function deleteTestimonyFromFirebase(t){
+  try{
+    if(!window._db || !t) return;
+    let c = window._firestore.collection(window._db, "fohgm_testimonies");
+    let q = window._firestore.query(c, window._firestore.where("created","==",t.created));
+    let snap = await window._firestore.getDocs(q);
+    for(let doc of snap.docs){ await window._firestore.deleteDoc(doc.ref); }
+  }catch(e){ console.log("Testimony Firebase delete failed", e); }
+}
+async function loadTestimoniesFromFirebase(){
+  try{
+    if(!window._db) return;
+    let c = window._firestore.collection(window._db, "fohgm_testimonies");
+    let snap = await window._firestore.getDocs(c);
+    let list = [];
+    snap.forEach(d=>{ list.push(d.data()); });
+    list.sort((a,b)=>(a.created||0)-(b.created||0));
+    if(list.length){
+      localStorage.setItem("fohgm_testimonies", JSON.stringify(list));
+      renderTestimonies();
+    }
+  }catch(e){ console.log("Load testimonies failed", e); }
+}
 function deleteTestimonyFromDetail(i){
   if(i < 4){ alert("This is one of the 4 old testimonies. You cannot delete it here."); return; }
-  if(!confirm("Admin: Delete this testimony forever?")) return;
+  if(!confirm("Admin: Delete this testimony forever from ALL devices?")) return;
+  let all = getDefaultTestimonies().concat(getTestimonies());
+  let t = all[i];
   let list = getTestimonies();
   list.splice(i-4,1);
   saveTestimonies(list);
+  deleteTestimonyFromFirebase(t);
   closeModal('testDetailModal');
   renderTestimonies();
-  alert("Deleted!");
+  alert("Deleted from all devices!");
 }
 function saveNewTestimony(){
   let name = document.getElementById("newTestName").value.trim();
@@ -444,22 +471,29 @@ function saveNewTestimony(){
   if(!name || !title || !text){ alert("Please fill Name, Title and Testimony"); return; }
   let list = getTestimonies();
   let num = getDefaultTestimonies().length + list.length + 1;
-  list.push({ name:name, title:num+". "+title, text:text, quote:name });
+  let newT = { name:name, title:num+". "+title, text:text, quote:name, created:Date.now() };
+  list.push(newT);
   saveTestimonies(list);
+  saveTestimonyToFirebase(newT);
   document.getElementById("newTestName").value="";
   document.getElementById("newTestTitle").value="";
   document.getElementById("newTestText").value="";
-  document.getElementById("testSaveMsg").textContent="✅ Saved! It is now live on the main website.";
+  document.getElementById("testSaveMsg").textContent="✅ Saved! It is now live on ALL phones and PC.";
   renderTestimonies();
   setTimeout(()=>{ closeModal('addTestimonyModal'); document.getElementById("testSaveMsg").textContent=""; },1200);
 }
 function deleteTestimony(i){
   if(!confirm("Delete this testimony?")) return;
   let list = getTestimonies();
+  let t = list[i];
   list.splice(i,1);
   saveTestimonies(list);
+  deleteTestimonyFromFirebase(t);
   renderTestimonies();
 }
+loadTestimoniesFromFirebase();
+setInterval(loadTestimoniesFromFirebase, 10000);
+<script>
 renderTestimonies();
 function showNotif(text){ let n=document.getElementById("notif");let t=document.getElementById("notifText"); if(n&&t){t.textContent=text;n.style.display="block";setTimeout(()=>{n.style.display="none"},8000)} }
 function openAdmin(){ var l=document.getElementById("loginModal"); if(l){ l.style.display="block"; } else { document.getElementById("adminModal").style.display="block"; } document.body.style.overflow="hidden" }
@@ -567,6 +601,7 @@ function changePrayerHistory(id, action){
  if(action==="pending"){ x.status="Pending"; x.prayerStatus="Pending"; }
  saveData(d); updateInFirebase(x); renderTable();
 }
+<script>
 function changePage(n){page+=n;renderTable()}
 function selectAllRows(v){document.querySelectorAll(".rowCheck").forEach(c=>c.checked=v)}
 function getSelectedIds(){return Array.from(document.querySelectorAll(".rowCheck:checked")).map(c=>Number(c.dataset.id))}
