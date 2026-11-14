@@ -804,4 +804,81 @@ window.togglePass = function(){
 var rb = document.getElementById('emergencyAdminBtn');
 if(rb) rb.remove();
 </script>
+<script>
+// FORCE TESTIMONY FIX
+function getSavedTestimonies(){
+  try{
+    var t = JSON.parse(localStorage.getItem('fohgm_testimonies') || '[]');
+    if(t.length) return t;
+  }catch(e){}
+  return [
+    {name:'Testimony 1', text:'God has been faithful to Fountain of Higher Grace Ministries.'},
+    {name:'Testimony 2', text:'We thank God for His goodness and mercy.'},
+    {name:'Testimony 3', text:'God is doing great things in Kololo.'},
+    {name:'Testimony 4', text:'Join us and share what God has done for you.'}
+  ];
+}
+function renderAllTestimoniesNow(){
+  var list = getSavedTestimonies();
+  var html = list.map(function(t){
+    return '<div style="background:#fff;padding:16px;border-radius:12px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,0.08)"><b>'+t.name+'</b><p style="margin:6px 0 0">'+t.text+'</p></div>';
+  }).join('');
+  ['allTestimoniesList','testimoniesList','testimonyList','all-testimonies-list'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.innerHTML = html;
+  });
+  // also fill the popup container itself if it has no list div
+  var pop = document.getElementById('pop-all-testimonies');
+  if(pop && !pop.querySelector('#allTestimoniesList')){
+    var box = pop.querySelector('div');
+    if(box && list.length) { /* keep title */ }
+  }
+  return list;
+}
+window.renderTestimonies = renderAllTestimoniesNow;
+
+function doSubmitTestimony(){
+  // find the visible form - Share Testimony or Admin Add
+  var modals = document.querySelectorAll('[id*="testimony"], [id*="Testimony"], [id*="share"], [id*="Share"]');
+  var name = '', text = '';
+  // try all inputs/textareas on page that are visible
+  var inputs = document.querySelectorAll('input, textarea');
+  var vals = [];
+  inputs.forEach(function(el){
+    if(el.offsetParent !== null && el.value.trim()) vals.push(el.value.trim());
+  });
+  // vals[0]=name, vals[1]=testimony in most forms
+  if(vals.length >= 2){ name = vals[0]; text = vals[1]; }
+  else if(vals.length === 1){ name = 'Anonymous'; text = vals[0]; }
+
+  if(!text){ alert('Please type your testimony first'); return; }
+
+  var list = JSON.parse(localStorage.getItem('fohgm_testimonies') || '[]');
+  // if list is still defaults, clear it first on first real submit
+  if(list.length && list[0].name==='Testimony 1') list = [];
+  list.unshift({name:name || 'Anonymous', text:text, date:new Date().toISOString()});
+  localStorage.setItem('fohgm_testimonies', JSON.stringify(list));
+  // also save under other keys your old code may use
+  localStorage.setItem('testimonies', JSON.stringify(list));
+
+  alert('Testimony saved! Thank you for sharing.');
+  renderAllTestimoniesNow();
+  // close any open form
+  document.querySelectorAll('[id*="Modal"], [id*="pop-"], [id*="form"]').forEach(function(el){
+    if(el.id!=='pop-all-testimonies') el.style.display='none';
+  });
+  document.body.style.overflow='';
+  // open All Testimonies to show it
+  var all = document.getElementById('pop-all-testimonies');
+  if(all) all.style.display='block';
+}
+window.submitTestimony = doSubmitTestimony;
+window.addTestimony = doSubmitTestimony;
+window.saveTestimony = doSubmitTestimony;
+window.postTestimony = doSubmitTestimony;
+
+// run on load
+document.addEventListener('DOMContentLoaded', renderAllTestimoniesNow);
+setTimeout(renderAllTestimoniesNow, 800);
+</script>
 </body></html>
