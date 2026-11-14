@@ -751,7 +751,6 @@ openAdminDetail = async function(type){
 img[src*="pastor"]{ width:100% !important; height:auto !important; max-height:580px !important; object-fit:contain !important; object-position:top !important; }
 </style>
 <!-- EMERGENCY FIX - PASTE BEFORE </body> -->
-<div id="emergencyAdminBtn" style="position:fixed;bottom:70px;right:10px;z-index:99999;background:#c00;color:#fff;padding:12px 16px;border-radius:50px;font-weight:900;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3)" onclick="forceOpenAdmin()">ADMIN</div>
 <script>
 function forceOpenAdmin(){
   var m = document.getElementById('loginModal');
@@ -773,32 +772,36 @@ window.openFormPage = function(id){
 if(location.hash==='#admin'){ setTimeout(forceOpenAdmin, 500); }
 </script>
 <script>
-// FORCE LOGIN FIX - overrides all broken doLogin versions
 window.doLogin = function(){
-  var u = document.getElementById('adminUser');
-  var p = document.getElementById('adminPass');
-  var user = u ? u.value.trim() : '';
-  var pass = p ? p.value.trim() : '';
+  var modal = document.getElementById('loginModal');
+  var inputs = modal ? modal.querySelectorAll('input') : [];
+  // First input = username, Second input = password - no matter what ID they have
+  var user = inputs[0] ? inputs[0].value.trim() : '';
+  var pass = inputs[1] ? inputs[1].value.trim() : '';
 
   if(!user || !pass){
-    alert('Please enter username and password');
+    alert('Please enter username and password. Found: ['+user+'] / ['+ (pass?'***':'') +']');
     return;
   }
 
-  // For now accept the login you use - we will change password after you get in
   if(user === 'samuel22331996' && pass === 'kokoboy2233'){
     localStorage.setItem('fohgm_admin','1');
     document.getElementById('loginModal').style.display='none';
+    document.body.style.overflow='';
     var am = document.getElementById('adminModal');
     if(am){ am.style.display='block'; }
-    else{ alert('Logged in! But adminModal not found - re-paste Part 4'); }
+    else{ alert('Logged in! adminModal not found'); }
   } else {
     alert('Wrong username or password. You typed: ' + user);
   }
 };
 window.togglePass = function(){
-  var p = document.getElementById('adminPass');
-  if(p) p.type = (p.type==='password' ? 'text' : 'password');
+  var modal = document.getElementById('loginModal');
+  var inputs = modal ? modal.querySelectorAll('input') : [];
+  if(inputs[1]) inputs[1].type = (inputs[1].type==='password' ? 'text' : 'password');
 };
+// Remove red button if it is still there
+var rb = document.getElementById('emergencyAdminBtn');
+if(rb) rb.remove();
 </script>
 </body></html>
