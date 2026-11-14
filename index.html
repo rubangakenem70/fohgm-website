@@ -750,4 +750,26 @@ openAdminDetail = async function(type){
 #tableWrap td{color:#111 !important}
 img[src*="pastor"]{ width:100% !important; height:auto !important; max-height:580px !important; object-fit:contain !important; object-position:top !important; }
 </style>
+<!-- EMERGENCY FIX - PASTE BEFORE </body> -->
+<div id="emergencyAdminBtn" style="position:fixed;bottom:70px;right:10px;z-index:99999;background:#c00;color:#fff;padding:12px 16px;border-radius:50px;font-weight:900;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3)" onclick="forceOpenAdmin()">ADMIN</div>
+<script>
+function forceOpenAdmin(){
+  var m = document.getElementById('loginModal');
+  if(m){ m.style.display='block'; document.body.style.overflow='hidden'; return; }
+  alert('loginModal NOT FOUND - file is incomplete, re-paste Part 4');
+}
+window.openPop = function(id){
+  try{
+    if(id==='pop-all-testimonies' && typeof renderTestimonies==='function'){ renderTestimonies(); }
+    var el = document.getElementById(id);
+    if(el){ el.style.display='block'; document.body.style.overflow='hidden'; }
+    else{ alert('Popup not found: '+id); }
+  }catch(e){ alert('Error opening: '+e.message); }
+};
+window.openFormPage = function(id){
+  var el = document.getElementById(id);
+  if(el){ el.style.display='block'; document.body.style.overflow='hidden'; }
+};
+if(location.hash==='#admin'){ setTimeout(forceOpenAdmin, 500); }
+</script>
 </body></html>
