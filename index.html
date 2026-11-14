@@ -408,17 +408,25 @@ function renderTestimonies(){
   html += '<div style="display:flex;gap:8px;justify-content:center;margin-top:10px"><button class="btn" onclick="testPage--;renderTestimonies()">⬅ Prev</button><span style="padding:8px;font-weight:800">Page '+testPage+' of '+totalPages+' - Total '+all.length+'</span><button class="btn" onclick="testPage++;renderTestimonies()">Next ➡</button></div>';
   box.innerHTML = html;
 }
+
 function openTestimonyDetail(i){
   let all = getDefaultTestimonies().concat(getTestimonies());
   let t = all[i]; if(!t) return;
   let viewed = getViewedTests();
   if(!viewed.includes(i)){ viewed.push(i); localStorage.setItem("fohgm_viewed_tests", JSON.stringify(viewed)); }
-  document.getElementById("testDetailTitle").textContent = t.title;
-  document.getElementById("testDetailBody").innerHTML = "<p><b>By:</b> "+t.name+"</p><p>"+t.text+"</p><p><i>\""+t.quote+"\"</i></p>";
+  document.getElementById("testDetailTitle").textContent = "";
+  document.getElementById("testDetailBody").innerHTML =
+  "<div style='text-align:center;background:#fffaf0;border:2px solid #d4af00;border-radius:12px;padding:16px 10px;margin-bottom:14px'>"
+    + "<div style='font-size:11px;letter-spacing:3px;color:#b89600;font-weight:900'>✨ TESTIMONY ✨</div>"
+    + "<h2 style='margin:8px 0 0;font-size:24px;line-height:1.2;font-weight:900;text-transform:uppercase;color:#111'>"+t.title+"</h2>"
+    + "<div style='margin-top:8px;font-size:13px;color:#666'>By: "+t.name+"</div>"
+    + "</div>"
+    + "<p style='font-size:16px;line-height:1.6'>"+t.text+"</p><p><i>\""+t.quote+"\"</i></p>";
   let delBtn = document.getElementById("testDetailDelete"); let isAdmin = window.location.hash.includes('admin') || localStorage.getItem("fohgm_admin")==="1"; if(isAdmin){ delBtn.style.display="block"; delBtn.onclick = function(){ deleteTestimonyFromDetail(i); }; } else { delBtn.style.display="none"; }
   document.getElementById("testDetailModal").style.display="flex";
   renderTestimonies();
 }
+
 function deleteTestimonyFromDetail(i){
   if(i < 4){ alert("This is one of the 4 old testimonies. You cannot delete it here."); return; }
   if(!confirm("Admin: Delete this testimony forever?")) return;
