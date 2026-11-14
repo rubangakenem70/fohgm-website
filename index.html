@@ -772,4 +772,33 @@ window.openFormPage = function(id){
 };
 if(location.hash==='#admin'){ setTimeout(forceOpenAdmin, 500); }
 </script>
+<script>
+// FORCE LOGIN FIX - overrides all broken doLogin versions
+window.doLogin = function(){
+  var u = document.getElementById('adminUser');
+  var p = document.getElementById('adminPass');
+  var user = u ? u.value.trim() : '';
+  var pass = p ? p.value.trim() : '';
+
+  if(!user || !pass){
+    alert('Please enter username and password');
+    return;
+  }
+
+  // For now accept the login you use - we will change password after you get in
+  if(user === 'samuel22331996' && pass === 'kokoboy2233'){
+    localStorage.setItem('fohgm_admin','1');
+    document.getElementById('loginModal').style.display='none';
+    var am = document.getElementById('adminModal');
+    if(am){ am.style.display='block'; }
+    else{ alert('Logged in! But adminModal not found - re-paste Part 4'); }
+  } else {
+    alert('Wrong username or password. You typed: ' + user);
+  }
+};
+window.togglePass = function(){
+  var p = document.getElementById('adminPass');
+  if(p) p.type = (p.type==='password' ? 'text' : 'password');
+};
+</script>
 </body></html>
